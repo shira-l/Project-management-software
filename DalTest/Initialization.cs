@@ -64,10 +64,10 @@ public static class Initialization
             do
                 id = s_rand.Next(MINid, MAXid);
             while (s_dalEngineer!.Read(id) != null);
-
+            double cost= s_rand.Next(14,30)*5;
+            Engineer newEngineer = new(id, cost, name, null);
+            s_dalEngineer!.Create(newEngineer);
+            //צריך לבדוק לגבי level
         }
-
-
     }
-
 }
