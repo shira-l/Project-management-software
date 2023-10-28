@@ -5,37 +5,43 @@ namespace Dal;
 using DalApi;
 using DO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class EngineerImplementation : IEngineer
 {
-    public int Create(Engineer n_engineer)
+    public int Create(Engineer m_engineer)
     {
-
-        if (DataSource.Tasks.Find(Engineer => Engineer.Id == n_engineer.Id))
-        {
-           
-        }
-            
-        
+        if (DataSource.Engineers.Find(Engineer => Engineer.Id == m_engineer.Id)!=null)
+            throw new Exception($"Engineer with ID={m_engineer.Id} already exists");
+        DataSource.Engineers.Add(m_engineer);
+        return m_engineer.Id; 
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        Engineer? engineer = DataSource.Engineers.Find(Engineer => Engineer.Id == id);
+        if (engineer == null)
+            throw new Exception($"Engineer with ID={id} is not exists");
+        DataSource.Engineers.Remove(engineer);
     }
 
     public Engineer? Read(int id)
     {
-        throw new NotImplementedException();
+        Engineer? engineer = DataSource.Engineers.Find(Engineer => Engineer.Id == id);
+        return engineer;
     }
 
     public List<Engineer> ReadAll()
     {
-        throw new NotImplementedException();
+        return new List<Engineer>(DataSource.Engineers);
     }
 
-    public void Update(Engineer item)
+    public void Update(Engineer m_engineer)
     {
-        throw new NotImplementedException();
+        Engineer? engineer = DataSource.Engineers.Find(Engineer => Engineer.Id == m_engineer.Id);
+        if (engineer == null)
+            throw new Exception($"Task with ID={m_engineer.Id} is not exists");
+        DataSource.Engineers.Remove(engineer);
+        DataSource.Engineers.Add(m_engineer);
     }
 }

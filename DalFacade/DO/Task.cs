@@ -9,6 +9,7 @@ namespace DO;
 /// <param name="Alias">Task Alias</param>
 /// <param name="Milestone"></param>******!!!!!!!
 /// <param name="Deliverables">The task Deliverables</param>
+/// <param name="IsActive">The task's status</param>
 /// <param name="Remarks">Remarks about the task</param>
 /// <param name="Start">The task start date</param>
 /// <param name="ScheduledDate"></param>
@@ -23,6 +24,7 @@ public record Task
     string? Description = null,
     string? Alias = null,
     bool Milestone = false,
+     bool IsActive = true,
     string? Deliverables = null,
     string? Remarks = null,
     DateTime? Start = null,

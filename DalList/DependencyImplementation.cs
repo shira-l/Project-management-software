@@ -7,24 +7,29 @@ using System.Collections.Generic;
 
 internal class DependencyImplementation : IDependency
 {
-    public int Create(Dependency item)
+    public int Create(Dependency m_dependency)
     {
-        throw new NotImplementedException();
+        int id = DataSource.Config.NextDependencyId;
+        Dependency copy = m_dependency with { Id = id };
+        DataSource.Dependencys.Add(copy);
+        return id;
+
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        throw new Exception("a Dependency object cannot be deleted");
     }
 
     public Dependency? Read(int id)
     {
-        throw new NotImplementedException();
+        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == id);
+        return dependency;
     }
 
     public List<Dependency> ReadAll()
     {
-        throw new NotImplementedException();
+        return new List<Dependency>(DataSource.Dependencys);
     }
 
     public void Update(Dependency item)
