@@ -84,7 +84,8 @@ public static class Initialization
         {
             int index=s_rand.Next(0, Engineers.Count);
             int EngineerId= Engineers[index].Id;
-
+            int moreDays= s_rand.Next(1, 31);
+            DateTime start = DateTime.Now.AddDays(moreDays);
         }
     }
 }
