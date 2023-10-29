@@ -14,7 +14,7 @@ public record Engineer
     int Id,
     double Cost,
     string? Name = null,
-    string? Email = null
-   // EngineerExperience Level
+    string? Email = null,
+    EngineerExperience? Level=null
 );
 

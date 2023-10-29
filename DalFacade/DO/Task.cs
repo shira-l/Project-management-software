@@ -12,7 +12,6 @@ namespace DO;
 /// <param name="IsActive">The task's status</param>
 /// <param name="Remarks">Remarks about the task</param>
 /// <param name="Start">The task start date</param>
-/// <param name="ScheduledDate"></param>
 /// <param name="ForecastDate">Estimated date for completion of the task</param>
 /// <param name="Deadline">Last date for completing the task</param>
 /// <param name="Complate">Actual task completion date</param>
@@ -28,11 +27,10 @@ public record Task
     string? Deliverables = null,
     string? Remarks = null,
     DateTime? Start = null,
-    DateTime? ScheduledDate = null,
     DateTime? ForecastDate = null,
     DateTime? Deadline = null,
-    DateTime? Complate = null
-    //EngineerExperience CompmlexityLevel******!!!!!!!
+    DateTime? Complate = null,
+    EngineerExperience? CompmlexityLevel=null
 )
 {
     ///<summary>

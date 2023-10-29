@@ -11,7 +11,13 @@ public static class Initialization
     private static readonly Random s_rand = new();
     private static void createDependency()
     {
-
+     for (int i = 0; i < 100; i++)
+     {
+      int DependentTask= s_rand.Next(1,251);
+      int DependOnTask = s_rand.Next(1, DependentTask);
+      Dependency newDependency = new(0, DependentTask, DependOnTask);
+      s_dalDependency!.Create(newDependency);
+     }
     }
     private static void createEngineer()
     {
@@ -65,9 +71,20 @@ public static class Initialization
                 id = s_rand.Next(MINid, MAXid);
             while (s_dalEngineer!.Read(id) != null);
             double cost= s_rand.Next(14,30)*5;
-            Engineer newEngineer = new(id, cost, name, null);
+            EngineerExperience level=(EngineerExperience)s_rand.Next((int)EngineerExperience.Novice,(int)EngineerExperience.Expert+1);
+            string email = name.Replace(" ", "") + "@gmail.com";
+            Engineer newEngineer = new(id, cost, name, email, level);
             s_dalEngineer!.Create(newEngineer);
-            //צריך לבדוק לגבי level
+        }
+    }
+    private static void createTask()
+    {
+        List<Engineer> Engineers= s_dalEngineer!.ReadAll();
+        for (int i = 0; i < 250; i++)
+        {
+            int index=s_rand.Next(0, Engineers.Count);
+            int EngineerId= Engineers[index].Id;
+
         }
     }
 }
