@@ -79,13 +79,33 @@ public static class Initialization
     }
     private static void createTask()
     {
+        string[] Deliverables =
+        {
+            "Project plan",
+            "User manual",
+            "Executable code module",
+            "Design document",
+            "Code listing",
+            "software product"
+        };
         List<Engineer> Engineers= s_dalEngineer!.ReadAll();
         for (int i = 0; i < 250; i++)
         {
             int index=s_rand.Next(0, Engineers.Count);
             int EngineerId= Engineers[index].Id;
-            int moreDays= s_rand.Next(1, 31);
+            int moreDays= s_rand.Next(3, 31),moreMonths = s_rand.Next(0, 10);
             DateTime start = DateTime.Now.AddDays(moreDays);
+            DateTime Deadline=start.AddMonths(4+ moreMonths).AddDays(moreDays);
+            DateTime ForecastDate = Deadline.AddDays(-(moreDays + 10));
+            TimeSpan range = Deadline - ForecastDate;
+            double rangeInDays = range.TotalDays;
+            DateTime Complate = ForecastDate.AddDays(rangeInDays);
+            EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
+            index = s_rand.Next(0, Deliverables.Length);
+            string myDeliverable = Deliverables[index];
+            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, start, ForecastDate, Deadline, Complate, CompmlexityLevel);
+            s_dalTask!.Create(task);
         }
     }
 }
+

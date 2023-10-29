@@ -15,6 +15,7 @@ namespace DO;
 /// <param name="ForecastDate">Estimated date for completion of the task</param>
 /// <param name="Deadline">Last date for completing the task</param>
 /// <param name="Complate">Actual task completion date</param>
+/// <param name="CompmlexityLevel">The difficulty level of the task</param>
 
 public record Task
 (
