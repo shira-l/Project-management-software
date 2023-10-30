@@ -32,8 +32,12 @@ public class DependencyImplementation : IDependency
         return new List<Dependency>(DataSource.Dependencys);
     }
 
-    public void Update(Dependency item)
+    public void Update(Dependency m_dependency)
     {
-        throw new NotImplementedException();
+        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == m_dependency.Id);
+        if (dependency == null)
+            throw new Exception($"Dependency with ID={m_dependency.Id} is not exists");
+        DataSource.Dependencys.Remove(dependency);
+        DataSource.Dependencys.Add(m_dependency);
     }
 }
