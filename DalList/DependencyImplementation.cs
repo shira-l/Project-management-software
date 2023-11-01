@@ -18,7 +18,10 @@ public class DependencyImplementation : IDependency
 
     public void Delete(int id)
     {
-        throw new Exception("a Dependency object cannot be deleted");
+        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == id);
+        if (dependency == null)
+            throw new Exception($"dependency with ID={id} is not exists");
+        DataSource.Dependencys.Remove(dependency);
     }
 
     public Dependency? Read(int id)
