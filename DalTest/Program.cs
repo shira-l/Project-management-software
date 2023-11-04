@@ -20,7 +20,8 @@ namespace DalTest
         public static void task()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
-            int choice = Console.Read();
+            int choice;
+            int.TryParse(Console.ReadLine()!, out choice);
             switch (choice)
             {
                 case 0:
@@ -124,7 +125,8 @@ namespace DalTest
         public static void engineer()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
-            int choice = Console.Read();
+            int choice;
+            int.TryParse(Console.ReadLine()!, out choice);
             switch (choice)
             {
                 case 0:
@@ -172,23 +174,28 @@ namespace DalTest
         }
         public static void UpdateEngineer()
         {
-            int id;
-            Console.WriteLine("Enter Engineer's id to update");
-            int.TryParse(Console.ReadLine(), out id);
-            DO.Engineer? previousEngineer = s_dalEngineer!.Read(id);
-            Console.WriteLine(previousEngineer);
-            double cost;
-            if (!double.TryParse(Console.ReadLine(), out cost))
-                cost = previousEngineer!.Cost;
-            string? name = Console.ReadLine();
-            if (string.IsNullOrEmpty(name))
-                name = previousEngineer!.Name;
-            string? email = Console.ReadLine();
-            if (string.IsNullOrEmpty(email))
-                email = previousEngineer!.Email;
-            EngineerExperience? level= TryParseNullableEngineerExperience(previousEngineer!.Level);
-            DO.Engineer newTask = new(id, cost,name,email,level);
-            s_dalEngineer!.Update(newTask);
+            try
+            {
+                int id;
+                Console.WriteLine("Enter Engineer's id to update");
+                int.TryParse(Console.ReadLine(), out id);
+                DO.Engineer? previousEngineer = s_dalEngineer!.Read(id);
+                Console.WriteLine(previousEngineer);
+                double cost;
+                if (!double.TryParse(Console.ReadLine(), out cost))
+                    cost = previousEngineer!.Cost;
+                string? name = Console.ReadLine();
+                if (string.IsNullOrEmpty(name))
+                    name = previousEngineer!.Name;
+                string? email = Console.ReadLine();
+                if (string.IsNullOrEmpty(email))
+                    email = previousEngineer!.Email;
+                EngineerExperience? level = TryParseNullableEngineerExperience(previousEngineer!.Level);
+                DO.Engineer newTask = new(id, cost, name, email, level);
+                s_dalEngineer!.Update(newTask);
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex); }
         }
         public static void readAllEngineer()
         {
@@ -209,7 +216,8 @@ namespace DalTest
         public static void dependency()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
-            int choice = Console.Read();
+            int choice;
+            int.TryParse(Console.ReadLine()!, out choice);
             switch (choice)
             {
                 case 0:
@@ -253,18 +261,24 @@ namespace DalTest
         }
         public static void UpdateDependency()
         {
-            int id;
-            Console.WriteLine("Enter Dependency's id to read");
-            int.TryParse(Console.ReadLine()!, out id);
-            DO.Dependency? previousDependency = s_dalDependency!.Read(id);
-            Console.WriteLine(previousDependency);
-            int DependentTask, DependOnTask;
-            if (!int.TryParse(Console.ReadLine(), out DependentTask))
-                DependentTask = previousDependency!.DependentTask;
-            if(int.TryParse(Console.ReadLine(), out DependOnTask))
-                DependOnTask = previousDependency!.DependOnTask;
-            DO.Dependency? UpdateDependency = new(id, DependentTask, DependOnTask);
-            s_dalDependency!.Update(UpdateDependency);
+            try
+            {
+                int id;
+                Console.WriteLine("Enter Dependency's id to read");
+                int.TryParse(Console.ReadLine()!, out id);
+                DO.Dependency? previousDependency = s_dalDependency!.Read(id);
+                Console.WriteLine(previousDependency);
+                int DependentTask, DependOnTask;
+                if (!int.TryParse(Console.ReadLine(), out DependentTask))
+                    DependentTask = previousDependency!.DependentTask;
+                if (int.TryParse(Console.ReadLine(), out DependOnTask))
+                    DependOnTask = previousDependency!.DependOnTask;
+                DO.Dependency? UpdateDependency = new(id, DependentTask, DependOnTask);
+                s_dalDependency!.Update(UpdateDependency);
+            }
+            catch (Exception ex) 
+            { Console.WriteLine(ex); }
+           
         }
         public static void readAllDependency()
         {
