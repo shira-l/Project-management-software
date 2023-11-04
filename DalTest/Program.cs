@@ -24,6 +24,7 @@ namespace DalTest
 
 
         }
+        //Task function to add, read, delete and update a task.
         public static void task()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -51,6 +52,7 @@ namespace DalTest
                     break;
             }
         }
+        //Creates new Task object in DAL
         public static void createTask()
         {
             Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date,ForecastDate date, Deadline date, CompmlexityLevel");
@@ -72,6 +74,7 @@ namespace DalTest
             s_dalTask!.Create(newTask);
             task();
         }
+        //Reads Task object by its ID 
         public static void readTask()
         {
             int id;
@@ -80,11 +83,13 @@ namespace DalTest
             Console.WriteLine(s_dalTask!.Read(id));
             task();
         }
+        //Reads all Task objects
         public static void readAllTask()
         {
             s_dalTask!.ReadAll().ForEach(task => Console.WriteLine(task));
             task();
         }
+        //Deletes an object by its Id
         public static void deleteTask()
         {
             try
@@ -99,6 +104,7 @@ namespace DalTest
             { Console.WriteLine(ex); }
            
         }
+        //Updates Task object
         public static void UpdateTask()
         {
             try
@@ -135,7 +141,7 @@ namespace DalTest
             catch(Exception ex)
             { Console.WriteLine(ex); };
         }
-
+        //Engineer function to add, read, delete and update an engineer.
         public static void engineer()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -165,6 +171,7 @@ namespace DalTest
 
         }
 
+        //Creates new Engineer object in DAL
         public static void createEngineer()
         {
             Console.WriteLine("Enter Engineer Id, cost, name, email, level");
@@ -180,6 +187,7 @@ namespace DalTest
             s_dalEngineer!.Create(newEngineer);
             engineer();
         }
+        //Reads Engineer object by its ID 
         public static void readEngineer()
         {
             int id;
@@ -188,6 +196,7 @@ namespace DalTest
             Console.WriteLine(s_dalEngineer!.Read(id));
             engineer();
         }
+        //Updates Engineer object
         public static void UpdateEngineer()
         {
             try
@@ -215,11 +224,13 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
+        // Reads all Engineer objects
         public static void readAllEngineer()
         {
             s_dalEngineer!.ReadAll().ForEach(engineer => Console.WriteLine(engineer));
             engineer();
         }
+        //Deletes an object by its Id
         public static void deleteEngineer()
         {
             try
@@ -233,6 +244,7 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
+        //Dependency function to add, read, delete and update dependencies
         public static void dependency()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -261,6 +273,7 @@ namespace DalTest
             }
         }
 
+        //Creates new Dependency object in DAL
         public static void createDependency()
         {
             Console.WriteLine("DependentTask, DependOnTask");
@@ -271,6 +284,7 @@ namespace DalTest
             s_dalDependency!.Create(newDependency);
             dependency();
         }
+        //Reads Dependency object by its ID 
         public static void readDependency()
         {
             int id;
@@ -279,6 +293,7 @@ namespace DalTest
             Console.WriteLine(s_dalDependency!.Read(id));
             dependency();
         }
+        //Updates Dependency object
         public static void UpdateDependency()
         {
             try
@@ -302,11 +317,13 @@ namespace DalTest
             { Console.WriteLine(ex); }
            
         }
+        // Reads all Dependency objects
         public static void readAllDependency()
         {
             s_dalDependency!.ReadAll().ForEach(dependency => Console.WriteLine(dependency));
             dependency();
         }
+        //Deletes an object by its Id
         public static void deleteDependency()
         {
             try
@@ -338,7 +355,7 @@ namespace DalTest
             EngineerExperience value;
             return EngineerExperience.TryParse(Console.ReadLine(), out value) ? value : previous;
         }
-
+        //Main function to select an engineer, task or dependency
         public static void menu()
         {
             while (true)
