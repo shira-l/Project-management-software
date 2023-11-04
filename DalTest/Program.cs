@@ -62,6 +62,7 @@ namespace DalTest
             EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
             DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, start, ForecastDate, Deadline, null, CompmlexityLevel);
             s_dalTask!.Create(newTask);
+            task();
         }
         public static void readTask()
         {
@@ -69,10 +70,12 @@ namespace DalTest
             Console.WriteLine("Enter Task's id to read");
             int.TryParse(Console.ReadLine()!, out id);
             Console.WriteLine(s_dalTask!.Read(id));
+            task();
         }
         public static void readAllTask()
         {
             s_dalTask!.ReadAll().ForEach(task => Console.WriteLine(task));
+            task();
         }
         public static void deleteTask()
         {
@@ -82,6 +85,7 @@ namespace DalTest
                 Console.WriteLine("Enter Task's id to delete");
                 int.TryParse(Console.ReadLine()!, out id);
                 s_dalTask!.Delete(id);
+                task();
             }
             catch (Exception ex)
             { Console.WriteLine(ex); }
@@ -117,6 +121,7 @@ namespace DalTest
                 EngineerExperience? CompmlexityLevel = TryParseNullableEngineerExperience(previousTask!.CompmlexityLevel);
                 DO.Task newTask = new(0, EngineerId, Description, Alias, false, true, Deliverables, Remarks, start, null, Deadline, null, CompmlexityLevel);
                 s_dalTask!.Update(newTask);
+                task();
             }
             catch(Exception ex)
             { Console.WriteLine(ex); };
@@ -164,6 +169,7 @@ namespace DalTest
             EngineerExperience.TryParse(Console.ReadLine()!, out level);
             DO.Engineer newEngineer = new(Id, cost, name, email, level);
             s_dalEngineer!.Create(newEngineer);
+            engineer();
         }
         public static void readEngineer()
         {
@@ -171,6 +177,7 @@ namespace DalTest
             Console.WriteLine("Enter Engineer's id to read");
             int.TryParse (Console.ReadLine(), out id);
             Console.WriteLine(s_dalEngineer!.Read(id));
+            engineer();
         }
         public static void UpdateEngineer()
         {
@@ -193,6 +200,7 @@ namespace DalTest
                 EngineerExperience? level = TryParseNullableEngineerExperience(previousEngineer!.Level);
                 DO.Engineer newTask = new(id, cost, name, email, level);
                 s_dalEngineer!.Update(newTask);
+                engineer();
             }
             catch (Exception ex)
             { Console.WriteLine(ex); }
@@ -200,6 +208,7 @@ namespace DalTest
         public static void readAllEngineer()
         {
             s_dalEngineer!.ReadAll().ForEach(engineer => Console.WriteLine(engineer));
+            engineer();
         }
         public static void deleteEngineer()
         {
@@ -209,6 +218,7 @@ namespace DalTest
                 Console.WriteLine("Enter Engineer's id to delete");
                 int.TryParse(Console.ReadLine(), out id);
                 s_dalEngineer!.Delete(id);
+                engineer();
             }
             catch (Exception ex)
             { Console.WriteLine(ex); }
@@ -250,7 +260,7 @@ namespace DalTest
             int.TryParse(Console.ReadLine()!, out DependOnTask);
             DO.Dependency newDependency = new(Id, DependentTask, DependOnTask);
             s_dalDependency!.Create(newDependency);
-
+            dependency();
         }
         public static void readDependency()
         {
@@ -258,6 +268,7 @@ namespace DalTest
             Console.WriteLine("Enter Dependency's id to read");
             int.TryParse(Console.ReadLine()!, out id);
             Console.WriteLine(s_dalDependency!.Read(id));
+            dependency();
         }
         public static void UpdateDependency()
         {
@@ -275,6 +286,7 @@ namespace DalTest
                     DependOnTask = previousDependency!.DependOnTask;
                 DO.Dependency? UpdateDependency = new(id, DependentTask, DependOnTask);
                 s_dalDependency!.Update(UpdateDependency);
+                dependency();
             }
             catch (Exception ex) 
             { Console.WriteLine(ex); }
@@ -283,6 +295,7 @@ namespace DalTest
         public static void readAllDependency()
         {
             s_dalDependency!.ReadAll().ForEach(dependency => Console.WriteLine(dependency));
+            dependency();
         }
         public static void deleteDependency()
         {
@@ -292,6 +305,7 @@ namespace DalTest
                 Console.WriteLine("Enter Dependency's id to delete");
                 int.TryParse(Console.ReadLine()!, out id);
                 s_dalDependency!.Delete(id);
+                dependency();
             }
             catch (Exception ex)
             { Console.WriteLine(ex); }
