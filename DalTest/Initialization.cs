@@ -107,5 +107,8 @@ public static class Initialization
             s_dalTask!.Create(task);
         }
     }
-}
+    public static void Do()
+    {
 
+    }
+}
