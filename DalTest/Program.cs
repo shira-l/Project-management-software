@@ -45,7 +45,7 @@ namespace DalTest
         }
         public static void createTask()
         {
-            Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date, Deadline date, CompmlexityLevel");
+            Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date,ForecastDate date, Deadline date, CompmlexityLevel");
             int EngineerId;
             int.TryParse(Console.ReadLine()!, out EngineerId);
             string? Description = Console.ReadLine();
@@ -53,11 +53,13 @@ namespace DalTest
             string? Deliverables = Console.ReadLine();
             string? Remarks =Console.ReadLine();
             DateTime start, Deadline;
+            var ForecastDate = new DateTime();
+            DateTime.TryParse(Console.ReadLine(), out ForecastDate);
             DateTime.TryParse(Console.ReadLine()!, out start);
             DateTime.TryParse(Console.ReadLine()!, out Deadline);
             EngineerExperience CompmlexityLevel;
             EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
-            DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, start, null, Deadline, null, CompmlexityLevel);
+            DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, start, ForecastDate, Deadline, null, CompmlexityLevel);
             s_dalTask!.Create(newTask);
         }
         public static void readTask()
@@ -108,11 +110,10 @@ namespace DalTest
                 string? Remarks = Console.ReadLine();
                 if (string.IsNullOrEmpty(Remarks))
                     Remarks = previousTask!.Remarks;
-                DateTime start, Deadline;
-                DateTime.TryParse(Console.ReadLine()!, out start); 
-                DateTime.TryParse(Console.ReadLine()!, out Deadline);
-                EngineerExperience CompmlexityLevel;
-                EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
+                DateTime? start = TryParseNullableDateTime(previousTask!.Start);
+                DateTime? ForecastDate = TryParseNullableDateTime(previousTask!.ForecastDate);
+                DateTime? Deadline = TryParseNullableDateTime(previousTask!.Deadline);
+                EngineerExperience? CompmlexityLevel = TryParseNullableEngineerExperience(previousTask!.CompmlexityLevel);
                 DO.Task newTask = new(0, EngineerId, Description, Alias, false, true, Deliverables, Remarks, start, null, Deadline, null, CompmlexityLevel);
                 s_dalTask!.Update(newTask);
             }
@@ -185,8 +186,7 @@ namespace DalTest
             string? email = Console.ReadLine();
             if (string.IsNullOrEmpty(email))
                 email = previousEngineer!.Email;
-            EngineerExperience level;
-            EngineerExperience.TryParse(Console.ReadLine()!, out level);
+            EngineerExperience? level= TryParseNullableEngineerExperience(previousEngineer!.Level);
             DO.Engineer newTask = new(id, cost,name,email,level);
             s_dalEngineer!.Update(newTask);
         }
@@ -282,14 +282,24 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
-
+        public static DateTime? TryParseNullableDateTime(DateTime? previous)
+        {
+            DateTime value;
+            return DateTime.TryParse(Console.ReadLine(), out value) ? value : previous;
+        }
+        public static EngineerExperience? TryParseNullableEngineerExperience(EngineerExperience? previous)
+        {
+            EngineerExperience value;
+            return EngineerExperience.TryParse(Console.ReadLine(), out value) ? value : previous;
+        }
 
         public static void menu()
         {
             while (true)
             {
                 Console.WriteLine("Select an entity to test:\n1-task\n2-engineer\n3-dependency\n0-exit");
-                int choice = Console.Read();
+                int choice;
+                int.TryParse(Console.ReadLine()!, out choice);
                 switch (choice)
                 {
                     case 0:

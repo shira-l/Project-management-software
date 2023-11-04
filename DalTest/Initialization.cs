@@ -97,13 +97,15 @@ public static class Initialization
             DateTime start = DateTime.Now.AddDays(moreDays);
             DateTime Deadline=start.AddMonths(4+ moreMonths).AddDays(moreDays);
             DateTime ForecastDate = Deadline.AddDays(-(moreDays + 10));
-            TimeSpan range = Deadline - ForecastDate;
-            double rangeInDays = range.TotalDays;
-            DateTime Complate = ForecastDate.AddDays(rangeInDays);
+            //TimeSpan range = Deadline - ForecastDate;
+            //int rangeInDays = (int)range.TotalDays;
+            //DateTime ?Complate=null;
+            //if (rangeInDays % 2 == 0)
+            //    Complate = ForecastDate.AddDays(s_rand.Next(rangeInDays+1));
             EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
             index = s_rand.Next(0, Deliverables.Length);
             string myDeliverable = Deliverables[index];
-            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, start, ForecastDate, Deadline, Complate, CompmlexityLevel);
+            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, start, ForecastDate, Deadline, null, CompmlexityLevel);
             s_dalTask!.Create(task);
         }
     }
