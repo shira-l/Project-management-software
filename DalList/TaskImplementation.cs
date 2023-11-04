@@ -5,7 +5,7 @@ namespace Dal;
 using DalApi;
 using DO;
 using System.Collections.Generic;
-
+//The interface implementation of Task
 public class TaskImplementation : ITask
 {
     public int Create(Task m_task)
@@ -21,6 +21,8 @@ public class TaskImplementation : ITask
         Task? task= DataSource.Tasks.Find(Task => Task.Id == id);
         if (task == null)
             throw new Exception($"Task with ID={id} is not exists");
+        if(!task.IsActive)
+                throw new Exception($"Task with ID={id} is  inactive");
         Task copy= task with { IsActive = false };
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(copy);
@@ -42,6 +44,8 @@ public class TaskImplementation : ITask
         Task? task = DataSource.Tasks.Find(Task => Task.Id == m_task.Id);
         if (task == null)
             throw new Exception($"Task with ID={m_task.Id} is not exists");
+        if (!task.IsActive)
+            throw new Exception($"Task with ID={m_task.Id} is  inactive");
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(m_task);
     }

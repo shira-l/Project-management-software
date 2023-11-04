@@ -3,12 +3,15 @@
 namespace DalTest;
 using DalApi;
 using DO;
+using System.Collections.Generic;
+
 public static class Initialization
 {
     private static IDependency? s_dalDependency; 
     private static IEngineer? s_dalEngineer; 
     private static ITask? s_dalTask;
     private static readonly Random s_rand = new();
+    //Initialize the list of dependencys
     private static void createDependency()
     {
      for (int i = 0; i < 100; i++)
@@ -19,6 +22,7 @@ public static class Initialization
       s_dalDependency!.Create(newDependency);
      }
     }
+    //Initialize the list of engineers
     private static void createEngineer()
     {
         string[] engineerNames =
@@ -77,6 +81,7 @@ public static class Initialization
             s_dalEngineer!.Create(newEngineer);
         }
     }
+    //Initialize the list of tasks
     private static void createTask()
     {
         string[] Deliverables =
@@ -97,11 +102,6 @@ public static class Initialization
             DateTime start = DateTime.Now.AddDays(moreDays);
             DateTime Deadline=start.AddMonths(4+ moreMonths).AddDays(moreDays);
             DateTime ForecastDate = Deadline.AddDays(-(moreDays + 10));
-            //TimeSpan range = Deadline - ForecastDate;
-            //int rangeInDays = (int)range.TotalDays;
-            //DateTime ?Complate=null;
-            //if (rangeInDays % 2 == 0)
-            //    Complate = ForecastDate.AddDays(s_rand.Next(rangeInDays+1));
             EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
             index = s_rand.Next(0, Deliverables.Length);
             string myDeliverable = Deliverables[index];

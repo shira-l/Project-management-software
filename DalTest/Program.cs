@@ -14,8 +14,15 @@ namespace DalTest
         private static ITask? s_dalTask = new TaskImplementation();
         static void Main()
         {
-            Initialization.Do(s_dalEngineer , s_dalDependency, s_dalTask);
-            menu();
+            try
+            {
+                Initialization.Do(s_dalEngineer, s_dalDependency, s_dalTask);
+                menu();
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex); }
+
+
         }
         public static void task()
         {
@@ -54,10 +61,11 @@ namespace DalTest
             string? Deliverables = Console.ReadLine();
             string? Remarks =Console.ReadLine();
             DateTime start, Deadline;
-            var ForecastDate = new DateTime();
-            DateTime.TryParse(Console.ReadLine(), out ForecastDate);
-            DateTime.TryParse(Console.ReadLine()!, out start);
-            DateTime.TryParse(Console.ReadLine()!, out Deadline);
+            while(!DateTime.TryParse(Console.ReadLine()!, out start))
+            { Console.WriteLine("enter start Date"); }
+            DateTime? ForecastDate = TryParseNullableDateTime((DateTime?)null);
+            while (!DateTime.TryParse(Console.ReadLine()!, out Deadline))
+            { Console.WriteLine("enter DateTime Date"); }
             EngineerExperience CompmlexityLevel;
             EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
             DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, start, ForecastDate, Deadline, null, CompmlexityLevel);
@@ -99,7 +107,8 @@ namespace DalTest
                 Console.WriteLine("Enter Task's id to update");
                 int.TryParse(Console.ReadLine()!, out id);
                 DO.Task? previousTask= s_dalTask!.Read(id);
-                Console.WriteLine(previousTask);
+                Console.WriteLine("the task tou want to update: "+previousTask);
+                Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date,ForecastDate date, Deadline date, CompmlexityLevel");
                 int EngineerId;
                 if (!int.TryParse(Console.ReadLine(), out EngineerId))
                     EngineerId = previousTask!.EngineerId;
@@ -187,7 +196,8 @@ namespace DalTest
                 Console.WriteLine("Enter Engineer's id to update");
                 int.TryParse(Console.ReadLine(), out id);
                 DO.Engineer? previousEngineer = s_dalEngineer!.Read(id);
-                Console.WriteLine(previousEngineer);
+                Console.WriteLine("the engineer you want to update: "+previousEngineer);
+                Console.WriteLine("Enter Engineer Id, cost, name, email, level");
                 double cost;
                 if (!double.TryParse(Console.ReadLine(), out cost))
                     cost = previousEngineer!.Cost;
@@ -253,12 +263,11 @@ namespace DalTest
 
         public static void createDependency()
         {
-            Console.WriteLine("Enter Engineer Id, DependentTask, DependOnTask");
-            int Id, DependentTask, DependOnTask;
-            int.TryParse(Console.ReadLine()!, out Id);
+            Console.WriteLine("DependentTask, DependOnTask");
+            int DependentTask, DependOnTask;
             int.TryParse(Console.ReadLine()!, out DependentTask);
             int.TryParse(Console.ReadLine()!, out DependOnTask);
-            DO.Dependency newDependency = new(Id, DependentTask, DependOnTask);
+            DO.Dependency newDependency = new(0, DependentTask, DependOnTask);
             s_dalDependency!.Create(newDependency);
             dependency();
         }
@@ -275,10 +284,11 @@ namespace DalTest
             try
             {
                 int id;
-                Console.WriteLine("Enter Dependency's id to read");
+                Console.WriteLine("Enter Dependency's id to update");
                 int.TryParse(Console.ReadLine()!, out id);
                 DO.Dependency? previousDependency = s_dalDependency!.Read(id);
-                Console.WriteLine(previousDependency);
+                Console.WriteLine("the dependency you want to update: "+previousDependency);
+                Console.WriteLine("Enter Engineer Id, DependentTask, DependOnTask");
                 int DependentTask, DependOnTask;
                 if (!int.TryParse(Console.ReadLine(), out DependentTask))
                     DependentTask = previousDependency!.DependentTask;
@@ -306,15 +316,23 @@ namespace DalTest
                 int.TryParse(Console.ReadLine()!, out id);
                 s_dalDependency!.Delete(id);
                 dependency();
-            }
+        }
             catch (Exception ex)
             { Console.WriteLine(ex); }
-        }
+}
+        //--------------------------------------------------------------
+        //Initialize the date in the input entered by the user or in the
+        //value received by the function if necessary
+        //--------------------------------------------------------------
         public static DateTime? TryParseNullableDateTime(DateTime? previous)
         {
             DateTime value;
             return DateTime.TryParse(Console.ReadLine(), out value) ? value : previous;
         }
+        //--------------------------------------------------------------
+        //Initialize the level in the input entered by the user or in the
+        //value received by the function if necessary
+        //--------------------------------------------------------------
         public static EngineerExperience? TryParseNullableEngineerExperience(EngineerExperience? previous)
         {
             EngineerExperience value;
