@@ -40,7 +40,7 @@ public class EngineerImplementation : IEngineer
     {
         Engineer? engineer = DataSource.Engineers.Find(Engineer => Engineer.Id == m_engineer.Id);
         if (engineer == null)
-            throw new Exception($"Task with ID={m_engineer.Id} is not exists");
+            throw new Exception($"Engineer with ID={m_engineer.Id} is not exists");
         DataSource.Engineers.Remove(engineer);
         DataSource.Engineers.Add(m_engineer);
     }

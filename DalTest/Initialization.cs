@@ -107,8 +107,13 @@ public static class Initialization
             s_dalTask!.Create(task);
         }
     }
-    public static void Do()
+    public static void Do(IEngineer? dalEngineer, IDependency? dalDependency, ITask? dalTask)
     {
-
+        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
+        createDependency();
+        createEngineer();
+        createTask();
     }
 }

@@ -5,7 +5,7 @@ using DalApi;
 using DO;
 using System.Collections.Generic;
 
-internal class DependencyImplementation : IDependency
+public class DependencyImplementation : IDependency
 {
     public int Create(Dependency m_dependency)
     {
@@ -18,7 +18,10 @@ internal class DependencyImplementation : IDependency
 
     public void Delete(int id)
     {
-        throw new Exception("a Dependency object cannot be deleted");
+        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == id);
+        if (dependency == null)
+            throw new Exception($"dependency with ID={id} is not exists");
+        DataSource.Dependencys.Remove(dependency);
     }
 
     public Dependency? Read(int id)
@@ -32,8 +35,12 @@ internal class DependencyImplementation : IDependency
         return new List<Dependency>(DataSource.Dependencys);
     }
 
-    public void Update(Dependency item)
+    public void Update(Dependency m_dependency)
     {
-        throw new NotImplementedException();
+        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == m_dependency.Id);
+        if (dependency == null)
+            throw new Exception($"Dependency with ID={m_dependency.Id} is not exists");
+        DataSource.Dependencys.Remove(dependency);
+        DataSource.Dependencys.Add(m_dependency);
     }
 }
