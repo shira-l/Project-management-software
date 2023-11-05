@@ -50,6 +50,8 @@ namespace DalTest
                 case 5:
                     deleteTask();
                     break;
+                default:
+                    throw new NullReferenceException("There is no such choice");
             }
         }
         //Creates new Task object in DAL
@@ -167,6 +169,8 @@ namespace DalTest
                 case 5:
                     deleteEngineer();
                     break;
+                default:
+                    throw new NullReferenceException("There is no such choice");
             }
 
         }
@@ -270,6 +274,8 @@ namespace DalTest
                 case 5:
                     deleteDependency();
                     break;
+                default:
+                    throw new NullReferenceException("There is no such choice");
             }
         }
 
@@ -377,7 +383,7 @@ namespace DalTest
                         dependency();
                         break;
                     default:
-                        break;
+                        throw new NullReferenceException("There is no such choice");
                 }
             }
         }
