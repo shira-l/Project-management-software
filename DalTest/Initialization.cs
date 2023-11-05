@@ -16,7 +16,7 @@ public static class Initialization
     {
      for (int i = 0; i < 100; i++)
      {
-      int DependentTask= s_rand.Next(1,251);
+      int DependentTask= s_rand.Next(1,101);
       int DependOnTask = s_rand.Next(1, DependentTask);
       Dependency newDependency = new(0, DependentTask, DependOnTask);
       s_dalDependency!.Create(newDependency);
