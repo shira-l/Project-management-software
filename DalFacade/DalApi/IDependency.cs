@@ -11,5 +11,5 @@ public interface IDependency
     List<Dependency> ReadAll(); // Reads all Dependency objects
     void Update(Dependency item); //Updates Dependency object
     void Delete(int id); //Deletes an object by its Id
-
+    void Reset();
 }

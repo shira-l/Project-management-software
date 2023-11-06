@@ -43,4 +43,8 @@ public class DependencyImplementation : IDependency
         DataSource.Dependencys.Remove(dependency);
         DataSource.Dependencys.Add(m_dependency);
     }
+    public void Reset()
+    {
+        DataSource.Dependencys.Clear(); 
+    }
 }

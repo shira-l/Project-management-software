@@ -44,4 +44,8 @@ public class EngineerImplementation : IEngineer
         DataSource.Engineers.Remove(engineer);
         DataSource.Engineers.Add(m_engineer);
     }
+    public void Reset()
+    {
+        DataSource.Engineers.Clear();
+    }
 }

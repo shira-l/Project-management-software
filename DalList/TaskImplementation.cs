@@ -49,4 +49,8 @@ public class TaskImplementation : ITask
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(m_task);
     }
+    public void Reset()
+    {
+        DataSource.Tasks.Clear();
+    }
 }

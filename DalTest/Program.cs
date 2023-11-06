@@ -57,22 +57,23 @@ namespace DalTest
         //Creates new Task object in DAL
         public static void createTask()
         {
-            Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date,ForecastDate date, Deadline date, CompmlexityLevel");
+            Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, createAt date,ForecastDate date, Deadline date, CompmlexityLevel");
             int EngineerId;
             int.TryParse(Console.ReadLine()!, out EngineerId);
             string? Description = Console.ReadLine();
             string? Alias = Console.ReadLine();
             string? Deliverables = Console.ReadLine();
             string? Remarks =Console.ReadLine();
-            DateTime start, Deadline;
-            while(!DateTime.TryParse(Console.ReadLine()!, out start))
-            { Console.WriteLine("enter start Date"); }
+            DateTime createAt, Deadline;
+            while(!DateTime.TryParse(Console.ReadLine()!, out createAt))
+            { Console.WriteLine("enter createAt Date"); }
+            DateTime? ScheduleDate = TryParseNullableDateTime((DateTime?)null);
             DateTime? ForecastDate = TryParseNullableDateTime((DateTime?)null);
             while (!DateTime.TryParse(Console.ReadLine()!, out Deadline))
             { Console.WriteLine("enter DateTime Date"); }
             EngineerExperience CompmlexityLevel;
             EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
-            DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, start, ForecastDate, Deadline, null, CompmlexityLevel);
+            DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
             s_dalTask!.Create(newTask);
             task();
         }
@@ -116,27 +117,21 @@ namespace DalTest
                 int.TryParse(Console.ReadLine()!, out id);
                 DO.Task? previousTask= s_dalTask!.Read(id);
                 Console.WriteLine("the task tou want to update: "+previousTask);
-                Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, Start date,ForecastDate date, Deadline date, CompmlexityLevel");
+                Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, createAt date,ForecastDate date, Deadline date, CompmlexityLevel");
                 int EngineerId;
                 if (!int.TryParse(Console.ReadLine(), out EngineerId))
                     EngineerId = previousTask!.EngineerId;
-                string? Description = Console.ReadLine();
-                if (string.IsNullOrEmpty(Description))
-                    Description = previousTask!.Description;
-                string? Alias = Console.ReadLine();
-                if (string.IsNullOrEmpty(Alias))
-                    Alias = previousTask!.Alias;
-                string? Deliverables = Console.ReadLine();
-                if (string.IsNullOrEmpty(Deliverables))
-                    Deliverables = previousTask!.Deliverables;
-                string? Remarks = Console.ReadLine();
-                if (string.IsNullOrEmpty(Remarks))
-                    Remarks = previousTask!.Remarks;
-                DateTime? start = TryParseNullableDateTime(previousTask!.Start);
+                string? Description, Alias, Deliverables, Remarks;
+                Description = stringIsNullOrEmpty(previousTask!.Description);
+                Alias = stringIsNullOrEmpty(previousTask!.Alias);
+                Deliverables = stringIsNullOrEmpty(previousTask!.Deliverables);
+                Remarks = stringIsNullOrEmpty(previousTask!.Remarks);
+                DateTime? createAt = TryParseNullableDateTime(previousTask!.DeadlineDate);
+                DateTime? ScheduleDate = TryParseNullableDateTime(previousTask!.ScheduleDate);
                 DateTime? ForecastDate = TryParseNullableDateTime(previousTask!.ForecastDate);
-                DateTime? Deadline = TryParseNullableDateTime(previousTask!.Deadline);
+                DateTime? Deadline = TryParseNullableDateTime(previousTask!.DeadlineDate);
                 EngineerExperience? CompmlexityLevel = TryParseNullableEngineerExperience(previousTask!.CompmlexityLevel);
-                DO.Task newTask = new(0, EngineerId, Description, Alias, false, true, Deliverables, Remarks, start, null, Deadline, null, CompmlexityLevel);
+                DO.Task newTask = new(0, EngineerId, Description, Alias, false, true, Deliverables, Remarks, createAt, null, Deadline, null, CompmlexityLevel);
                 s_dalTask!.Update(newTask);
                 task();
             }
@@ -178,18 +173,23 @@ namespace DalTest
         //Creates new Engineer object in DAL
         public static void createEngineer()
         {
-            Console.WriteLine("Enter Engineer Id, cost, name, email, level");
-            int Id;
-            double cost;
-            int.TryParse(Console.ReadLine()!, out Id);
-            double.TryParse(Console.ReadLine()!, out cost);
-            string? name = Console.ReadLine();
-            string? email = Console.ReadLine();
-            EngineerExperience level;
-            EngineerExperience.TryParse(Console.ReadLine()!, out level);
-            DO.Engineer newEngineer = new(Id, cost, name, email, level);
-            s_dalEngineer!.Create(newEngineer);
-            engineer();
+            try
+            {
+                Console.WriteLine("Enter Engineer Id, cost, name, email, level");
+                int Id;
+                double cost;
+                int.TryParse(Console.ReadLine()!, out Id);
+                double.TryParse(Console.ReadLine()!, out cost);
+                string? name = Console.ReadLine();
+                string? email = Console.ReadLine();
+                EngineerExperience level;
+                EngineerExperience.TryParse(Console.ReadLine()!, out level);
+                DO.Engineer newEngineer = new(Id, cost, name, email, level);
+                s_dalEngineer!.Create(newEngineer);
+                engineer();
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex); }
         }
         //Reads Engineer object by its ID 
         public static void readEngineer()
@@ -214,12 +214,9 @@ namespace DalTest
                 double cost;
                 if (!double.TryParse(Console.ReadLine(), out cost))
                     cost = previousEngineer!.Cost;
-                string? name = Console.ReadLine();
-                if (string.IsNullOrEmpty(name))
-                    name = previousEngineer!.Name;
-                string? email = Console.ReadLine();
-                if (string.IsNullOrEmpty(email))
-                    email = previousEngineer!.Email;
+                string? name ,email;
+                name = stringIsNullOrEmpty(previousEngineer!.Name);
+                email = stringIsNullOrEmpty(previousEngineer!.Email);
                 EngineerExperience? level = TryParseNullableEngineerExperience(previousEngineer!.Level);
                 DO.Engineer newTask = new(id, cost, name, email, level);
                 s_dalEngineer!.Update(newTask);
@@ -345,7 +342,7 @@ namespace DalTest
 }
         //--------------------------------------------------------------
         //Initialize the date in the input entered by the user or in the
-        //value received by the function if necessary
+        //value received by the function if no value is entered
         //--------------------------------------------------------------
         public static DateTime? TryParseNullableDateTime(DateTime? previous)
         {
@@ -354,12 +351,21 @@ namespace DalTest
         }
         //--------------------------------------------------------------
         //Initialize the level in the input entered by the user or in the
-        //value received by the function if necessary
+        //value received by the function if no value is entered
         //--------------------------------------------------------------
         public static EngineerExperience? TryParseNullableEngineerExperience(EngineerExperience? previous)
         {
             EngineerExperience value;
             return EngineerExperience.TryParse(Console.ReadLine(), out value) ? value : previous;
+        }
+        //--------------------------------------------------------------
+        //Initialize the string in the input entered by the user or in the
+        //value received by the function if no value is entered
+        //--------------------------------------------------------------
+        public static string? stringIsNullOrEmpty(string? previous)
+        {
+            string? value= Console.ReadLine();
+            return string.IsNullOrEmpty(value) ? previous : value;
         }
         //Main function to select an engineer, task or dependency
         public static void menu()
