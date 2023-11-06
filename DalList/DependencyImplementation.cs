@@ -18,33 +18,48 @@ internal class DependencyImplementation : IDependency
 
     public void Delete(int id)
     {
-        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == id);
+        Dependency? dependency = (from _dependency in DataSource.Dependencys
+                                  where (_dependency.Id == id)
+                                  select _dependency).First();
         if (dependency == null)
-            throw new Exception($"dependency with ID={id} is not exists");
+            throw new DalDoesNotExistException($"dependency with ID={id} is not exists");
         DataSource.Dependencys.Remove(dependency);
     }
 
     public Dependency? Read(int id)
     {
-        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == id);
+        Dependency? dependency = (from _dependency in DataSource.Dependencys
+                                  where (_dependency.Id == id)
+                                  select _dependency).First();
         return dependency;
     }
 
-    public List<Dependency> ReadAll()
+    public IEnumerable<Dependency?> ReadAll(Func<Dependency?, bool>? filter = null)
     {
-        return new List<Dependency>(DataSource.Dependencys);
+        if (filter == null)
+            return DataSource.Dependencys.Select(item => item);
+        else
+            return DataSource.Dependencys.Where(filter);
     }
 
     public void Update(Dependency m_dependency)
     {
-        Dependency? dependency = DataSource.Dependencys.Find(Dependency => Dependency.Id == m_dependency.Id);
+        Dependency? dependency = Read(m_dependency.Id);
         if (dependency == null)
-            throw new Exception($"Dependency with ID={m_dependency.Id} is not exists");
+            throw new DalDoesNotExistException($"Dependency with ID={m_dependency.Id} is not exists");
         DataSource.Dependencys.Remove(dependency);
         DataSource.Dependencys.Add(m_dependency);
     }
     public void Reset()
     {
         DataSource.Dependencys.Clear(); 
+    }
+
+    public Dependency? Read(Func<Dependency, bool> filter)
+    {
+        Dependency? dependency = (from _dependency in DataSource.Dependencys
+                                  where (filter(_dependency))
+                                  select _dependency).First();
+        return dependency;
     }
 }

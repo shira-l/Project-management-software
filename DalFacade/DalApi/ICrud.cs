@@ -11,7 +11,8 @@ namespace DalApi
     {
         int Create(T item); //Creates new Engineer object in DAL
         T? Read(int id); //Reads Engineer object by its ID 
-        List<T> ReadAll(); // Reads all Engineer objects
+        T? Read(Func<T, bool> filter);
+        IEnumerable<T?> ReadAll(Func<T, bool>? filter = null);  // Reads all Engineer objects
         void Update(T item); //Updates Engineer object
         void Delete(int id); //Deletes an object by its Id
         void Reset();//Resets the data list

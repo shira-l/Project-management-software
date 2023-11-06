@@ -9,7 +9,7 @@ namespace DalTest
 {
     internal class Program
     {
-        private static IDal? s_dal = new DalList();
+        private readonly static IDal? s_dal = new DalList();
         static void Main()
         {
             try

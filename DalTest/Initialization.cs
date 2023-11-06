@@ -91,11 +91,11 @@ public static class Initialization
             "Code listing",
             "software product"
         };
-        List<Engineer> Engineers= s_dal!.Engineer.ReadAll();
+        IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll((engineer) => { return engineer.Id != 0; }) ;
         for (int i = 0; i < 250; i++)
         {
-            int index=s_rand.Next(0, Engineers.Count);
-            int EngineerId= Engineers[index].Id;
+            int index=s_rand.Next(0, Engineers.Count());
+            int EngineerId= Engineers.ElementAt(index)!.Id;
             int moreDays= s_rand.Next(3, 31),moreMonths = s_rand.Next(0, 10);
             DateTime createAt = DateTime.Now.AddDays(-moreDays);
             DateTime Deadline=createAt.AddMonths(4+ moreMonths).AddDays(moreDays);

@@ -10,6 +10,7 @@ internal class TaskImplementation : ITask
 {
     public int Create(Task m_task)
     {
+
         int id = DataSource.Config.NextTaskId;
         Task copy = m_task with { Id = id };
         DataSource.Tasks.Add(copy);
@@ -18,11 +19,13 @@ internal class TaskImplementation : ITask
 
     public void Delete(int id)
     {
-        Task? task= DataSource.Tasks.Find(Task => Task.Id == id);
+        Task? task= (from _task in DataSource.Tasks
+                     where (_task.Id == id)
+                     select _task).First();
         if (task == null)
-            throw new Exception($"Task with ID={id} is not exists");
+            throw new DalDoesNotExistException($"Task with ID={id} is not exists");
         if(!task.IsActive)
-                throw new Exception($"Task with ID={id} is  inactive");
+                throw new DalIsinactiveException($"Task with ID={id} is  inactive");
         Task copy= task with { IsActive = false };
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(copy);
@@ -30,27 +33,42 @@ internal class TaskImplementation : ITask
 
     public Task? Read(int id)
     {
-        Task? task = DataSource.Tasks.Find(Task => Task.Id == id);
+        Task? task = (from _task in DataSource.Tasks
+                      where (_task.Id == id)
+                      select _task).First();
         return task;
     }
 
-    public List<Task> ReadAll()
+    public IEnumerable<Task?> ReadAll(Func<Task?, bool>? filter = null)
     {
-        return new List<Task>(DataSource.Tasks);
+        if (filter == null)
+            return DataSource.Tasks.Select(item => item);
+        else
+            return DataSource.Tasks.Where(filter);
     }
 
     public void Update(Task m_task)
     {
-        Task? task = DataSource.Tasks.Find(Task => Task.Id == m_task.Id);
+        Task? task = (from _task in DataSource.Tasks
+                      where (_task.Id == m_task.Id)
+                      select _task).First();
         if (task == null)
-            throw new Exception($"Task with ID={m_task.Id} is not exists");
+            throw new DalDoesNotExistException($"Task with ID={m_task.Id} is not exists");
         if (!task.IsActive)
-            throw new Exception($"Task with ID={m_task.Id} is  inactive");
+            throw new DalIsinactiveException($"Task with ID={m_task.Id} is  inactive");
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(m_task);
     }
     public void Reset()
     {
         DataSource.Tasks.Clear();
+    }
+
+    public Task? Read(Func<Task, bool> filter)
+    {
+        Task? Task = (from _task in DataSource.Tasks
+                      where (filter(_task))
+                                  select _task).First();
+        return Task;
     }
 }
