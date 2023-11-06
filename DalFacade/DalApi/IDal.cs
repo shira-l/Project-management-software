@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DalApi
 {
-    internal interface IDal
+    public interface IDal
     {
+        IDependency Dependency  { get; }
+        IEngineer Engineer  {get;}
+        ITask Task { get; }
     }
 }
