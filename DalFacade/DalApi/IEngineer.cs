@@ -11,5 +11,5 @@ public interface IEngineer
     List<Engineer> ReadAll(); // Reads all Engineer objects
     void Update(Engineer item); //Updates Engineer object
     void Delete(int id); //Deletes an object by its Id
-    void Reset();
+    void Reset();//Resets the data list
 }
