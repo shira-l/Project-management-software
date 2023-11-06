@@ -10,5 +10,5 @@ public interface ITask
     List<Task> ReadAll(); //Reads all Task objects
     void Update(Task item); //Updates Task object
     void Delete(int id); //Deletes an object by its Id
-    void Reset();
+    void Reset();//Resets the data list
 }
