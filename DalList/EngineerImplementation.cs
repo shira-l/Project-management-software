@@ -7,7 +7,7 @@ using DO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 //The interface implementation of Engineer
-public class EngineerImplementation : IEngineer
+internal class EngineerImplementation : IEngineer
 {
     public int Create(Engineer m_engineer)
     {

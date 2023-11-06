@@ -6,7 +6,7 @@ using DalApi;
 using DO;
 using System.Collections.Generic;
 //The interface implementation of Task
-public class TaskImplementation : ITask
+internal class TaskImplementation : ITask
 {
     public int Create(Task m_task)
     {

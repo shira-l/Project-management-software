@@ -7,9 +7,7 @@ using System.Collections.Generic;
 
 public static class Initialization
 {
-    private static IDependency? s_dalDependency; 
-    private static IEngineer? s_dalEngineer; 
-    private static ITask? s_dalTask;
+    private static IDal? s_dal;
     private static readonly Random s_rand = new();
     //Initialize the list of dependencys
     private static void createDependency()
@@ -19,7 +17,7 @@ public static class Initialization
       int DependentTask= s_rand.Next(1,251);
       int DependOnTask = s_rand.Next(1, DependentTask);
       Dependency newDependency = new(0, DependentTask, DependOnTask);
-      s_dalDependency!.Create(newDependency);
+      s_dal!.Dependency.Create(newDependency);
      }
     }
     //Initialize the list of engineers
@@ -73,12 +71,12 @@ public static class Initialization
             int id, MINid= 200000000, MAXid= 400000000;
             do
                 id = s_rand.Next(MINid, MAXid);
-            while (s_dalEngineer!.Read(id) != null);
+            while (s_dal!.Engineer.Read(id) != null);
             double cost= s_rand.Next(14,30)*5;
             EngineerExperience level=(EngineerExperience)s_rand.Next((int)EngineerExperience.Novice,(int)EngineerExperience.Expert+1);
             string email = name.Replace(" ", "") + "@gmail.com";
             Engineer newEngineer = new(id, cost, name, email, level);
-            s_dalEngineer!.Create(newEngineer);
+            s_dal!.Engineer.Create(newEngineer);
         }
     }
     //Initialize the list of tasks
@@ -93,27 +91,25 @@ public static class Initialization
             "Code listing",
             "software product"
         };
-        List<Engineer> Engineers= s_dalEngineer!.ReadAll();
+        List<Engineer> Engineers= s_dal!.Engineer.ReadAll();
         for (int i = 0; i < 250; i++)
         {
             int index=s_rand.Next(0, Engineers.Count);
             int EngineerId= Engineers[index].Id;
             int moreDays= s_rand.Next(3, 31),moreMonths = s_rand.Next(0, 10);
-            DateTime start = DateTime.Now.AddDays(moreDays);
-            DateTime Deadline=start.AddMonths(4+ moreMonths).AddDays(moreDays);
+            DateTime createAt = DateTime.Now.AddDays(-moreDays);
+            DateTime Deadline=createAt.AddMonths(4+ moreMonths).AddDays(moreDays);
             DateTime ForecastDate = Deadline.AddDays(-(moreDays + 10));
             EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
             index = s_rand.Next(0, Deliverables.Length);
             string myDeliverable = Deliverables[index];
-            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, start, ForecastDate, Deadline, null, CompmlexityLevel);
-            s_dalTask!.Create(task);
+            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, createAt, ForecastDate, null,Deadline, null, CompmlexityLevel);
+            s_dal!.Task.Create(task);
         }
     }
-    public static void Do(IEngineer? dalEngineer, IDependency? dalDependency, ITask? dalTask)
+    public static void Do(IDal? dal)
     {
-        s_dalEngineer = dalEngineer ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
+        s_dal = dal ?? throw new NullReferenceException("DAL can not be null!");
         createDependency();
         createEngineer();
         createTask();
