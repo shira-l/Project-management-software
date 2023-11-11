@@ -14,10 +14,6 @@ public class DalDeletionImpossible : Exception
 {
     public DalDeletionImpossible(string? message) : base(message) { }
 }
-public class DalIsinactiveException : Exception
-{
-    public DalIsinactiveException(string? message) : base(message) { }
-}
 
 
 

@@ -85,9 +85,9 @@ namespace DalTest
             task();
         }
         //Reads all Task objects
-        public static void readAllTask()
+        public static void readAllTask(Func<DO.Task?, bool>? filter = null)
         {
-            s_dal!.Task.ReadAll().ForEach(task => Console.WriteLine(task));
+            s_dal!.Task.ReadAll(filter).ToList().ForEach(task => Console.WriteLine(task));
             task();
         }
         //Deletes an object by its Id
@@ -224,9 +224,9 @@ namespace DalTest
             { Console.WriteLine(ex); }
         }
         // Reads all Engineer objects
-        public static void readAllEngineer()
+        public static void readAllEngineer(Func<Engineer?, bool>? filter = null)
         {
-            s_dal!.Engineer.ReadAll().ForEach(engineer => Console.WriteLine(engineer));
+            s_dal!.Engineer.ReadAll(filter).ToList().ForEach(engineer => Console.WriteLine(engineer));
             engineer();
         }
         //Deletes an object by its Id
@@ -319,9 +319,9 @@ namespace DalTest
            
         }
         // Reads all Dependency objects
-        public static void readAllDependency()
+        public static void readAllDependency(Func<Dependency?, bool>? filter = null)
         {
-            s_dal!.Dependency.ReadAll().ForEach(dependency => Console.WriteLine(dependency));
+            s_dal!.Dependency.ReadAll(filter).ToList().ForEach(dependency => Console.WriteLine(dependency));
             dependency();
         }
         //Deletes an object by its Id

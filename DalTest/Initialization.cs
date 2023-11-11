@@ -91,7 +91,7 @@ public static class Initialization
             "Code listing",
             "software product"
         };
-        IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll((engineer) => { return engineer.Id != 0; }) ;
+        IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll(null) ;
         for (int i = 0; i < 250; i++)
         {
             int index=s_rand.Next(0, Engineers.Count());

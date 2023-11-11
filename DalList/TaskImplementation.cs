@@ -5,6 +5,7 @@ namespace Dal;
 using DalApi;
 using DO;
 using System.Collections.Generic;
+
 //The interface implementation of Task
 internal class TaskImplementation : ITask
 {
@@ -19,13 +20,9 @@ internal class TaskImplementation : ITask
 
     public void Delete(int id)
     {
-        Task? task= (from _task in DataSource.Tasks
-                     where (_task.Id == id)
-                     select _task).First();
-        if (task == null)
+        Task? task= DataSource.Tasks.Where(_task => _task.Id == id).FirstOrDefault();
+        if (task == null|| !task.IsActive)
             throw new DalDoesNotExistException($"Task with ID={id} is not exists");
-        if(!task.IsActive)
-                throw new DalIsinactiveException($"Task with ID={id} is  inactive");
         Task copy= task with { IsActive = false };
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(copy);
@@ -33,9 +30,9 @@ internal class TaskImplementation : ITask
 
     public Task? Read(int id)
     {
-        Task? task = (from _task in DataSource.Tasks
-                      where (_task.Id == id)
-                      select _task).First();
+        Task? task = DataSource.Tasks.Where(_task => _task.Id == id).FirstOrDefault();
+        if (task==null||!task!.IsActive)
+            return null;
         return task;
     }
 
@@ -49,13 +46,9 @@ internal class TaskImplementation : ITask
 
     public void Update(Task m_task)
     {
-        Task? task = (from _task in DataSource.Tasks
-                      where (_task.Id == m_task.Id)
-                      select _task).First();
-        if (task == null)
+        Task? task = Read(m_task.Id);
+        if (task == null|| !task.IsActive)
             throw new DalDoesNotExistException($"Task with ID={m_task.Id} is not exists");
-        if (!task.IsActive)
-            throw new DalIsinactiveException($"Task with ID={m_task.Id} is  inactive");
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(m_task);
     }
@@ -66,9 +59,9 @@ internal class TaskImplementation : ITask
 
     public Task? Read(Func<Task, bool> filter)
     {
-        Task? Task = (from _task in DataSource.Tasks
-                      where (filter(_task))
-                                  select _task).First();
+        Task? Task = DataSource.Tasks.Where(_task=>filter(_task)).FirstOrDefault();
+        if (Task == null || !Task!.IsActive)
+            return null;
         return Task;
     }
 }
