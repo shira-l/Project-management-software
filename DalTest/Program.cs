@@ -17,6 +17,12 @@ namespace DalTest
                 Initialization.Do(s_dal);
                 menu();
             }
+            catch(DalIsNotExistException ex)
+            { Console.WriteLine(ex); }
+            catch (DalAlreadyExistsException ex)
+            { Console.WriteLine(ex); }
+            catch (DalDeletionImpossible ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
 
@@ -101,6 +107,8 @@ namespace DalTest
                 s_dal!.Task.Delete(id);
                 task();
             }
+            catch(DalDeletionImpossible ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
            
@@ -133,7 +141,9 @@ namespace DalTest
                 s_dal!.Task.Update(newTask);
                 task();
             }
-            catch(Exception ex)
+            catch(DalIsNotExistException ex)
+            { Console.WriteLine(ex); }
+            catch (Exception ex)
             { Console.WriteLine(ex); };
         }
         //Engineer function to add, read, delete and update an engineer.
@@ -186,6 +196,8 @@ namespace DalTest
                 s_dal!.Engineer.Create(newEngineer);
                 engineer();
             }
+            catch (DalAlreadyExistsException ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
@@ -220,6 +232,8 @@ namespace DalTest
                 s_dal!.Engineer.Update(newTask);
                 engineer();
             }
+            catch (DalIsNotExistException ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
@@ -240,6 +254,8 @@ namespace DalTest
                 s_dal!.Engineer.Delete(id);
                 engineer();
             }
+            catch (DalDeletionImpossible ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
@@ -314,6 +330,8 @@ namespace DalTest
                 s_dal!.Dependency.Update(UpdateDependency);
                 dependency();
             }
+            catch (DalIsNotExistException ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex) 
             { Console.WriteLine(ex); }
            
@@ -334,7 +352,10 @@ namespace DalTest
                 int.TryParse(Console.ReadLine()!, out id);
                 s_dal!.Dependency.Delete(id);
                 dependency();
+            
         }
+            catch (DalDeletionImpossible ex)
+            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
 }
