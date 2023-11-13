@@ -20,7 +20,7 @@ internal class EngineerImplementation : IEngineer
     public void Delete(int id)
     {
         Engineer? engineer = DataSource.Engineers.Where(_engineer => _engineer.Id == id).FirstOrDefault()??
-         throw new DalDoesNotExistException($"Engineer with ID={id} is not exists");
+         throw new DalIsNotExistException($"Engineer with ID={id} is not exists");
         DataSource.Engineers.Remove(engineer);
     }
 
@@ -40,7 +40,7 @@ internal class EngineerImplementation : IEngineer
     public void Update(Engineer m_engineer)
     {
         Engineer? engineer = Read(m_engineer.Id)??
-        throw new DalDoesNotExistException($"Engineer with ID={m_engineer.Id} is not exists");
+        throw new DalIsNotExistException($"Engineer with ID={m_engineer.Id} is not exists");
         DataSource.Engineers.Remove(engineer);
         DataSource.Engineers.Add(m_engineer);
     }

@@ -19,7 +19,7 @@ internal class DependencyImplementation : IDependency
     public void Delete(int id)
     {
         Dependency? dependency = DataSource.Dependencys.Where(_dependency => _dependency.Id == id).FirstOrDefault()??
-        throw new DalDoesNotExistException($"dependency with ID={id} is not exists");
+        throw new DalIsNotExistException($"dependency with ID={id} is not exists");
         DataSource.Dependencys.Remove(dependency);
     }
 
@@ -39,7 +39,7 @@ internal class DependencyImplementation : IDependency
 
     public void Update(Dependency m_dependency)
     {
-        Dependency? dependency = Read(m_dependency.Id) ?? throw new DalDoesNotExistException($"Dependency with ID={m_dependency.Id} is not exists");
+        Dependency? dependency = Read(m_dependency.Id) ?? throw new DalIsNotExistException($"Dependency with ID={m_dependency.Id} is not exists");
         DataSource.Dependencys.Remove(dependency);
         DataSource.Dependencys.Add(m_dependency);
     }

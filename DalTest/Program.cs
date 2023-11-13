@@ -21,8 +21,6 @@ namespace DalTest
             { Console.WriteLine(ex); }
             catch (DalAlreadyExistsException ex)
             { Console.WriteLine(ex); }
-            catch (DalDeletionImpossible ex)
-            { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
 
@@ -107,7 +105,7 @@ namespace DalTest
                 s_dal!.Task.Delete(id);
                 task();
             }
-            catch(DalDeletionImpossible ex)
+            catch(DalIsNotExistException ex)
             { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
@@ -122,6 +120,8 @@ namespace DalTest
                 Console.WriteLine("Enter Task's id to update");
                 int.TryParse(Console.ReadLine()!, out id);
                 DO.Task? previousTask= s_dal!.Task.Read(id);
+                if (previousTask == null)
+                    throw new DalIsNotExistException($"task with ID={id} is not exists");
                 Console.WriteLine("the task tou want to update: "+previousTask);
                 Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, createAt date,ForecastDate date, Deadline date, CompmlexityLevel");
                 int EngineerId;
@@ -219,6 +219,8 @@ namespace DalTest
                 Console.WriteLine("Enter Engineer's id to update");
                 int.TryParse(Console.ReadLine(), out id);
                 DO.Engineer? previousEngineer = s_dal!.Engineer.Read(id);
+                if (previousEngineer == null)
+                    throw new DalIsNotExistException($"engineer with ID={id} is not exists");
                 Console.WriteLine("the engineer you want to update: "+previousEngineer);
                 Console.WriteLine("Enter Engineer Id, cost, name, email, level");
                 double cost;
@@ -254,7 +256,7 @@ namespace DalTest
                 s_dal!.Engineer.Delete(id);
                 engineer();
             }
-            catch (DalDeletionImpossible ex)
+            catch (DalIsNotExistException ex)
             { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }
@@ -319,6 +321,8 @@ namespace DalTest
                 Console.WriteLine("Enter Dependency's id to update");
                 int.TryParse(Console.ReadLine()!, out id);
                 DO.Dependency? previousDependency = s_dal!.Dependency.Read(id);
+                if( previousDependency == null )
+                    throw new DalIsNotExistException($"dependency with ID={id} is not exists");
                 Console.WriteLine("the dependency you want to update: "+previousDependency);
                 Console.WriteLine("Enter Engineer Id, DependentTask, DependOnTask");
                 int DependentTask, DependOnTask;
@@ -354,7 +358,7 @@ namespace DalTest
                 dependency();
             
         }
-            catch (DalDeletionImpossible ex)
+            catch (DalIsNotExistException ex)
             { Console.WriteLine(ex); }
             catch (Exception ex)
             { Console.WriteLine(ex); }

@@ -22,7 +22,7 @@ internal class TaskImplementation : ITask
     {
         Task? task= DataSource.Tasks.Where(_task => _task.Id == id).FirstOrDefault();
         if (task == null|| !task.IsActive)
-            throw new DalDoesNotExistException($"Task with ID={id} is not exists");
+            throw new DalIsNotExistException($"Task with ID={id} is not exists");
         Task copy= task with { IsActive = false };
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(copy);
@@ -48,7 +48,7 @@ internal class TaskImplementation : ITask
     {
         Task? task = Read(m_task.Id);
         if (task == null|| !task.IsActive)
-            throw new DalDoesNotExistException($"Task with ID={m_task.Id} is not exists");
+            throw new DalIsNotExistException($"Task with ID={m_task.Id} is not exists");
         DataSource.Tasks.Remove(task);
         DataSource.Tasks.Add(m_task);
     }
