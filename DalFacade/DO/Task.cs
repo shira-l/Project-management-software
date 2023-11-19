@@ -37,8 +37,8 @@ public record Task
     DateTime? ComplateDate = null,
     EngineerExperience? CompmlexityLevel = null
 )
-
 {
+    public Task() : this(0,0,null,null,false,true,null,null,null,null,null,null,null,null) { } //empty ctor for stage 3
     ///<summary>
     ///CreateAt - Creation a task Product date
     ///</summary>

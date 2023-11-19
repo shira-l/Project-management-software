@@ -9,14 +9,26 @@ using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
-    public int Create(Engineer item)
+    public int Create(Engineer m_engineer)
     {
-        throw new NotImplementedException();
+        Engineer? engineer = Read(m_engineer.Id);
+        if (engineer != null)
+            throw new DalAlreadyExistsException($"Engineer with ID={m_engineer.Id} already exists");
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<DO.Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<DO.Engineer>(XMLENGINEER);
+        lEngineer.Add(m_engineer);
+        XMLTools.SaveListToXMLSerializer<DO.Engineer>(lEngineer, XMLENGINEER);
+        return m_engineer.Id;
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<DO.Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<DO.Engineer>(XMLENGINEER);
+        Engineer? engineer = lEngineer.Where(_engineer => _engineer.Id == id).FirstOrDefault() ??
+         throw new DalIsNotExistException($"Engineer with ID={id} is not exists");
+        lEngineer.Remove(engineer);
+        XMLTools.SaveListToXMLSerializer<DO.Engineer>(lEngineer, XMLENGINEER);
     }
 
     public Engineer? Read(int id)
