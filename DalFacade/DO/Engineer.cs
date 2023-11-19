@@ -16,5 +16,7 @@ public record Engineer
     string? Name = null,
     string? Email = null,
     EngineerExperience? Level=null
-);
-
+)
+{
+    public Engineer() : this(0,0,null,null,null) { } //empty ctor for stage 3
+}
