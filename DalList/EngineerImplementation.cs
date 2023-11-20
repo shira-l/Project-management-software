@@ -29,7 +29,7 @@ internal class EngineerImplementation : IEngineer
         Engineer? engineer = DataSource.Engineers.Where(_engineer=>_engineer.Id == id).FirstOrDefault();
         return engineer;
     }
-    public IEnumerable<Engineer?> ReadAll(Func<Engineer?, bool>? filter = null)
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
     {
         if (filter == null)
             return DataSource.Engineers.Select(item => item);

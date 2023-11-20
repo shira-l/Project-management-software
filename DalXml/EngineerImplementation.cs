@@ -15,44 +15,64 @@ internal class EngineerImplementation : IEngineer
         if (engineer != null)
             throw new DalAlreadyExistsException($"Engineer with ID={m_engineer.Id} already exists");
         const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
-        List<DO.Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<DO.Engineer>(XMLENGINEER);
+        List<DO.Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
         lEngineer.Add(m_engineer);
-        XMLTools.SaveListToXMLSerializer<DO.Engineer>(lEngineer, XMLENGINEER);
+        XMLTools.SaveListToXMLSerializer<Engineer?>(lEngineer, XMLENGINEER);
         return m_engineer.Id;
     }
 
     public void Delete(int id)
     {
         const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
-        List<DO.Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<DO.Engineer>(XMLENGINEER);
-        Engineer? engineer = lEngineer.Where(_engineer => _engineer.Id == id).FirstOrDefault() ??
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        Engineer? engineer = lEngineer.Where(_engineer => _engineer!.Id == id).FirstOrDefault() ??
          throw new DalIsNotExistException($"Engineer with ID={id} is not exists");
         lEngineer.Remove(engineer);
-        XMLTools.SaveListToXMLSerializer<DO.Engineer>(lEngineer, XMLENGINEER);
+        XMLTools.SaveListToXMLSerializer<Engineer?>(lEngineer, XMLENGINEER);
     }
 
     public Engineer? Read(int id)
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        Engineer? engineer = lEngineer.Where(_engineer => _engineer.Id == id).FirstOrDefault();
+        return engineer;
     }
 
     public Engineer? Read(Func<Engineer, bool> filter)
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        Engineer? Engineer = lEngineer.Where(_engineer => filter(_engineer)).FirstOrDefault();
+        return Engineer;
     }
 
     public IEnumerable<Engineer?> ReadAll(Func<Engineer?, bool>? filter = null)
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        if (filter == null)
+            return lEngineer.Select(item => item);
+        else
+            return lEngineer.Where(filter);
     }
 
     public void Reset()
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        lEngineer.Clear();
+        XMLTools.SaveListToXMLSerializer<Engineer?>(lEngineer, XMLENGINEER);
     }
 
-    public void Update(Engineer item)
+    public void Update(Engineer m_engineer)
     {
-        throw new NotImplementedException();
+        const string XMLENGINEER = @"..\..\..\..\..\..\xml\engineer.xml";
+        List<Engineer?>? lEngineer = XMLTools.LoadListFromXMLSerializer<Engineer>(XMLENGINEER);
+        Engineer? engineer = Read(m_engineer.Id) ??
+        throw new DalIsNotExistException($"Engineer with ID={m_engineer.Id} is not exists");
+        lEngineer.Remove(engineer);
+        lEngineer.Add(m_engineer);
+        XMLTools.SaveListToXMLSerializer<Engineer?>(lEngineer, XMLENGINEER);
     }
 }
