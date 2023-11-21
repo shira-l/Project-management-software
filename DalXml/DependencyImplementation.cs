@@ -6,6 +6,8 @@ namespace Dal;
 
 using DalApi;
 using DO;
+using System.Security.Cryptography;
+using System.Xml.Linq;
 
 
 internal class DependencyImplementation : IDependency
@@ -15,25 +17,28 @@ internal class DependencyImplementation : IDependency
         int id = Config.NextTaskId;
         Dependency copy = m_dependency with { Id = id };
         const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\task.xml";
-        List<DO.Dependency>? lDependency = XMLTools.LoadListFromXMLSerializer<Dependency>(XMLDEPENDENCY);
+        XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
         lDependency.Add(copy);
-        XMLTools.SaveListToXMLSerializer<Dependency>(lDependency, XMLDEPENDENCY);
+        XMLTools.SaveListToXMLElement(lDependency, XMLDEPENDENCY);
         return id;
     }
 
     public void Delete(int id)
     {
         const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\engineer.xml";
-        List<DO.Dependency>? lDependency = XMLTools.LoadListFromXMLSerializer<Dependency>(XMLDEPENDENCY);
-        Dependency? dependency = lDependency.Where(_dependency => _dependency.Id == id).FirstOrDefault() ??
+        XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
+        XElement? deleteDependency = lDependency.Elements().Where(dependency=> dependency.ToIntNullable("Id")==id).FirstOrDefault()??
           throw new DalIsNotExistException($"dependency with ID={id} is not exists");
-        lDependency.Remove(dependency);
-        XMLTools.SaveListToXMLSerializer<Dependency>(lDependency, XMLDEPENDENCY);
+        deleteDependency.Remove();
+        XMLTools.SaveListToXMLElement(lDependency, XMLDEPENDENCY);
+         
     }
 
     public Dependency? Read(int id)
     {
-        throw new NotImplementedException();
+        XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
+        XElement? dependency = lDependency.Elements().Where(dependency => dependency.ToIntNullable("Id") == id).FirstOrDefault();
+        return dependency;
     }
 
     public Dependency? Read(Func<Dependency, bool> filter)
