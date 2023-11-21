@@ -4,12 +4,15 @@ using DalApi;
 using System;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlTypes;
 
 namespace DalTest
 {
     internal class Program
     {
-        private readonly static IDal? s_dal = new DalList();
+        //private readonly static IDal? s_dal = new DalList();stage 2
+        static readonly IDal s_dal = new DalXml(); //stage 3
+
         static void Main()
         {
             try
