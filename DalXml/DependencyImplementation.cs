@@ -12,16 +12,17 @@ internal class DependencyImplementation : IDependency
     {
         int id = Config.NextTaskId;
         Dependency copy = m_dependency with { Id = id };
-        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\task.xml";
+        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\dependencies";
         XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
-        lDependency.Add(copy);
+        XElement Ecopy = GetXElement(copy);
+        lDependency.Add(Ecopy);
         XMLTools.SaveListToXMLElement(lDependency, XMLDEPENDENCY);
         return id;
     }
 
     public void Delete(int id)
     {
-        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\engineer.xml";
+        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\dependencies";
         XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
         XElement? deleteDependency = lDependency.Elements().Where(dependency=> dependency.ToIntNullable("Id")==id).FirstOrDefault()??
           throw new DalIsNotExistException($"dependency with ID={id} is not exists");
@@ -59,7 +60,7 @@ internal class DependencyImplementation : IDependency
         XElement? lDependency = XMLTools.LoadListFromXMLElement("Dependency");
         foreach (XElement dependency in lDependency.Elements())
             dependency.Remove();
-        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\engineer.xml";
+        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\dependencies";
         XMLTools.SaveListToXMLElement(lDependency, XMLDEPENDENCY);
     }
 
@@ -70,14 +71,28 @@ internal class DependencyImplementation : IDependency
             throw new DalIsNotExistException($"Dependency with ID={m_dependency.Id} is not exists");
         dependency.Remove();
         lDependency.Add(m_dependency);
-        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\engineer.xml";
+        const string XMLDEPENDENCY = @"..\..\..\..\..\..\xml\dependencies";
         XMLTools.SaveListToXMLElement(lDependency, XMLDEPENDENCY);
     }
-    static Dependency? getDependency(XElement dependency) =>
+    public static Dependency? getDependency(XElement dependency) =>
         dependency.ToIntNullable("Id") is null ? null : new Dependency()
         {
             Id = (int)dependency.Element("Id")!,
             DependentTask = (int)dependency.Element("DependentTask")!,
             DependOnTask = (int)dependency.Element("DependentTask")!
         };
+  
+    public static XElement GetXElement(Dependency m_dependency)
+    {
+        XElement Edependency = new XElement("Dependency");
+        foreach (var prop in m_dependency.GetType().GetProperties())
+        {
+            XElement el = new XElement(prop.Name, m_dependency.GetType().GetProperty(prop.Name)?.GetValue(m_dependency));
+            Edependency.Add(el);
+        }
+
+        return Edependency;
+
+    }
+
 }
