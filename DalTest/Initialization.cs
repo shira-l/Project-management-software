@@ -4,6 +4,7 @@ namespace DalTest;
 using DalApi;
 using DO;
 using System.Collections.Generic;
+using System.Drawing;
 
 public static class Initialization
 {
@@ -92,7 +93,8 @@ public static class Initialization
             "software product"
         };
         IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll(null) ;
-        for (int i = 0; i < 250; i++)
+        const int SIZE= 150;
+        for (int i = 0; i < SIZE; i++)
         {
             int index=s_rand.Next(0, Engineers.Count());
             int EngineerId= Engineers.ElementAt(index)!.Id;
@@ -105,6 +107,7 @@ public static class Initialization
             string myDeliverable = Deliverables[index];
             Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, createAt, ForecastDate, null,Deadline, null, CompmlexityLevel);
             s_dal!.Task.Create(task);
+
         }
     }
     public static void Do(IDal? dal)

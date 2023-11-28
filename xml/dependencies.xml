@@ -1,3 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDependency>
+  <Dependency />
+  <Id>1233</Id>
+  <DependentTask>70</DependentTask>
+  <DependOnTask>25</DependOnTask>
+  <ArrayOfDependency>
+    <Dependency />
+    <Id>1233</Id>
+    <DependentTask>70</DependentTask>
+    <DependOnTask>25</DependOnTask>
+  </ArrayOfDependency>
 </ArrayOfDependency>

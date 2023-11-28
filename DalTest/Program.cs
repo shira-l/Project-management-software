@@ -127,6 +127,7 @@ namespace DalTest
                     throw new DalIsNotExistException($"task with ID={id} is not exists");
                 Console.WriteLine("the task tou want to update: "+previousTask);
                 Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, createAt date,ForecastDate date, Deadline date, CompmlexityLevel");
+                int ID = previousTask.Id;
                 int EngineerId;
                 if (!int.TryParse(Console.ReadLine(), out EngineerId))
                     EngineerId = previousTask!.EngineerId;
@@ -140,7 +141,7 @@ namespace DalTest
                 DateTime? ForecastDate = TryParseNullableDateTime(previousTask!.ForecastDate);
                 DateTime? Deadline = TryParseNullableDateTime(previousTask!.DeadlineDate);
                 EngineerExperience? CompmlexityLevel = TryParseNullableEngineerExperience(previousTask!.CompmlexityLevel);
-                DO.Task newTask = new(0, EngineerId, Description, Alias, false, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
+                DO.Task newTask = new(ID, EngineerId, Description, Alias, false, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
                 s_dal!.Task.Update(newTask);
                 task();
             }
@@ -327,11 +328,11 @@ namespace DalTest
                 if( previousDependency == null )
                     throw new DalIsNotExistException($"dependency with ID={id} is not exists");
                 Console.WriteLine("the dependency you want to update: "+previousDependency);
-                Console.WriteLine("Enter Engineer Id, DependentTask, DependOnTask");
+                Console.WriteLine("Enter DependentTask, DependOnTask");
                 int DependentTask, DependOnTask;
                 if (!int.TryParse(Console.ReadLine(), out DependentTask))
                     DependentTask = previousDependency!.DependentTask;
-                if (int.TryParse(Console.ReadLine(), out DependOnTask))
+                if (!int.TryParse(Console.ReadLine(), out DependOnTask))
                     DependOnTask = previousDependency!.DependOnTask;
                 DO.Dependency? UpdateDependency = new(id, DependentTask, DependOnTask);
                 s_dal!.Dependency.Update(UpdateDependency);
