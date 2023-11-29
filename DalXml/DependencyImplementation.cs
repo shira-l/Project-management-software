@@ -5,7 +5,7 @@ using DalApi;
 using DO;
 using System.Xml.Linq;
 
-
+//The interface implementation of Dependency
 internal class DependencyImplementation : IDependency
 {
     public int Create(Dependency m_dependency)

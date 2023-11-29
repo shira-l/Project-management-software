@@ -833,4 +833,60 @@
     <Email>NatanRegev@gmail.com</Email>
     <Level>Expert</Level>
   </Engineer>
+  <Engineer>
+    <Id>216811851</Id>
+    <Cost>105</Cost>
+    <Name>Ayala Levi</Name>
+    <Email>AyalaLevi@gmail.com</Email>
+    <Level>Novice</Level>
+  </Engineer>
+  <Engineer>
+    <Id>214985164</Id>
+    <Cost>140</Cost>
+    <Name>Bracha Klein</Name>
+    <Email>BrachaKlein@gmail.com</Email>
+    <Level>Expert</Level>
+  </Engineer>
+  <Engineer>
+    <Id>291976631</Id>
+    <Cost>85</Cost>
+    <Name>Gad Kohen</Name>
+    <Email>GadKohen@gmail.com</Email>
+    <Level>Expert</Level>
+  </Engineer>
+  <Engineer>
+    <Id>269979238</Id>
+    <Cost>95</Cost>
+    <Name>Dan Kanner</Name>
+    <Email>DanKanner@gmail.com</Email>
+    <Level>AdvancedBeginner</Level>
+  </Engineer>
+  <Engineer>
+    <Id>233620533</Id>
+    <Cost>90</Cost>
+    <Name>Hadar Fried</Name>
+    <Email>HadarFried@gmail.com</Email>
+    <Level>AdvancedBeginner</Level>
+  </Engineer>
+  <Engineer>
+    <Id>392713780</Id>
+    <Cost>80</Cost>
+    <Name>Vered Moses</Name>
+    <Email>VeredMoses@gmail.com</Email>
+    <Level>Competent</Level>
+  </Engineer>
+  <Engineer>
+    <Id>335486709</Id>
+    <Cost>100</Cost>
+    <Name>Zisi Zander</Name>
+    <Email>ZisiZander@gmail.com</Email>
+    <Level>Expert</Level>
+  </Engineer>
+  <Engineer>
+    <Id>329178819</Id>
+    <Cost>105</Cost>
+    <Name>Chaya Dror</Name>
+    <Email>ChayaDror@gmail.com</Email>
+    <Level>Proficient</Level>
+  </Engineer>
 </ArrayOfEngineer>
