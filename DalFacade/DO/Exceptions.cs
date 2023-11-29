@@ -14,3 +14,7 @@ public class DalXMLFileLoadCreateException:Exception
 {
     public DalXMLFileLoadCreateException(string? message) : base(message) { }
 }
+public class IsNotException: Exception
+{
+    public IsNotException(string? message): base(message) { }
+}

@@ -416,7 +416,7 @@ namespace DalTest
                         dependency();
                         break;
                     default:
-                        throw new NullReferenceException("There is no such choice");
+                        throw new IsNotException("There is no such choice");
                 }
             }
         }
