@@ -14,7 +14,7 @@ public class DalXMLFileLoadCreateException:Exception
 {
     public DalXMLFileLoadCreateException(string? message) : base(message) { }
 }
-public class IsNotException: Exception
+public class IsNotChoiceException : Exception
 {
-    public IsNotException(string? message): base(message) { }
+    public IsNotChoiceException(string? message): base(message) { }
 }

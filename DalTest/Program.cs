@@ -29,7 +29,10 @@ namespace DalTest
 
 
         }
-        //Task function to add, read, delete and update a task.
+
+        /// <summary>
+        /// Task function to add, read, delete and update a task.
+        /// </summary>
         public static void task()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -59,7 +62,10 @@ namespace DalTest
                     throw new NullReferenceException("There is no such choice");
             }
         }
-        //Creates new Task object in DAL
+
+        /// <summary>
+        ///Creates new Task object in DAL
+        ///</summary>
         public static void createTask()
         {
             Console.WriteLine("Enter Engineer Id, Description, Alias, Deliverables, Remarks, createAt date,ForecastDate date, Deadline date, CompmlexityLevel");
@@ -82,7 +88,11 @@ namespace DalTest
             s_dal!.Task.Create(newTask);
             task();
         }
-        //Reads Task object by its ID 
+
+        /// <summary>
+        /// Reads Task object by its ID
+        /// </summary>
+       
         public static void readTask()
         {
             int id;
@@ -91,13 +101,19 @@ namespace DalTest
             Console.WriteLine(s_dal!.Task.Read(id));
             task();
         }
-        //Reads all Task objects
+
+        /// <summary>
+        /// Reads all Task objects
+        /// </summary>
         public static void readAllTask(Func<DO.Task?, bool>? filter = null)
         {
             s_dal!.Task.ReadAll(filter).ToList().ForEach(task => Console.WriteLine(task));
             task();
         }
-        //Deletes an object by its Id
+
+        /// <summary>
+        /// Deletes an object by its Id
+        /// </summary>
         public static void deleteTask()
         {
             try
@@ -114,7 +130,9 @@ namespace DalTest
             { Console.WriteLine(ex); }
            
         }
-        //Updates Task object
+        /// <summary>
+        /// Updates Task object
+        /// </summary>
         public static void UpdateTask()
         {
             try
@@ -150,7 +168,9 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); };
         }
-        //Engineer function to add, read, delete and update an engineer.
+        /// <summary>
+        ///Engineer function to add, read, delete and update an engineer. 
+        /// </summary>
         public static void engineer()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -182,7 +202,9 @@ namespace DalTest
 
         }
 
-        //Creates new Engineer object in DAL
+        /// <summary>
+        /// Creates new Engineer object in DAL
+        /// </summary>
         public static void createEngineer()
         {
             try
@@ -205,7 +227,10 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
-        //Reads Engineer object by its ID 
+
+        /// <summary>
+        /// Reads Engineer object by its ID 
+        /// </summary>
         public static void readEngineer()
         {
             int id;
@@ -214,7 +239,10 @@ namespace DalTest
             Console.WriteLine(s_dal!.Engineer.Read(id));
             engineer();
         }
-        //Updates Engineer object
+
+        /// <summary>
+        /// Updates Engineer object
+        /// </summary>
         public static void UpdateEngineer()
         {
             try
@@ -243,13 +271,19 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
-        // Reads all Engineer objects
+
+        /// <summary>
+        /// Reads all Engineer objects
+        /// </summary>
         public static void readAllEngineer(Func<Engineer?, bool>? filter = null)
         {
             s_dal!.Engineer.ReadAll(filter).ToList().ForEach(engineer => Console.WriteLine(engineer));
             engineer();
         }
-        //Deletes an object by its Id
+
+        /// <summary>
+        /// Deletes an object by its Id
+        /// </summary>
         public static void deleteEngineer()
         {
             try
@@ -265,7 +299,10 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
         }
-        //Dependency function to add, read, delete and update dependencies
+
+        /// <summary>
+        /// Dependency function to add, read, delete and update dependencies
+        /// </summary>
         public static void dependency()
         {
             Console.WriteLine("Select the desired action:\n1-create\n2-read\n3-update\n4-read all\n5-delete\n0-exit");
@@ -296,7 +333,9 @@ namespace DalTest
             }
         }
 
-        //Creates new Dependency object in DAL
+        /// <summary>
+        /// Creates new Dependency object in DAL
+        /// </summary>
         public static void createDependency()
         {
             Console.WriteLine("DependentTask, DependOnTask");
@@ -307,7 +346,10 @@ namespace DalTest
             s_dal!.Dependency.Create(newDependency);
             dependency();
         }
-        //Reads Dependency object by its ID 
+
+        /// <summary>
+        /// Reads Dependency object by its ID 
+        /// </summary>
         public static void readDependency()
         {
             int id;
@@ -316,7 +358,10 @@ namespace DalTest
             Console.WriteLine(s_dal!.Dependency.Read(id));
             dependency();
         }
-        //Updates Dependency object
+
+        /// <summary>
+        /// Updates Dependency object
+        /// </summary>
         public static void UpdateDependency()
         {
             try
@@ -344,13 +389,19 @@ namespace DalTest
             { Console.WriteLine(ex); }
            
         }
-        // Reads all Dependency objects
+
+        /// <summary>
+        /// Reads all Dependency objects
+        /// </summary>
         public static void readAllDependency(Func<Dependency?, bool>? filter = null)
         {
             s_dal!.Dependency.ReadAll(filter).ToList().ForEach(dependency => Console.WriteLine(dependency));
             dependency();
         }
-        //Deletes an object by its Id
+
+        /// <summary>
+        /// Deletes an object by its Id
+        /// </summary>
         public static void deleteDependency()
         {
             try
@@ -367,34 +418,50 @@ namespace DalTest
             catch (Exception ex)
             { Console.WriteLine(ex); }
 }
-        //--------------------------------------------------------------
-        //Initialize the date in the input entered by the user or in the
-        //value received by the function if no value is entered
-        //--------------------------------------------------------------
+        /// <summary>
+        /// --------------------------------------------------------------
+        /// Initialize the date in the input entered by the user or in the
+        ///value received by the function if no value is entered
+        ///--------------------------------------------------------------
+        /// </summary>
+        /// <param name="previous">the previous date</param>
         public static DateTime? TryParseNullableDateTime(DateTime? previous)
         {
             DateTime value;
             return DateTime.TryParse(Console.ReadLine(), out value) ? value : previous;
         }
-        //--------------------------------------------------------------
-        //Initialize the level in the input entered by the user or in the
-        //value received by the function if no value is entered
-        //--------------------------------------------------------------
+
+        /// <summary>
+        ///--------------------------------------------------------------
+        ///Initialize the level in the input entered by the user or in the
+        ///value received by the function if no value is entered
+        ///--------------------------------------------------------------
+        /// </summary>
+        /// <param name="previous">the previous Engineer Experience</param>
+
+
         public static EngineerExperience? TryParseNullableEngineerExperience(EngineerExperience? previous)
         {
             EngineerExperience value;
             return EngineerExperience.TryParse(Console.ReadLine(), out value) ? value : previous;
         }
-        //--------------------------------------------------------------
-        //Initialize the string in the input entered by the user or in the
-        //value received by the function if no value is entered
-        //--------------------------------------------------------------
+
+        /// <summary>
+        ///--------------------------------------------------------------
+        /// Initialize the string in the input entered by the user or in the
+        /// value received by the function if no value is entered
+        ///--------------------------------------------------------------
+        /// </summary>
+        /// <param name="previous">the previous string value</param>
         public static string? stringIsNullOrEmpty(string? previous)
         {
             string? value= Console.ReadLine();
             return string.IsNullOrEmpty(value) ? previous : value;
         }
-        //Main function to select an engineer, task or dependency
+
+        /// <summary>
+        /// Main function to select an engineer, task or dependency
+        /// </summary>
         public static void menu()
         {
             while (true)
@@ -416,7 +483,7 @@ namespace DalTest
                         dependency();
                         break;
                     default:
-                        throw new IsNotException("There is no such choice");
+                        throw new IsNotChoiceException("There is no such choice");
                 }
             }
         }

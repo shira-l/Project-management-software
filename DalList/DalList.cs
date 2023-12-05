@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class DalList : IDal
+    sealed internal class DalList : IDal
     {
         public IDependency Dependency =>  new DependencyImplementation();
 
