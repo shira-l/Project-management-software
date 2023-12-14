@@ -1,5 +1,7 @@
-﻿
-namespace BO;
+//<<<<<<< HEAD
+
+﻿namespace BO;
+
 
 public class Engineer
 {
@@ -8,5 +10,5 @@ public class Engineer
     public string? Name { get; set; }
     public string? Email { get; set; }
     public EngineerExperience? Level { get; set; }
-    public Task? taskInEngineer { get; init; }
+    public Task? TaskInEngineer { get; init; }
 }
