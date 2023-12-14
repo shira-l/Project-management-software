@@ -10,3 +10,11 @@ public enum EngineerExperience
     Proficient,
     Expert
 }
+
+public enum Status
+{
+   InJeopardy,
+   OnTrack,
+   Scheduled,
+   Unscheduled
+}
