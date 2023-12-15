@@ -27,7 +27,7 @@ public record Task
     string? Description = null,
     string? Alias = null,
     bool Milestone = false,
-     bool IsActive = true,
+    bool IsActive = true,
     string? Deliverables = null,
     string? Remarks = null,
     DateTime? CreateAtDate = null,
