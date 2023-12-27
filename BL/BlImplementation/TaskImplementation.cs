@@ -4,29 +4,35 @@ namespace BlImplementation;
 using BlApi;
 
 
-
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
     public int Create(BO.Task boTask)
     {
-        //DO.Task doTask = new DO.Task
-        //(boTask.Id, boTask.Engineer, boTask.Description, boTask.Alias, boTask.Milestone, boTask.IsActive, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, boTask.CompmlexityLevel); ;
-        //try
-        //{
-        //    int idTask = _dal.Task.Create(doTask);
-        //    return idTask;
-        //}
+        try
+        {
+            if(boTask.Id < 0 || boTask.Alias == "")
+            {
+                throw new Exception("Incorrect data");
+            }
+            DO.Task doTask = new DO.Task
+            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true , boTask.IsActive, boTask.Remarks, (DO.DateTime?)boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, boTask.CompmlexityLevel);
+            int idTask = _dal.Task.Create(doTask);
+            return idTask;
+        }
         //catch (DO.DalAlreadyExistsException ex)
         //{
-        //    throw new BO.BlAlreadyExistsException($"Student with ID={boTask.Id} already exists", ex);
+        //    throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
         //}
-        throw new NotImplementedException();
+        catch (Exception ex)
+        {
+            throw new Exception("Incorrect data", ex);
+        }
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        
     }
 
     public BO.Task? Read(int id)
@@ -80,8 +86,25 @@ internal class TaskImplementation : ITask
         throw new NotImplementedException();
     }
 
-    public void Update(BO.Task task)
+    public void Update(BO.Task boTask)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (boTask.Id < 0 || boTask.Alias == "")
+            {
+                throw new Exception("Incorrect data");
+            }
+            DO.Task doTask = new DO.Task
+            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true, boTask.IsActive, boTask.Remarks, (DO.DateTime?)boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, boTask.CompmlexityLevel);
+             _dal.Task.Update(doTask);
+        }
+        //catch (DO.DalAlreadyExistsException ex)
+        //{
+        //    throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
+        //}
+        catch (Exception ex)
+        {
+            throw new Exception("Incorrect data", ex);
+        }
     }
 }

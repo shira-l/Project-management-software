@@ -7,12 +7,12 @@ public class Milestone
     public string? Deliverables { get; set; }
     public string? Alias { get; set; }
     public DateTime? CreateAtDate { get; set; }
-    //public Status Status { get; init; }
+    public Status Status { get; init; }
     public DateTime? ForecastDate { get; set; }
     public DateTime? DeadlineDate { get; set; }
     public DateTime? ComplateDate { get; set; }
     public string? Remarks { get; set; }
-    //public List<TaskInList> dependencies { get; set; }
+    public List<TaskInList>? dependencies { get; set; }
     public double CompletionPercentage { get; set; }
 
 }
