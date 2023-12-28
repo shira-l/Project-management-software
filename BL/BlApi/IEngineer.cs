@@ -1,5 +1,7 @@
 ﻿
 
+using BO;
+
 namespace BlApi;
 
 public interface IEngineer
@@ -10,5 +12,5 @@ public interface IEngineer
     public IEnumerable<BO.Engineer?> ReadAll(Func<DO.Engineer, bool>? filter = null);
     public void Update(BO.Engineer engineer);
     public void Delete(int id);
-    public DO.Task? GetCurrentTask(int id);
+    public TaskInEngineer? GetCurrentTask(int id);
 }

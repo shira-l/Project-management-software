@@ -2,7 +2,8 @@
 
 namespace BlImplementation;
 using BlApi;
-
+using BO;
+using DO;
 
 internal class TaskImplementation : ITask
 {
@@ -16,7 +17,7 @@ internal class TaskImplementation : ITask
                 throw new Exception("Incorrect data");
             }
             DO.Task doTask = new DO.Task
-            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true , boTask.IsActive, boTask.Remarks, (DO.DateTime?)boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, boTask.CompmlexityLevel);
+            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true , boTask.IsActive, boTask.Deliverables,boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
             int idTask = _dal.Task.Create(doTask);
             return idTask;
         }
@@ -35,28 +36,58 @@ internal class TaskImplementation : ITask
         
     }
 
+    public EngineerInTask getEngineer(int EngineerId)
+    {
+        Func<DO.Engineer, bool> filter = (DO.Engineer engineer) => EngineerId == engineer.Id;
+        DO.Engineer? engineer = _dal.Engineer.ReadAll(filter).FirstOrDefault();
+        EngineerInTask engineerInTask = new(EngineerId, engineer.Name);
+        return engineerInTask;
+    }
+
+    public MilestoneInTask getMilestone(int Id)
+    {
+        Func<DO.Dependency, bool> filterDependency = (DO.Dependency dependency) => Id == dependency.Id;
+        DO.Dependency? Dependency = _dal.Dependency.ReadAll(filterDependency).FirstOrDefault();
+        Func<DO.Task, bool> filterTask = (DO.Task task) => Dependency.DependOnTask == task.Id;
+        DO.Task? Task = _dal.Task.ReadAll(filterTask).FirstOrDefault();
+        MilestoneInTask milestoneInTask = new(Dependency.DependOnTask, Task.Alias);
+        return milestoneInTask;
+    }
+
+    public TaskInList getpendingTasks(int Id)
+    {
+        throw new NotImplementedException();
+    }
+
     public BO.Task? Read(int id)
     {
-        //DO.Task? doTask = _dal.Task.Read(id);
-        //if (doTask == null)
-        //    throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
-        //return new BO.Task()
-        //{
-        //    Id = id,
-        //    EngineerId = doTask.EngineerId,
-        //    Description = doTask.Description,
-        //    Alias = doTask.Alias,
-        //    Milestone = doTask.Milestone,
-        //    IsActive = doTask.IsActive,
-        //    Remarks = doTask.Remarks,
-        //    CreateAtDate = doTask.CreateAtDate,
-        //    ScheduleDate = doTask.ScheduleDate,
-        //    ForecastDate = doTask.ForecastDate,
-        //    DeadlineDate = doTask.DeadlineDate,
-        //    ComplateDate = doTask.ComplateDate,
-        //    CompmlexityLevel = doTask.CompmlexityLevel
-        //};
-        throw new NotImplementedException();
+        DO.Task? doTask = _dal.Task.Read(id);
+        if (doTask == null)
+        {
+            //throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
+        }
+        return new BO.Task()
+        {
+            Id = id,
+            Engineer = getEngineer(doTask.EngineerId),
+            Description = doTask.Description,
+            Alias = doTask.Alias,
+            Milestone = getMilestone(id),
+            IsActive = doTask.IsActive,
+            //איך לבחור status?
+            Status = Status.InJeopardy,
+            Deliverables = doTask.Deliverables,
+            Remarks = doTask.Remarks,
+            CreateAtDate = doTask.CreateAtDate,
+            //לעדכן תאריך
+            StartDate = DateTime.Now,
+            ScheduleDate = doTask.ScheduleDate,
+            ForecastDate = doTask.ForecastDate,
+            DeadlineDate = doTask.DeadlineDate,
+            ComplateDate = doTask.ComplateDate,
+            CompmlexityLevel = (BO.EngineerExperience)doTask.CompmlexityLevel,
+            pendingTasks = null
+        };
     }
 
     public BO.Task? Read(Func<BO.Task, bool> filter)
@@ -95,7 +126,7 @@ internal class TaskImplementation : ITask
                 throw new Exception("Incorrect data");
             }
             DO.Task doTask = new DO.Task
-            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true, boTask.IsActive, boTask.Remarks, (DO.DateTime?)boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, boTask.CompmlexityLevel);
+            (boTask.Id, boTask.Engineer.Id, boTask.Description, boTask.Alias, true, boTask.IsActive,boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
              _dal.Task.Update(doTask);
         }
         //catch (DO.DalAlreadyExistsException ex)

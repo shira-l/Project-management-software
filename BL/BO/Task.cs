@@ -4,7 +4,7 @@ namespace BO;
 public class Task
 {
     public int Id { get; init; }
-    public EngineerInTask? Engineer { get; init; }
+    public EngineerInTask Engineer { get; init; }
     public string? Description { get; set; }
     public string? Alias { get; set; }
     public MilestoneInTask? Milestone { get; set; }

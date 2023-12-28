@@ -78,7 +78,8 @@ internal class EngineerImplementation : IEngineer
             Name = doEngineer.Name,
             Email = doEngineer.Email,
             Level = (BO.EngineerExperience?)doEngineer.Level,
-            TaskInEngineer = ToBOTask(GetCurrentTask(id),id, doEngineer.Name)
+            Task = GetCurrentTask(id)
+            //TaskInEngineer = ToBOTask(GetCurrentTask(id),id, doEngineer.Name)
         };
     }
 
@@ -92,7 +93,8 @@ internal class EngineerImplementation : IEngineer
             Name = doEngineer.Name,
             Email = doEngineer.Email,
             Level = (BO.EngineerExperience?)doEngineer.Level,
-            TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
+            Task = GetCurrentTask(doEngineer.Id)
+            //TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
         };
     }
 
@@ -106,8 +108,8 @@ internal class EngineerImplementation : IEngineer
                     Name = doEngineer.Name,
                     Email = doEngineer.Email,
                     Level = (BO.EngineerExperience?)doEngineer.Level,
-                    TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
-
+                    Task = GetCurrentTask(doEngineer.Id)
+                    //TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
                 });
     }
 
@@ -133,26 +135,27 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public DO.Task? GetCurrentTask(int id)
+    public TaskInEngineer GetCurrentTask(int id)
     {
         Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
-        return currentTask;
+        TaskInEngineer curTask = new(currentTask.Id, currentTask.Alias);
+        return curTask;
     }
-    public BO.Task? ToBOTask(DO.Task? task,int id,string? name)
-    {
-        if (task == null)
-            return null;
-        EngineerInTask EITask = new(id, name);
-        MilestoneInTask MTask = new(task.Id, task.Alias);
-        Status status = (Status)(1);
-        BO.Task boTask = new(task.Id, EITask, task.Description, task.Alias, MTask, task.IsActive, status, task.Deliverables,task.Remarks,task.CreateAtDate,task.StartDate, task.ScheduleDate,task.ForecastDate,task.DeadlineDate,task.ComplateDate,task.CompmlexityLevel );
-        //foreach (var prop in task.GetType().GetProperties())
-        //{
-        //    string name = prop.Name;
-        //    boTask = prop.GetValue(task);
-        //}
-        return boTask;
-    }
+    //public BO.Task? ToBOTask(DO.Task? task, int id, string? name)
+    //{
+    //    if (task == null)
+    //        return null;
+    //    EngineerInTask EITask = new(id, name);
+    //    MilestoneInTask MTask = new(task.Id, task.Alias);
+    //    Status status = (Status)(1);
+    //    BO.Task boTask = new(task.Id, EITask, task.Description, task.Alias, MTask, task.IsActive, status, task.Deliverables, task.Remarks, task.CreateAtDate, task.StartDate, task.ScheduleDate, task.ForecastDate, task.DeadlineDate, task.ComplateDate, task.CompmlexityLevel);
+    //    //foreach (var prop in task.GetType().GetProperties())
+    //    //{
+    //    //    string name = prop.Name;
+    //    //    boTask = prop.GetValue(task);
+    //    //}
+    //    return boTask;
+    //}
 }
 

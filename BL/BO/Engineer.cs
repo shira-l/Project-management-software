@@ -10,5 +10,5 @@ public class Engineer
     public string? Name { get; set; }
     public string? Email { get; set; }
     public EngineerExperience? Level { get; set; }
-    public Task? TaskInEngineer { get; init; }
+    public TaskInEngineer? Task { get; init; }
 }
