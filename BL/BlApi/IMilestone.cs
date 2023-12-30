@@ -2,5 +2,5 @@
 public interface IMilestone
 {
     public BO.Milestone Read(int id);
-    public BO.Milestone Update(BO.Milestone milestone);
+    public BO.Milestone Update(int id);
 }

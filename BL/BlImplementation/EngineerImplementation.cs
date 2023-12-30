@@ -3,18 +3,16 @@
 namespace BlImplementation;
 using BlApi;
 using BO;
-using DO;
-using System.Diagnostics.Contracts;
-using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
 using System.Text.RegularExpressions;
 
 internal class EngineerImplementation : IEngineer
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
-    public static bool RegexEmailCheck(string input)
+    public static bool RegexEmailCheck(string? input)
     {
+        if (input == null)
+            return true;
         // returns true if the input is a valid email
         return Regex.IsMatch(input, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
     }
@@ -74,29 +72,14 @@ internal class EngineerImplementation : IEngineer
         return new BO.Engineer()
         {
             Id = id,
-            Cost = doEngineer.Cost,
+            Cost = doEngineer!.Cost,
             Name = doEngineer.Name,
             Email = doEngineer.Email,
             Level = (BO.EngineerExperience?)doEngineer.Level,
             Task = GetCurrentTask(id)
-            //TaskInEngineer = ToBOTask(GetCurrentTask(id),id, doEngineer.Name)
         };
     }
 
-    public BO.Engineer? Read(Func<DO.Engineer, bool> filter)
-    {
-        DO.Engineer? doEngineer = _dal.Engineer.ReadAll(filter).FirstOrDefault();
-        return new BO.Engineer()
-        {
-            Id = doEngineer.Id,
-            Cost = doEngineer.Cost,
-            Name = doEngineer.Name,
-            Email = doEngineer.Email,
-            Level = (BO.EngineerExperience?)doEngineer.Level,
-            Task = GetCurrentTask(doEngineer.Id)
-            //TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
-        };
-    }
 
     public IEnumerable<BO.Engineer?> ReadAll(Func<DO.Engineer, bool>? filter = null)
     {
@@ -109,7 +92,6 @@ internal class EngineerImplementation : IEngineer
                     Email = doEngineer.Email,
                     Level = (BO.EngineerExperience?)doEngineer.Level,
                     Task = GetCurrentTask(doEngineer.Id)
-                    //TaskInEngineer = ToBOTask(GetCurrentTask(doEngineer.Id), doEngineer.Id, doEngineer.Name)
                 });
     }
 
@@ -135,27 +117,14 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public TaskInEngineer GetCurrentTask(int id)
+    public TaskInEngineer? GetCurrentTask(int id)
     {
         Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
+        if (currentTask == null)
+            return null;
         TaskInEngineer curTask = new(currentTask.Id, currentTask.Alias);
         return curTask;
     }
-    //public BO.Task? ToBOTask(DO.Task? task, int id, string? name)
-    //{
-    //    if (task == null)
-    //        return null;
-    //    EngineerInTask EITask = new(id, name);
-    //    MilestoneInTask MTask = new(task.Id, task.Alias);
-    //    Status status = (Status)(1);
-    //    BO.Task boTask = new(task.Id, EITask, task.Description, task.Alias, MTask, task.IsActive, status, task.Deliverables, task.Remarks, task.CreateAtDate, task.StartDate, task.ScheduleDate, task.ForecastDate, task.DeadlineDate, task.ComplateDate, task.CompmlexityLevel);
-    //    //foreach (var prop in task.GetType().GetProperties())
-    //    //{
-    //    //    string name = prop.Name;
-    //    //    boTask = prop.GetValue(task);
-    //    //}
-    //    return boTask;
-    //}
 }
 
