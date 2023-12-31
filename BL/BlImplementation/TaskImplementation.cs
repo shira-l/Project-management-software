@@ -19,13 +19,9 @@ internal class TaskImplementation : ITask
             int idTask = _dal.Task.Create(doTask);
             return idTask;
         }
-        //catch (DO.DalAlreadyExistsException ex)
-        //{
-        //    throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalAlreadyExistsException ex)
         {
-            throw new Exception("Incorrect data", ex);
+            throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
         }
     }
 
@@ -33,29 +29,17 @@ internal class TaskImplementation : ITask
     {
         try
         {
-            DO.Task? doTask = _dal.Task.Read(id);
-            if (doTask == null)
-            {
-                //throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
-            }
             IEnumerable<BO.TaskInList> pendingTasks = getPendingTasks(id);
             if(pendingTasks.Count() == 0)
             {
-                //throw new BO.BlCannotBeDeletedExeption($"Task with ID={id} cannot be deleted");
+                throw new BO.BlCannotBeDeletedExeption($"Task with ID={id} cannot be deleted");
             }
             
             _dal.Task.Delete(id);
-
-         
-            
         }
-        //catch (BO.BlCannotBeDeletedExeption ex)
-        //{
-        //    //    throw new BO.BlAlreadyExistsException($"Task with ID={id} cannot be deleted", ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalIsNotExistException ex)
         {
-            throw new Exception("Incorrect data", ex);
+               throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist", ex);
         }
     }
 
@@ -66,7 +50,7 @@ internal class TaskImplementation : ITask
         DO.Task? doTask = _dal.Task.Read(id);
         if (doTask == null)
         {
-            //throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
+            throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
         }
         return new BO.Task()
         {
@@ -130,13 +114,9 @@ internal class TaskImplementation : ITask
             (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, true, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
             _dal.Task.Update(doTask);
         }
-        //catch (DO.DalAlreadyExistsException ex)
-        //{
-        //    throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalAlreadyExistsException ex)
         {
-            throw new Exception("Incorrect data", ex);
+            throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
         }
     }
     public BO.EngineerInTask getEngineer(int EngineerId)

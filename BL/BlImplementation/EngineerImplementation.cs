@@ -29,13 +29,9 @@ internal class EngineerImplementation : IEngineer
             int idEngineer = _dal.Engineer.Create(doEngineer);
             return idEngineer;
         }
-        //catch (DO.DalAlreadyExistsException ex)
-        //{
-        //    throw new BO.BlAlreadyExistsException($"Engineer with ID={boEngineer.Id} already exists", ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalAlreadyExistsException ex)
         {
-            throw new Exception("Incorrect data",ex);
+            throw new BO.BlAlreadyExistsException($"Engineer with ID={boEngineer.Id} already exists", ex);
         }
     }
     
@@ -52,13 +48,9 @@ internal class EngineerImplementation : IEngineer
             }
             _dal.Engineer.Delete(id);
         }
-        //catch (DO.DalIsNotExistException ex)
-        //{
-        //    throw new BO.DalIsNotExistException($"Engineer with ID={id} is not exists",ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalIsNotExistException ex)
         {
-            throw new Exception("Engineer in task",ex);
+            throw new BO.BlDoesNotExistException($"Engineer with ID={id} does not exists", ex);
         }
     }
 
@@ -67,7 +59,7 @@ internal class EngineerImplementation : IEngineer
         DO.Engineer? doEngineer = _dal.Engineer.Read(id);
         if (doEngineer == null)
         {
-            //throw new BO.BlAlreadyExistsException($"Engineer with ID={id} is not exists");
+            throw new BO.BlDoesNotExistException($"Engineer with ID={id} does not exists");
         }
         return new BO.Engineer()
         {
@@ -107,13 +99,9 @@ internal class EngineerImplementation : IEngineer
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);
             _dal.Engineer.Update(doEngineer);
         }
-        //catch (DO.DalIsNotExistException ex)
-        //{
-        //    throw new BO.DalIsNotExistException($"Engineer with ID={boEngineer.Id} is not exists", ex);
-        //}
-        catch (Exception ex)
+        catch (DO.DalIsNotExistException ex)
         {
-            throw new Exception("Incorrect data",ex);
+            throw new BO.BlDoesNotExistException($"Engineer with ID={boEngineer.Id} does not exists", ex);
         }
     }
 
