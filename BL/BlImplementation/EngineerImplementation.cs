@@ -105,7 +105,7 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    public TaskInEngineer? GetCurrentTask(int id)
+    private TaskInEngineer? GetCurrentTask(int id)
     {
         Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();

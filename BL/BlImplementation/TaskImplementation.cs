@@ -60,8 +60,7 @@ internal class TaskImplementation : ITask
             Alias = doTask.Alias,
             Milestone = getMilestone(id),
             IsActive = doTask.IsActive,
-            //איך לבחור status?
-            Status = BO.Status.InJeopardy,
+            Status = getStatusOfTask(doTask),
             Deliverables = doTask.Deliverables,
             Remarks = doTask.Remarks,
             CreateAtDate = doTask.CreateAtDate,
@@ -87,8 +86,7 @@ internal class TaskImplementation : ITask
                     Alias = doTask.Alias,
                     Milestone = getMilestone(doTask.Id),
                     IsActive = doTask.IsActive,
-                    //איך לבחור status?
-                    Status = BO.Status.InJeopardy,
+                    Status = getStatusOfTask(doTask),
                     Deliverables = doTask.Deliverables,
                     Remarks = doTask.Remarks,
                     CreateAtDate = doTask.CreateAtDate,
@@ -119,7 +117,7 @@ internal class TaskImplementation : ITask
             throw new BO.BlAlreadyExistsException($"Task with ID={boTask.Id} already exists", ex);
         }
     }
-    public BO.EngineerInTask getEngineer(int EngineerId)
+    private BO.EngineerInTask getEngineer(int EngineerId)
     {
         Func<DO.Engineer, bool> filter = (DO.Engineer engineer) => EngineerId == engineer.Id;
         DO.Engineer? engineer = _dal.Engineer.ReadAll(filter).FirstOrDefault();
@@ -127,29 +125,52 @@ internal class TaskImplementation : ITask
         return engineerInTask;
     }
 //לבדוק milstone!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public BO.MilestoneInTask getMilestone(int Id)
-    {
-        Func<DO.Dependency, bool> filterDependency = (DO.Dependency dependency) => Id == dependency.Id;
-        DO.Dependency? Dependency = _dal.Dependency.ReadAll(filterDependency).FirstOrDefault();
-        Func<DO.Task, bool> filterTask = (DO.Task task) => Dependency.DependOnTask == task.Id;
-        DO.Task? Task = _dal.Task.ReadAll(filterTask).FirstOrDefault();
-        BO.MilestoneInTask milestoneInTask = new(Dependency.DependOnTask, Task.Alias);
-        return milestoneInTask;
-    }
-
-    public IEnumerable<BO.TaskInList> getPendingTasks(int Id)
+    private BO.MilestoneInTask getMilestone(int Id)
     {
         Func<DO.Dependency, bool> filterDependency = (DO.Dependency dependency) => Id == dependency.DependentTask;
-        IEnumerable<DO.Task> dependencies = (from DO.Dependency? dependency in _dal.Dependency.ReadAll(filterDependency)
-                                             select _dal.Task.Read(dependency.DependOnTask));
-        return (from DO.Task task in dependencies
+        IEnumerable<DO.Task?>? dependencies = (from DO.Dependency? dependency in _dal.Dependency.ReadAll(filterDependency)
+                                               select _dal.Task.Read(dependency.DependOnTask));
+        if(dependencies==null)
+        {
+            ///צריך לחשוב מה אמורים לעשות
+        }
+        DO.Task? task = dependencies!.Where(task => task!.Milestone == true).FirstOrDefault();
+        if(task==null)
+        {
+            ///צריך לחשוב מה אמורים לעשות
+        }
+        return new BO.MilestoneInTask() 
+        {
+            Id = task!.Id,
+        Alias = task.Alias
+        };
+    }
+
+    private IEnumerable<BO.TaskInList> getPendingTasks(int Id)
+    {
+        Func<DO.Dependency, bool> filterDependency = (DO.Dependency dependency) => Id == dependency.DependOnTask;
+        IEnumerable<DO.Task> pendingTask = (from DO.Dependency? dependency in _dal.Dependency.ReadAll(filterDependency)
+                                             select _dal.Task.Read(dependency.DependentTask));
+        return (from DO.Task task in pendingTask
                 select new BO.TaskInList()
                 {
                     Id = task.Id,
                     Description = task.Description,
                     Alias = task.Alias,
-                    Status = (BO.Status)(1)
+                    Status = getStatusOfTask(task)
                 });
 
     }
+    private BO.Status getStatusOfTask(DO.Task task)
+    {
+        DateTime now = DateTime.Now;
+        if (task.ScheduleDate == DateTime.MinValue)
+            return BO.Status.Unscheduled;
+        else if (task.StartDate == DateTime.MinValue)
+            return BO.Status.Scheduled;
+        else if (task.DeadlineDate < now && task.ComplateDate == DateTime.MinValue)
+            return BO.Status.InJeopardy;
+        else return BO.Status.OnTrack;
+    }
+
 }
