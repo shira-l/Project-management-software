@@ -4,7 +4,7 @@ namespace BO;
 public class Milestone
 {
     public int Id { get; init; }
-    public string? Deliverables { get; set; }
+    public string? Description { get; set; }
     public string? Alias { get; set; }
     public DateTime? CreateAtDate { get; init; }
     public Status Status { get; init; }

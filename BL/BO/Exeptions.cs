@@ -1,5 +1,7 @@
 ﻿
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace BO;
 
 [Serializable]
@@ -31,6 +33,19 @@ public class BlCannotBeDeletedExeption : Exception
 {
     public BlCannotBeDeletedExeption(string? message) : base(message) { }
 }
+
+[Serializable]
+public class BlIncorrectDateOrderExeption : Exception
+{
+    public BlIncorrectDateOrderExeption(string? message) : base(message) { }
+}
+
+[Serializable]
+public class BlInvalidValueExeption : Exception
+{
+    public BlInvalidValueExeption(string? message) : base(message) { }
+}
+
 
 [Serializable]
 public class BlNullPropertyException : Exception

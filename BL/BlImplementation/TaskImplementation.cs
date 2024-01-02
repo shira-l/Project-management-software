@@ -2,6 +2,7 @@
 
 namespace BlImplementation;
 using BlApi;
+using BO;
 
 internal class TaskImplementation : ITask
 {
@@ -106,7 +107,12 @@ internal class TaskImplementation : ITask
         {
             if (boTask.Id < 0 || boTask.Alias == "")
             {
-                throw new Exception("Incorrect data");
+                throw new BO.BlInvalidValueExeption("Incorrect data");
+            }
+            /// לבדוק תאריכים
+            if(boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate || boTask.ComplateDate != null)
+            {
+                throw new BO.BlIncorrectDateOrderExeption("Incorrect data");
             }
             DO.Task doTask = new DO.Task
             (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, true, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
