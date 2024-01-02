@@ -142,7 +142,7 @@ internal class TaskImplementation : ITask
         return new BO.MilestoneInTask() 
         {
             Id = task!.Id,
-        Alias = task.Alias
+            Alias = task.Alias
         };
     }
 
