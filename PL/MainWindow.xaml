@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Content="Display Engineers" HorizontalAlignment="Left" Margin="100" Height="50" Width="100" Click="btnDisplayEngineers" />
-        <Button Grid.Column="1" Content="Engineer Initialization" HorizontalAlignment="Left" Margin="100" Height="50" Width="100" Click="btnEngineerInitialization"/>
+        <Button Grid.Column="0" Content="Handle Engineers" HorizontalAlignment="Left" Margin="100" Height="50" Width="130" Click="btnHandleEngineers" />
+        <Button Grid.Column="1" Content="Engineer Initialization" HorizontalAlignment="Left" Margin="100" Height="50" Width="130" Click="btnEngineerInitialization"/>
     </Grid>
 </Window>

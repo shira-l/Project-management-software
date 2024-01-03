@@ -26,7 +26,7 @@
             <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </Grid>
 
-        <ListView Grid.Row="1">
+        <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding CourseList}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
