@@ -6,7 +6,7 @@ namespace Dal;
 
 sealed internal class DalXml : IDal
 {
-    public static Lazy<DalXml> Instance { get; } = new Lazy<DalXml>(true);
+    public static DalXml Instance { get; } = new Lazy<DalXml>(() => new DalXml(), true).Value;
     private DalXml() { }
     public IDependency Dependency => new DependencyImplementation();
 

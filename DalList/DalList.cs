@@ -9,7 +9,7 @@ namespace Dal
 {
     sealed internal class DalList : IDal
     {
-        public static Lazy<DalList> Instance { get; } = new Lazy<DalList>(true);
+        public static DalList Instance { get; } = new Lazy<DalList>(() => new DalList(), true).Value;
         private DalList() { }
         public IDependency Dependency =>  new DependencyImplementation();
 

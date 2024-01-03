@@ -15,11 +15,12 @@ using System.Windows.Shapes;
 namespace PL.Engineer
 {
     /// <summary>
-    /// Interaction logic for EngineerslistWindow.xaml
+    /// Interaction logic for EngineerListWindow.xaml
     /// </summary>
-    public partial class EngineerslistWindow : Window
+    public partial class EngineerListWindow : Window
     {
-        public EngineerslistWindow()
+        static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        public EngineerListWindow()
         {
             InitializeComponent();
         }
