@@ -1,4 +1,5 @@
 ﻿
+using BO;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -11,6 +12,7 @@ namespace PL.Engineer
     public partial class EngineerListWindow : Window
     {
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+        public BO.EngineerExperience Engineer { get; set; } = BO.EngineerExperience.None;
         public EngineerListWindow()
         {
             InitializeComponent();
@@ -27,5 +29,13 @@ namespace PL.Engineer
         public static readonly DependencyProperty EngineerListProperty =
             DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.Engineer>), typeof(EngineerListWindow), new PropertyMetadata(null));
 
+        private void Engineer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var temp = Engineer == BO.EngineerExperience.None ?
+            s_bl?.Engineer.ReadAll() :
+            ///EngineerExperience and ReadAll() לבדוק 
+            s_bl?.Engineer.ReadAll(item => (EngineerExperience?)item.Level == Engineer);
+            EngineerList = temp == null ? new() : new(temp);
+        }
     }
 }
