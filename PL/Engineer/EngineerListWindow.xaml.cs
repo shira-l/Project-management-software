@@ -33,9 +33,8 @@ namespace PL.Engineer
         {
             var temp = Engineer == BO.EngineerExperience.None ?
             s_bl?.Engineer.ReadAll() :
-            ///EngineerExperience and ReadAll() לבדוק 
-            s_bl?.Engineer.ReadAll(item => (EngineerExperience?)item.Level == Engineer);
-            EngineerList = temp == null ? new() : new(temp);
+            s_bl?.Engineer.ReadAll(item => item.Level == Engineer);
+            EngineerList = temp == null ? new() : new(temp!);
         }
     }
 }
