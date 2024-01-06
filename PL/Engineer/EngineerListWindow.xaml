@@ -28,7 +28,7 @@
              Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </Grid>
 
-        <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding CourseList}">
+        <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding EngineerList}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

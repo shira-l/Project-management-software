@@ -73,9 +73,9 @@ internal class EngineerImplementation : IEngineer
     }
 
 
-    public IEnumerable<BO.Engineer?> ReadAll(Func<DO.Engineer, bool>? filter = null)
+    public IEnumerable<BO.Engineer?> ReadAll(Func<BO.Engineer, bool>? filter = null)
     {
-        return (from DO.Engineer doEngineer in _dal.Engineer.ReadAll(filter)
+        IEnumerable<BO.Engineer?> ?engineers= (from DO.Engineer doEngineer in _dal.Engineer.ReadAll()
                 select new BO.Engineer
                 {
                     Id = doEngineer.Id,
@@ -85,6 +85,7 @@ internal class EngineerImplementation : IEngineer
                     Level = (BO.EngineerExperience?)doEngineer.Level,
                     Task = GetCurrentTask(doEngineer.Id)
                 });
+        return filter==null? engineers: engineers.Where(filter!);
     }
 
     public void Update(BO.Engineer boEngineer)
@@ -111,7 +112,7 @@ internal class EngineerImplementation : IEngineer
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
         if (currentTask == null)
             return null;
-        TaskInEngineer curTask = new(currentTask.Id, currentTask.Alias);
+        TaskInEngineer curTask = new() { Id=currentTask.Id, Alias= currentTask.Alias };
         return curTask;
     }
 }

@@ -76,9 +76,9 @@ internal class TaskImplementation : ITask
     }
 
 
-    public IEnumerable<BO.Task?> ReadAll(Func<DO.Task, bool>? filter = null)
+    public IEnumerable<BO.Task?> ReadAll(Func<BO.Task, bool>? filter = null)
     {
-        return (from DO.Task doTask in _dal.Task.ReadAll(filter)
+        IEnumerable<BO.Task?>? tasks=(from DO.Task doTask in _dal.Task.ReadAll()
                 select new BO.Task
                 {
                     Id = doTask.Id,
@@ -99,6 +99,7 @@ internal class TaskImplementation : ITask
                     CompmlexityLevel = (BO.EngineerExperience?)doTask.CompmlexityLevel,
                     pendingTasks = getPendingTasks(doTask.Id)
                 });
+        return filter==null?tasks:tasks.Where(filter!);
     }
 
     public void Update(BO.Task boTask)

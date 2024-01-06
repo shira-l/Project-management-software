@@ -1,13 +1,14 @@
-﻿namespace BO;
+﻿using System.Xml.Linq;
+
+namespace BO;
 
 public class TaskInEngineer
 {
     public int Id { get; init; }
     public string? Alias { get; set; }
-    public TaskInEngineer(int Id , string? Alias)
+    public override string ToString()
     {
-        this.Id = Id;
-        this.Alias = Alias;
+        return $"{Id} {Alias}";
     }
 }
 
