@@ -46,7 +46,28 @@ namespace PL.Engineer
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
-           
+            Button btn = sender as Button;
+            try
+            {
+                if (btn.Content == "Add")
+                {
+                    s_bl.Engineer.Create(Engineer);
+                }
+                else
+                {
+                    s_bl.Engineer.Update(Engineer);
+                }
+            }
+            catch (BO.BlAlreadyExistsException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (BO.BlDoesNotExistException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            MessageBox.Show("succeeded!!");
+            this.Close();
         }
     }
 }

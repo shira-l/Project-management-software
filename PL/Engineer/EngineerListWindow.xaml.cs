@@ -36,5 +36,10 @@ namespace PL.Engineer
             s_bl?.Engineer.ReadAll(item => item.Level == Engineer);
             EngineerList = temp == null ? new() : new(temp!);
         }
+
+        private void btnEngineerWindow(object sender, RoutedEventArgs e)
+        {
+            new EngineerWindow().Show();
+        }
     }
 }

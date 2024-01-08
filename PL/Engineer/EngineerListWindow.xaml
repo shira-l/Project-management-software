@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Label" HorizontalAlignment="Left" Margin="181,0,0,0" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Content="Select Level" HorizontalAlignment="Left" Margin="181,0,0,0" VerticalAlignment="Center"/>
             <ComboBox SelectedValue="{Binding Engineer, Mode=TwoWay}" SelectionChanged="Engineer_SelectionChanged"
              ItemsSource="{Binding Source={StaticResource EngineersCollectionKey}}"
              Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -36,7 +36,7 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="btnEngineerWindow"/>
     </Grid>
 </Window>
 
