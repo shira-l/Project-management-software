@@ -1,8 +1,9 @@
 ﻿
 using BO;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
-
+using System.Windows.Controls;
 
 namespace PL.Engineer
 {
@@ -39,7 +40,13 @@ namespace PL.Engineer
 
         private void btnEngineerWindow(object sender, RoutedEventArgs e)
         {
-            new EngineerWindow().Show();
+            new EngineerWindow().ShowDialog();
+        }
+
+        private void ListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            BO.Engineer? EngineerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
+            new EngineerWindow(EngineerInList!.Id).ShowDialog();
         }
     }
 }

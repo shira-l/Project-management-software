@@ -39,7 +39,7 @@ namespace PL.Engineer
             Button btn = sender as Button;
             try
             {
-                if (btn!.Content == "Add")
+                if (btn.Content == "Add")
                 {
                     s_bl.Engineer.Create(CurrentEngineer);
                 }
@@ -58,6 +58,7 @@ namespace PL.Engineer
             }
             MessageBox.Show("succeeded!!");
             this.Close();
+            
         }
     }
 }
