@@ -94,7 +94,7 @@ public static class Initialization
             "software product"
         };
         IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll(null) ;
-        const int SIZE= 150;
+        const int SIZE= 50;
         for (int i = 0; i < SIZE; i++)
         {
             int index=s_rand.Next(0, Engineers.Count());

@@ -22,7 +22,7 @@ internal class EngineerImplementation : IEngineer
         {
             if (boEngineer.Id < 0 || boEngineer.Name == "" || boEngineer.Cost < 0 || !RegexEmailCheck(boEngineer.Email))
             {
-                throw new Exception("Incorrect data");
+                throw new BO.BlInvalidValueExeption("Incorrect data");
             }
             DO.Engineer doEngineer = new DO.Engineer
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);
@@ -44,7 +44,7 @@ internal class EngineerImplementation : IEngineer
             IEnumerable<DO.Task?> doTasks = _dal.Task.ReadAll(filter);
             if (doTasks.Count() > 0)
             {
-                throw new Exception("Engineer in task");
+                throw new BO.BlCannotBeDeletedExeption($"Engineer with ID={id} performing a task");
             }
             _dal.Engineer.Delete(id);
         }
@@ -94,7 +94,7 @@ internal class EngineerImplementation : IEngineer
         {
             if (boEngineer.Id < 0 || boEngineer.Name == "" || boEngineer.Cost < 0 || !RegexEmailCheck(boEngineer.Email))
             {
-                throw new Exception("Incorrect data");
+                        throw new Exception("Incorrect data");
             }
             DO.Engineer doEngineer = new DO.Engineer
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);

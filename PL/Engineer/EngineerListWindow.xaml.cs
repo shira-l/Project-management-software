@@ -1,6 +1,5 @@
 ﻿
-using BO;
-using System;
+
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,15 +37,17 @@ namespace PL.Engineer
             EngineerList = temp == null ? new() : new(temp!);
         }
 
-        private void btnEngineerWindow(object sender, RoutedEventArgs e)
+        private void btnAddEngineer(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
+            EngineerList = new(s_bl?.Engineer.ReadAll()!);
         }
 
-        private void ListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)
         {
             BO.Engineer? EngineerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
             new EngineerWindow(EngineerInList!.Id).ShowDialog();
+            EngineerList = new(s_bl?.Engineer.ReadAll()!);
         }
     }
 }
