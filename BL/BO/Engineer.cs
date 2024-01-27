@@ -9,6 +9,7 @@
 /// <param name="Email">The engineer's email</param>
 /// <param name="Level">The level of the engineer</param>
 /// <param name="Cost">Hourly cost</param>
+/// <param name="Task">The task of the engineer</param>
 
 public class Engineer
 {
