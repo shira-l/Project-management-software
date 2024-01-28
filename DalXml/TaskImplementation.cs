@@ -6,8 +6,9 @@ using DO;
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-
-//The interface implementation of Task
+/// <summary>
+/// The interface implementation of Task
+/// </summary>
 internal class TaskImplementation : ITask
 {
     public int Create(Task m_task)

@@ -3,7 +3,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DO;
 /// <summary>
-/// 
+/// Task Entity
 /// </summary>
 /// <param name="Id">Unique ID of task</param>
 /// <param name="EngineerId">The engineer ID assigned to the task</param>

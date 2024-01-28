@@ -3,7 +3,9 @@
 namespace BlImplementation;
 using BlApi;
 using BO;
-
+/// <summary>
+/// The interface implementation of Task
+/// </summary>
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;

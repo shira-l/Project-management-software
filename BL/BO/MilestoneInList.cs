@@ -1,7 +1,7 @@
 ﻿
 namespace BO;
 /// <summary>
-/// 
+/// The MilestoneInList entity represents the list of tasks that are a milestone
 /// </summary>
 /// <param name="Id">Personal unique ID of milestone</param>
 /// <param name="Description">Milestone description</param>

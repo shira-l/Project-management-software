@@ -2,7 +2,9 @@
 namespace BlImplementation;
 using BlApi;
 using BO;
-
+/// <summary>
+/// The interface implementation of Milestone
+/// </summary>
 internal class MilestoneImplementation : IMilestone
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;

@@ -5,8 +5,9 @@ namespace Dal;
 using DalApi;
 using DO;
 using System.Collections.Generic;
-
-//The interface implementation of Task
+/// <summary>
+/// The interface implementation of Task
+/// </summary>
 internal class TaskImplementation : ITask
 {
     public int Create(Task m_task)

@@ -2,7 +2,7 @@
 namespace DO;
 
 /// <summary>
-/// 
+/// Engineer Entity
 /// </summary>
 /// <param name="Id">Personal unique ID of engineer</param>
 /// <param name="Name">Private name of the engineer</param>

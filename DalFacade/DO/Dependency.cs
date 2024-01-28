@@ -2,7 +2,7 @@
 namespace DO;
 
 /// <summary>
-/// 
+/// Dependency Entity
 /// </summary>
 /// <param name="Id">Unique ID number</param>
 /// <param name="DependentTask">ID number of pending task</param>

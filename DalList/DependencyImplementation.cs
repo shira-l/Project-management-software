@@ -4,7 +4,9 @@ namespace Dal;
 using DalApi;
 using DO;
 using System.Collections.Generic;
-//The interface implementation of Dependency
+/// <summary>
+/// The interface implementation of Dependency
+/// </summary>
 internal class DependencyImplementation : IDependency
 {
     public int Create(Dependency m_dependency)

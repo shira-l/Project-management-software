@@ -1,7 +1,7 @@
 ﻿
 namespace BO;
 /// <summary>
-///
+/// Milestone Entity
 /// </summary>
 /// <param name="Id">Personal unique ID of milestone</param>
 /// <param name="Description">Milestone description</param>
