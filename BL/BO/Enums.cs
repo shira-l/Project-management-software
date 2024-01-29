@@ -4,12 +4,12 @@ namespace BO;
 
 public enum EngineerExperience
 {
-    None,
     Novice,
     AdvancedBeginner,
     Competent,
     Proficient,
-    Expert
+    Expert,
+    None
 }
 
 public enum Status

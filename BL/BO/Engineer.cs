@@ -9,7 +9,7 @@
 /// <param name="Email">The engineer's email</param>
 /// <param name="Level">The level of the engineer</param>
 /// <param name="Cost">Hourly cost</param>
-/// <param name="Task">The task of the engineer</param>
+/// <param name="Task">The current task of the engineer</param>
 
 public class Engineer
 {
@@ -21,6 +21,7 @@ public class Engineer
     public TaskInEngineer? Task { get; init; }
     public override string ToString()
     {
-        return $"{Name} {Email} {Cost} {Level} \n current task:{Task}";
+        return $"Id:{Id} \n Name:{Name}\n Email:{Email}\n Cost:{Cost}\n Level:{Level} \n current task:{Task}";
     }
 }
+

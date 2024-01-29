@@ -87,7 +87,7 @@ internal class DependencyImplementation : IDependency
         XElement Edependency = new XElement("Dependency");
         foreach (var prop in m_dependency.GetType().GetProperties())
         {
-            XElement el = new XElement(prop.Name, m_dependency.GetType().GetProperty(prop.Name)?.GetValue(m_dependency));
+            XElement el = new (prop.Name, m_dependency.GetType().GetProperty(prop.Name)?.GetValue(m_dependency));
             Edependency.Add(el);
         }
         lDependency!.Add(Edependency);

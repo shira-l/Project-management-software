@@ -26,7 +26,7 @@ internal class EngineerImplementation : IEngineer
             {
                 throw new BO.BlInvalidValueExeption("Incorrect data");
             }
-            DO.Engineer doEngineer = new DO.Engineer
+            DO.Engineer doEngineer = new
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);
             int idEngineer = _dal.Engineer.Create(doEngineer);
             return idEngineer;
@@ -70,7 +70,7 @@ internal class EngineerImplementation : IEngineer
             Name = doEngineer.Name,
             Email = doEngineer.Email,
             Level = (BO.EngineerExperience?)doEngineer.Level,
-            Task = GetCurrentTask(id)
+            Task = ITaskInEngineer.Read(id)
         };
     }
 
@@ -98,7 +98,7 @@ internal class EngineerImplementation : IEngineer
             {
                         throw new Exception("Incorrect data");
             }
-            DO.Engineer doEngineer = new DO.Engineer
+            DO.Engineer doEngineer = new
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);
             _dal.Engineer.Update(doEngineer);
         }
@@ -108,14 +108,5 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-    private TaskInEngineer? GetCurrentTask(int id)
-    {
-        Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
-        DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
-        if (currentTask == null)
-            return null;
-        TaskInEngineer curTask = new() { Id=currentTask.Id, Alias= currentTask.Alias };
-        return curTask;
-    }
 }
 
