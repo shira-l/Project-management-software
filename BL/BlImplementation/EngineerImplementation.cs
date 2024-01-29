@@ -70,7 +70,7 @@ internal class EngineerImplementation : IEngineer
             Name = doEngineer.Name,
             Email = doEngineer.Email,
             Level = (BO.EngineerExperience?)doEngineer.Level,
-            Task = ITaskInEngineer.Read(id)
+            Task = GetCurrentTask(id)
         };
     }
 
@@ -108,5 +108,14 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
+    private TaskInEngineer? GetCurrentTask(int id)
+    {
+        Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
+        DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
+        if (currentTask == null)
+            return null;
+        TaskInEngineer curTask = new() { Id=currentTask.Id, Alias= currentTask.Alias };
+        return curTask;
+    }
 }
 
