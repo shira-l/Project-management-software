@@ -86,7 +86,7 @@ namespace DalTest
             { Console.WriteLine("enter DateTime Date"); }
             EngineerExperience CompmlexityLevel;
             EngineerExperience.TryParse(Console.ReadLine()!, out CompmlexityLevel);
-            DO.Task newTask = new(0, EngineerId, Description,Alias,false, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
+            DO.Task newTask = new(0, EngineerId, Description,Alias, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
             s_dal!.Task.Create(newTask);
             task();
         }
@@ -161,7 +161,7 @@ namespace DalTest
                 DateTime? ForecastDate = TryParseNullableDateTime(previousTask!.ForecastDate);
                 DateTime? Deadline = TryParseNullableDateTime(previousTask!.DeadlineDate);
                 EngineerExperience? CompmlexityLevel = TryParseNullableEngineerExperience(previousTask!.CompmlexityLevel);
-                DO.Task newTask = new(ID, EngineerId, Description, Alias, false, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
+                DO.Task newTask = new(ID, EngineerId, Description, Alias, true, Deliverables, Remarks, createAt, ScheduleDate, ForecastDate, Deadline, null, CompmlexityLevel);
                 s_dal!.Task.Update(newTask);
                 task();
             }

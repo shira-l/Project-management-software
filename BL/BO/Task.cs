@@ -7,7 +7,6 @@ namespace BO;
 /// <param name="Engineer">The task of the engineer</param>
 /// <param name="Description">Task description</param>
 /// <param name="Alias">Task Alias</param>
-/// <param name="Milestone">The milestone of the task</param>
 /// <param name="IsActive">The task's status</param>
 /// <param name="Status">Task status</param>
 /// <param name="Deliverables">The task Deliverables</param>
@@ -27,9 +26,8 @@ public class Task
     public EngineerInTask? Engineer { get; init; }
     public string? Description { get; set; }
     public string? Alias { get; set; }
-    public MilestoneInTask? Milestone { get; set; }
     public bool IsActive { get; set; }
-    public Status Status { get; init; }
+    public Status? Status { get; init; }
     public string? Deliverables { get; set; }
     public string? Remarks { get; set; }
     public DateTime? CreateAtDate { get; set; }
@@ -39,5 +37,5 @@ public class Task
     public DateTime? DeadlineDate { get; set; }
     public DateTime? ComplateDate { get; set; }
     public EngineerExperience? CompmlexityLevel { get; set; }
-    public IEnumerable<TaskInList> ? pendingTasks { get; set; }
+    public IEnumerable<TaskInList> ? PendingTasks { get; set; }
 }
