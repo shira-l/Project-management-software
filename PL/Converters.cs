@@ -17,11 +17,21 @@ class ConvertIdToContent : IValueConverter
     {
         throw new NotImplementedException();
     }
-    public object ConvertNotEnable(object value, Type targetType, object parameter, CultureInfo culture)
+}
+
+
+class ConvertIdtoEnable : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return (int)value == 0 ? "Add" : "Update";
+        return (int)value == 0 ? "True" : "False";
     }
 
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
 }
+
 
 
