@@ -16,6 +16,7 @@ public partial class TaskListWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
     public BO.Status Task { get; set; } = BO.Status.None;
+    public BO.EngineerExperience CompmlexityLevel { get; set; } = BO.EngineerExperience.None;
     public TaskListWindow()
     {
         InitializeComponent();
@@ -39,7 +40,6 @@ public partial class TaskListWindow : Window
         s_bl?.Task.ReadAll(item => item.Status == Task);
         TaskList = temp == null ? new() : new(s_bl!.TaskInList.ReadAll(temp!));
     }
-
 
     private void btnAddTask(object sender, RoutedEventArgs e)
     {

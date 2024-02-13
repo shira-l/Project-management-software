@@ -3,6 +3,7 @@ using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
 
+
 namespace PL.Task;
 
 /// <summary>
@@ -11,7 +12,7 @@ namespace PL.Task;
 public partial class TaskWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-    public TaskWindow(int Id =0)
+    public TaskWindow(int Id = 0)
     {
         InitializeComponent();
         try
@@ -31,7 +32,7 @@ public partial class TaskWindow : Window
                 ForecastDate = null,
                 DeadlineDate = null,
                 ComplateDate = null,
-                CompmlexityLevel = null
+                CompmlexityLevel = null,
             }
             : s_bl.Task.Read(Id)!;
         }
@@ -62,5 +63,10 @@ public partial class TaskWindow : Window
         catch (BO.BlInvalidValueExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
         MessageBox.Show("the transaction completed successfully");
         Close();
+    }
+
+    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
     }
 }

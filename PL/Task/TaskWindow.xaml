@@ -52,8 +52,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"/>
-            <TextBox Text="{Binding Engineer, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  Grid.Row="1"/>
+            <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" IsEnabled="False"/>
             <TextBox Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  Grid.Row="2"/>
             <TextBox Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="3"/>
             <ComboBox ItemsSource="{Binding Source={StaticResource TasksCollectionKey}}" 
@@ -73,20 +72,7 @@
             <!--<TextBox Text="{Binding PendingTasks, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="15"/>-->
             <Label Content="Id"/>
             <Label Content="Engineer"   Grid.Row="1" />
-            <Label Content="Description"  Grid.Row="2" />
-            <Label Content="Alias"  Grid.Row="3" />
-            <Label Content="Status"   Grid.Row="4" />
-            <Label Content="Deliverables"  Grid.Row="5"/>
-            <Label Content="Remarks"   Grid.Row="6" />
-            <Label Content="CreateAtDate" Grid.Column="2"/>
-            <Label Content="CreateAtDate" Grid.Column="2" Grid.Row="1"/>
-            <Label Content="ScheduleDate" Grid.Column="2" Grid.Row="2"/>
-            <Label Content="ForecastDate"  Grid.Column="2" Grid.Row="3"/>
-            <Label Content="DeadlineDate"  Grid.Column="2" Grid.Row="4"/>
-            <Label Content="ComplateDate"  Grid.Column="2" Grid.Row="5"/>
-            <Label Content="CompmlexityLevel"  Grid.Column="2" Grid.Row="6"/>
-         
-            <!--<Grid Grid.Column="1" Grid.Row="5">
+            <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40*"/>
                     <ColumnDefinition Width="60*"/>
@@ -94,14 +80,28 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>-->
-                <!--<Label Content="Id" />
-                <Label Content="Alias" Grid.Row="1"/>-->
-                <!--<TextBox Grid.Column="1"  Grid.RowSpan="2"  Margin="10,3,0,0"  VerticalAlignment="Stretch" IsEnabled="False"
-                 Text="{Binding Task.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"/>
-                <TextBox Grid.Column="1" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"
-                 Text="{Binding Task.Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"/>
-            </Grid>-->
+                </Grid.RowDefinitions>
+                <Label Content="Id" />
+                <Label Content="name" Grid.Row="1"/>
+                <TextBox  Margin="31,3,0,3"  VerticalAlignment="Stretch"
+                 Text="{Binding Engineer.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2" Width="95"/>
+                <TextBox Margin="31,0,14,0" Grid.Row="1" 
+                 Text="{Binding Engineer.Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2" Width="NaN" HorizontalAlignment="Stretch"/>
+            </Grid>
+            <Label Content="Description"  Grid.Row="2" />
+            <Label Content="Alias"  Grid.Row="3" />
+            <Label Content="Status"   Grid.Row="4" />
+            <Label Content="Deliverables"  Grid.Row="5"/>
+            <Label Content="Remarks"   Grid.Row="6" />
+            <Label Content="CreateAtDate" Grid.Column="2"/>
+            <Label Content="StartDate" Grid.Column="2" Grid.Row="1"/>
+            <Label Content="ScheduleDate" Grid.Column="2" Grid.Row="2"/>
+            <Label Content="ForecastDate"  Grid.Column="2" Grid.Row="3"/>
+            <Label Content="DeadlineDate"  Grid.Column="2" Grid.Row="4"/>
+            <Label Content="ComplateDate"  Grid.Column="2" Grid.Row="5"/>
+            <Label Content="CompmlexityLevel"  Grid.Column="2" Grid.Row="6"/>
+
+
         </Grid>
         <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConvertIdToContentKey}}" 
          HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="33" Width="100" Click="btnAddUpdate_Click"/>
