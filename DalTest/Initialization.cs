@@ -106,7 +106,7 @@ public static class Initialization
             EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
             index = s_rand.Next(0, Deliverables.Length);
             string myDeliverable = Deliverables[index];
-            Task task = new(0, EngineerId, null, null, false, true, myDeliverable, null, createAt, ForecastDate, null,Deadline, null, CompmlexityLevel);
+            Task task = new(0, EngineerId, null, null, true, myDeliverable, null, createAt, ForecastDate, null,Deadline, null, CompmlexityLevel);
             s_dal!.Task.Create(task);
 
         }

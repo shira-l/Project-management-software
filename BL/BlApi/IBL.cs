@@ -5,6 +5,6 @@ public interface IBl
 {
     IEngineer Engineer { get; }
     ITask Task { get; }
-    IMilestone milestone { get; }
- 
+    IEngineerInList EngineerInList { get; }
+    ITaskInList TaskInList { get; }
 }

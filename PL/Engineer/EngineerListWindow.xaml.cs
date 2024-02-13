@@ -3,7 +3,10 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.Generic;
 using System;
+using System.Collections;
+
 namespace PL.Engineer
 {
     /// <summary>
@@ -17,37 +20,40 @@ namespace PL.Engineer
         {
             InitializeComponent();
             var temp = s_bl?.Engineer.ReadAll();
-            EngineerList = temp == null ? new() : new(temp!);
+            EngineerList = temp == null ? new() : new(s_bl!.EngineerInList.ReadAll(temp!));
         }
 
-        public ObservableCollection<BO.Engineer> EngineerList
+        public ObservableCollection<BO.EngineerInList> EngineerList
         {
-            get { return (ObservableCollection<BO.Engineer>)GetValue(EngineerListProperty); }
+            get { return (ObservableCollection<BO.EngineerInList>)GetValue(EngineerListProperty); }
             set { SetValue(EngineerListProperty, value); }
         }
 
         public static readonly DependencyProperty EngineerListProperty =
-            DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.Engineer>), typeof(EngineerListWindow), new PropertyMetadata(null));
+            DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.EngineerInList>), typeof(EngineerListWindow), new PropertyMetadata(null));
 
         private void Engineer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var temp = Engineer == BO.EngineerExperience.None ?
             s_bl?.Engineer.ReadAll() :
             s_bl?.Engineer.ReadAll(item => item.Level == Engineer);
-            EngineerList = temp == null ? new() : new(temp!);
+            EngineerList = temp == null ? new() : new(s_bl!.EngineerInList.ReadAll(temp!));
         }
 
         private void btnAddEngineer(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
-            EngineerList = new(s_bl?.Engineer.ReadAll()!);
+            IEnumerable<BO.Engineer> engineers = s_bl?.Engineer.ReadAll()!;
+            s_bl!.EngineerInList.ReadAll(engineers);
+            EngineerList = new();
         }
 
         private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)
         {
-            BO.Engineer? EngineerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
-            new EngineerWindow(EngineerInList!.Id).ShowDialog();
-            EngineerList = new(s_bl?.Engineer.ReadAll()!);
+            BO.EngineerInList ?engineer = (sender as ListView)?.SelectedItem as BO.EngineerInList;
+            new EngineerWindow(engineer!.Id).ShowDialog();
+            IEnumerable<BO.Engineer> engineers = s_bl?.Engineer.ReadAll()!;
+            EngineerList = new(s_bl!.EngineerInList.ReadAll(engineers));
         }
     }
 }

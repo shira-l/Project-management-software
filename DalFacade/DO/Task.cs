@@ -9,11 +9,10 @@ namespace DO;
 /// <param name="EngineerId">The engineer ID assigned to the task</param>
 /// <param name="Description">Task description</param>
 /// <param name="Alias">Task Alias</param>
-/// <param name="Milestone"></param
 /// <param name="Deliverables">The task Deliverables</param>
 /// <param name="IsActive">The task's status</param>
 /// <param name="Remarks">Remarks about the task</param>
-/// <param name="Start">The task start date</param>
+/// <param name="CreateAtDate">The task start date</param>
 /// <param name="ScheduleDate">Planned date for completion of the task</param>
 /// <param name="ForecastDate">Forecast updated date for the end of the mission</param>
 /// <param name="DeadlineDate">Last date for completing the task</param>
@@ -26,7 +25,6 @@ public record Task
     int EngineerId,
     string? Description = null,
     string? Alias = null,
-    bool Milestone = false,
     bool IsActive = true,
     string? Deliverables = null,
     string? Remarks = null,
@@ -38,7 +36,7 @@ public record Task
     EngineerExperience? CompmlexityLevel = null
 )
 {
-    public Task() : this(0,0,null,null,false,true,null,null,null,null,null,null,null,null) { } //empty ctor for stage 3
+    public Task() : this(0,0,null,null,true,null,null,null,null,null,null,null,null) { } //empty ctor for stage 3
     ///<summary>
     ///CreateAt - Creation a task Product date
     ///</summary>

@@ -107,14 +107,13 @@ internal class EngineerImplementation : IEngineer
             throw new BO.BlDoesNotExistException($"Engineer with ID={boEngineer.Id} does not exists", ex);
         }
     }
-
     private TaskInEngineer? GetCurrentTask(int id)
     {
         Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
         if (currentTask == null)
             return null;
-        TaskInEngineer curTask = new() { Id=currentTask.Id, Alias= currentTask.Alias };
+        TaskInEngineer curTask = new() { Id = currentTask.Id, Alias = currentTask.Alias };
         return curTask;
     }
 }

@@ -17,4 +17,11 @@ class ConvertIdToContent : IValueConverter
     {
         throw new NotImplementedException();
     }
+    public object ConvertNotEnable(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return (int)value == 0 ? "Add" : "Update";
+    }
+
 }
+
+
