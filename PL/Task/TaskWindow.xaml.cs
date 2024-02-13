@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PL.Engineer;
+using System;
+using System.Collections.ObjectModel;
 using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,14 +22,15 @@ public partial class TaskWindow : Window
             CurrentTask = Id == 0 ? new()
             {
                 Id = 0,
-                Engineer = null,
+                Engineer = new(),
                 Description = "",
                 Alias = "",
+                IsActive = true,
                 Status = null,
                 Deliverables = null,
                 Remarks = null,
-                CreateAtDate = null,
-                StartDate = null,
+                CreateAtDate = DateTime.Now,
+                StartDate =null ,
                 ScheduleDate = null,
                 ForecastDate = null,
                 DeadlineDate = null,
@@ -53,6 +56,10 @@ public partial class TaskWindow : Window
         string content = (sender as Button)!.Content.ToString()!;
         try
         {
+            if (CurrentTask.Alias == "")
+            {
+                throw new Exception("Incorrect data");
+            }
             if (content == "Add")
                 s_bl.Task.Create(CurrentTask);
             else
@@ -65,8 +72,4 @@ public partial class TaskWindow : Window
         Close();
     }
 
-    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-    {
-
-    }
 }

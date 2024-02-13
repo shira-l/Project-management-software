@@ -6,6 +6,8 @@ using System;
 using System.Collections;
 using BO;
 using PL.Task;
+using PL.Engineer;
+using System.Linq;
 
 namespace PL.Task;
 
@@ -22,6 +24,7 @@ public partial class TaskListWindow : Window
         InitializeComponent();
         var temp = s_bl?.Task.ReadAll();
         TaskList = temp == null ? new() : new(s_bl!.TaskInList.ReadAll(temp!));
+        //TasksId= new(TaskList.Select(task => task.Id));
     }
 
     public ObservableCollection<BO.TaskInList> TaskList
@@ -33,6 +36,13 @@ public partial class TaskListWindow : Window
     public static readonly DependencyProperty TaskListProperty =
         DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.TaskInList>), typeof(TaskListWindow), new PropertyMetadata(null));
 
+    //public ObservableCollection<int> TasksId
+    //{
+    //    get { return (ObservableCollection<int>)GetValue(TasksIdProperty); }
+    //    set { SetValue(TasksIdProperty, value); }
+    //}
+    //public static readonly DependencyProperty TasksIdProperty =
+    //   DependencyProperty.Register("TasksId", typeof(int), typeof(EngineerWindow), new PropertyMetadata(null));
     private void Task_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
         var temp = Task == BO.Status.None ?
@@ -45,8 +55,7 @@ public partial class TaskListWindow : Window
     {
         new TaskWindow().ShowDialog();
         IEnumerable<BO.Task> tasks = s_bl?.Task.ReadAll()!;
-        s_bl!.TaskInList.ReadAll(tasks);
-        TaskList = new();
+        TaskList = new(s_bl!.TaskInList.ReadAll(tasks));
     }
 
     private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)
@@ -57,4 +66,3 @@ public partial class TaskListWindow : Window
         TaskList = new(s_bl!.TaskInList.ReadAll(tasks));
     }
 }
- 

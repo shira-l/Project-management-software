@@ -13,11 +13,16 @@ internal class TaskImplementation : ITask
     {
         try
         {
-            if (boTask.Id < 0 || boTask.Alias == "")
+            //מחקתי id
+            if (boTask.Alias == "")
             {
-                throw new Exception("Incorrect data");
+                throw new BO.BlInvalidValueExeption("Incorrect data");
             }
-            DO.Task doTask = new DO.Task
+            if (boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate || boTask.ComplateDate != null)
+            {
+                throw new BO.BlIncorrectDateOrderExeption("Incorrect data");
+            }
+            DO.Task doTask = new 
             (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
             int idTask = _dal.Task.Create(doTask);
             return idTask;
@@ -51,7 +56,7 @@ internal class TaskImplementation : ITask
         DO.Task? doTask = _dal.Task.Read(id);
         if (doTask == null)
         {
-            throw new BO.BlDoesNotExistException($"Student with ID={id} does Not exist");
+            throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist");
         }
         return new BO.Task()
         {
@@ -103,12 +108,13 @@ internal class TaskImplementation : ITask
     {
         try
         {
-            if (boTask.Id < 0 || boTask.Alias == "")
+            //מחקתי id
+            if (boTask.Alias == "")
             {
                 throw new BO.BlInvalidValueExeption("Incorrect data");
             }
             /// לבדוק תאריכים
-            if(boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate || boTask.ComplateDate != null)
+            if(boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate)
             {
                 throw new BO.BlIncorrectDateOrderExeption("Incorrect data");
             }
@@ -125,7 +131,7 @@ internal class TaskImplementation : ITask
     {
         Func<DO.Engineer, bool> filter = (DO.Engineer engineer) => EngineerId == engineer.Id;
         DO.Engineer? engineer = _dal.Engineer.ReadAll(filter).FirstOrDefault();
-        BO.EngineerInTask engineerInTask = new(EngineerId, engineer?.Name);
+        BO.EngineerInTask engineerInTask = new() {Id= EngineerId,Name= engineer?.Name };
         return engineerInTask;
     }
 

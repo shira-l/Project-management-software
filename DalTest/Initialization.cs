@@ -93,20 +93,28 @@ public static class Initialization
             "Code listing",
             "software product"
         };
+        string[] Aliases =
+        {
+            "do Project",
+             "Complete manual",
+            "run code",
+            "Designing",
+            "debaging",
+            "Submit a stage"
+        };
         IEnumerable<Engineer?> Engineers = s_dal!.Engineer.ReadAll(null) ;
         const int SIZE= 50;
         for (int i = 0; i < SIZE; i++)
         {
             int index=s_rand.Next(0, Engineers.Count());
             int EngineerId= Engineers.ElementAt(index)!.Id;
-            int moreDays= s_rand.Next(3, 31),moreMonths = s_rand.Next(0, 10);
-            DateTime createAt = DateTime.Now.AddDays(-moreDays);
-            DateTime Deadline=createAt.AddMonths(4+ moreMonths).AddDays(moreDays);
+            int moreDays= s_rand.Next(2, 15),moreMonths = s_rand.Next(0, 10);
+            DateTime startDate = DateTime.Now.AddDays(moreDays);
+            DateTime Deadline= startDate.AddMonths(4+ moreMonths).AddDays(moreDays);
             DateTime ForecastDate = Deadline.AddDays(-(moreDays + 10));
             EngineerExperience CompmlexityLevel = (EngineerExperience)s_rand.Next((int)EngineerExperience.Novice, (int)EngineerExperience.Expert + 1);
             index = s_rand.Next(0, Deliverables.Length);
-            string myDeliverable = Deliverables[index];
-            Task task = new(0, EngineerId, null, null, true, myDeliverable, null, createAt, ForecastDate, null,Deadline, null, CompmlexityLevel);
+            Task task = new(0, EngineerId, "", Aliases[index], true, Deliverables[index], "", startDate, null,ForecastDate,Deadline, null, CompmlexityLevel);
             s_dal!.Task.Create(task);
 
         }

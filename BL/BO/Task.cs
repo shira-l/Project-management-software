@@ -23,14 +23,14 @@ namespace BO;
 public class Task
 {
     public int Id { get; init; }
-    public EngineerInTask? Engineer { get; init; }
+    public EngineerInTask? Engineer { get; set; }
     public string? Description { get; set; }
     public string? Alias { get; set; }
     public bool IsActive { get; set; }
     public Status? Status { get; init; }
     public string? Deliverables { get; set; }
     public string? Remarks { get; set; }
-    public DateTime? CreateAtDate { get; set; }
+    public DateTime? CreateAtDate { get; init; }
     public DateTime? StartDate{ get; set; }
     public DateTime? ScheduleDate { get; set; }
     public DateTime? ForecastDate { get; set; }

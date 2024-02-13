@@ -28,7 +28,7 @@ public record Task
     bool IsActive = true,
     string? Deliverables = null,
     string? Remarks = null,
-    DateTime? CreateAtDate = null,
+    DateTime? StartDate = null,
     DateTime? ScheduleDate = null,
     DateTime? ForecastDate = null,
     DateTime? DeadlineDate = null,
@@ -38,7 +38,7 @@ public record Task
 {
     public Task() : this(0,0,null,null,true,null,null,null,null,null,null,null,null) { } //empty ctor for stage 3
     ///<summary>
-    ///CreateAt - Creation a task Product date
+    ///CreateAtDate - Creation a task Product date
     ///</summary>
-    public DateTime StartDate => DateTime.Now; //get only
+    public DateTime CreateAtDate => DateTime.Now; //get only
 }

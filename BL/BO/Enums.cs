@@ -20,3 +20,12 @@ public enum Status
    Unscheduled,
    None
 }
+
+public enum Level
+{
+    Novice,
+    AdvancedBeginner,
+    Competent,
+    Proficient,
+    Expert
+}

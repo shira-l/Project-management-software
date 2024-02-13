@@ -45,7 +45,7 @@ namespace PL.Engineer
             new EngineerWindow().ShowDialog();
             IEnumerable<BO.Engineer> engineers = s_bl?.Engineer.ReadAll()!;
             s_bl!.EngineerInList.ReadAll(engineers);
-            EngineerList = new();
+            EngineerList = new(s_bl!.EngineerInList.ReadAll(engineers));
         }
 
         private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)

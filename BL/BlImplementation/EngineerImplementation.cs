@@ -96,7 +96,7 @@ internal class EngineerImplementation : IEngineer
         {
             if (boEngineer.Id < 0 || boEngineer.Name == "" || boEngineer.Cost < 0 || !RegexEmailCheck(boEngineer.Email))
             {
-                        throw new Exception("Incorrect data");
+                        throw new BO.BlInvalidValueExeption("Incorrect data");
             }
             DO.Engineer doEngineer = new
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);

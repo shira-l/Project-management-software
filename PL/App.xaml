@@ -8,5 +8,6 @@
         <local:ConvertIdToContent x:Key="ConvertIdToContentKey"/>
         <local:TasksCollection x:Key="TasksCollectionKey"/>
         <local:ConvertIdtoEnable x:Key="ConvertIdtoEnableKey"/>
+        <local:Collection x:Key="CollectionKey"/>
     </Application.Resources>
 </Application>
