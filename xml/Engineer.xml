@@ -15,13 +15,6 @@
     <Level>Expert</Level>
   </Engineer>
   <Engineer>
-    <Id>277629455</Id>
-    <Cost>120</Cost>
-    <Name>Dan Kanner</Name>
-    <Email>DanKanner@gmail.com</Email>
-    <Level>AdvancedBeginner</Level>
-  </Engineer>
-  <Engineer>
     <Id>398010138</Id>
     <Cost>105</Cost>
     <Name>Hadar Fried</Name>
@@ -279,5 +272,12 @@
     <Name>Ayala Levi</Name>
     <Email>AyalaLevi@gmail.com</Email>
     <Level>Expert</Level>
+  </Engineer>
+  <Engineer>
+    <Id>277629455</Id>
+    <Cost>120</Cost>
+    <Name>Dan Kanner</Name>
+    <Email>DanKanner@gmail.com</Email>
+    <Level>Novice</Level>
   </Engineer>
 </ArrayOfEngineer>
