@@ -14,6 +14,6 @@
         </Grid.ColumnDefinitions>
         <Button Grid.Column="0" Content="Handle Engineers" HorizontalAlignment="Left" Margin="50" Height="50" Width="130" Click="btnHandleEngineers" />
         <Button Grid.Column="1" Content="Handle Tasks" HorizontalAlignment="Left" Margin="50" Height="50" Width="130" Click="btnHandleTasks" />
-        <Button Grid.Column="2" Content="Engineer Initialization" HorizontalAlignment="Left" Margin="50" Height="50" Width="130" Click="btnEngineerInitialization"/>
+        <Button Grid.Column="2" Content="DB Initialization" HorizontalAlignment="Left" Margin="50" Height="50" Width="130" Click="btnEngineerInitialization"/>
     </Grid>
 </Window>

@@ -8,19 +8,22 @@
         Title="TaskWindow" Height="450" Width="800"
         DataContext="{Binding CurrentTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" 
+                    Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14px"/>
+        </Style>
         <Style TargetType="Label">
-            <Setter Property="Margin"
-                    Value="0,0,30,0"/>
             <Setter Property="HorizontalAlignment"
-                    Value="Right"/>
+                    Value="Left"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin"
-                    Value="10,0,0,0"/>
+                    Value="0,0,50,0"/>
             <Setter Property="HorizontalAlignment"
-                    Value="Left"/>
+                    Value="Right"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
             <Setter Property="Width"
@@ -30,9 +33,9 @@
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="Margin"
-                    Value="10,0,0,0"/>
+                    Value="0,0,50,0"/>
             <Setter Property="HorizontalAlignment"
-                    Value="Left"/>
+                    Value="Right"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
             <Setter Property="Width"
@@ -44,16 +47,16 @@
     <!--Extrnal Grid-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <!--Internal, Upper Grid update-->
-        <Grid Grid.Column="0" Margin="120,20,120,19" RenderTransformOrigin="-0.015,0.523">
+        <Grid Grid.Column="0" Margin="100,20,93,10" RenderTransformOrigin="-0.015,0.523">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -118,7 +121,7 @@
             </DatePicker>
             <ComboBox ItemsSource="{Binding Source={StaticResource CollectionKey}}" 
                       SelectedValue="{Binding CompmlexityLevel, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                Grid.Column="3" HorizontalAlignment="Left"  Grid.Row="6"/>
+                Grid.Column="3" Margin="0,0,15,0"  Grid.Row="6"/>
             <Label Content="Id"/>
             <Label Content="Engineer"   Grid.Row="1" />
             <Grid Grid.Column="1" Grid.Row="1">
@@ -130,11 +133,11 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Id" />
-                <Label Content="name" Grid.Row="1"/>
-                <TextBox Margin="31,0,14,0" Width="95"
+                <Label Content="Id" FontSize="12px"/>
+                <Label Content="name" Grid.Row="1" FontSize="12px"/>
+                <TextBox  Width="100"
                  Text="{Binding Engineer.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2" />
-                <TextBox Margin="31,0,14,0" Grid.Row="1" Width="95"
+                <TextBox  Grid.Row="1" Width="100"
                  Text="{Binding Engineer.Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2"/>
             </Grid>
             <Label Content="Description"  Grid.Row="2" />
@@ -142,13 +145,13 @@
             <Label Content="Status"   Grid.Row="4" />
             <Label Content="Deliverables"  Grid.Row="5"/>
             <Label Content="Remarks"   Grid.Row="6" />
-            <Label Content="CreateAtDate" Grid.Column="2"/>
-            <Label Content="StartDate" Grid.Column="2" Grid.Row="1"/>
-            <Label Content="ScheduleDate" Grid.Column="2" Grid.Row="2"/>
-            <Label Content="ForecastDate"  Grid.Column="2" Grid.Row="3"/>
-            <Label Content="DeadlineDate"  Grid.Column="2" Grid.Row="4"/>
-            <Label Content="ComplateDate"  Grid.Column="2" Grid.Row="5"/>
-            <Label Content="CompmlexityLevel"  Grid.Column="2" Grid.Row="6"/>
+            <Label Content="Create At Date" Grid.Column="2"/>
+            <Label Content="Start Date" Grid.Column="2" Grid.Row="1"/>
+            <Label Content="Schedule Date" Grid.Column="2" Grid.Row="2"/>
+            <Label Content="Forecast Date"  Grid.Column="2" Grid.Row="3"/>
+            <Label Content="Deadline Date"  Grid.Column="2" Grid.Row="4"/>
+            <Label Content="Complate Date"  Grid.Column="2" Grid.Row="5"/>
+            <Label Content="Compmlexity Level"  Grid.Column="2" Grid.Row="6"/>
 
 
         </Grid>

@@ -17,14 +17,12 @@ namespace PL.Task;
 public partial class TaskListWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-    public BO.Status Task { get; set; } = BO.Status.None;
     public BO.EngineerExperience CompmlexityLevel { get; set; } = BO.EngineerExperience.None;
     public TaskListWindow()
     {
         InitializeComponent();
         var temp = s_bl?.Task.ReadAll();
         TaskList = temp == null ? new() : new(s_bl!.TaskInList.ReadAll(temp!));
-        //TasksId= new(TaskList.Select(task => task.Id));
     }
 
     public ObservableCollection<BO.TaskInList> TaskList
@@ -36,18 +34,11 @@ public partial class TaskListWindow : Window
     public static readonly DependencyProperty TaskListProperty =
         DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.TaskInList>), typeof(TaskListWindow), new PropertyMetadata(null));
 
-    //public ObservableCollection<int> TasksId
-    //{
-    //    get { return (ObservableCollection<int>)GetValue(TasksIdProperty); }
-    //    set { SetValue(TasksIdProperty, value); }
-    //}
-    //public static readonly DependencyProperty TasksIdProperty =
-    //   DependencyProperty.Register("TasksId", typeof(int), typeof(EngineerWindow), new PropertyMetadata(null));
     private void Task_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
-        var temp = Task == BO.Status.None ?
+        var temp = CompmlexityLevel == BO.EngineerExperience.None ?
         s_bl?.Task.ReadAll() :
-        s_bl?.Task.ReadAll(item => item.Status == Task);
+        s_bl?.Task.ReadAll(item => item.CompmlexityLevel == CompmlexityLevel);
         TaskList = temp == null ? new() : new(s_bl!.TaskInList.ReadAll(temp!));
     }
 

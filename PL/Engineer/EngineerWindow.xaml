@@ -9,23 +9,24 @@
         DataContext="{Binding CurrentEngineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
 
     <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" 
+                    Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14px"/>
+        </Style>
         <Style TargetType="Label">
-            <Setter Property="Margin"
-                    Value="0,0,30,0"/>
             <Setter Property="HorizontalAlignment"
-                    Value="Right"/>
+                    Value="Left"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Margin"
-                    Value="30,0,0,0"/>
             <Setter Property="HorizontalAlignment"
                     Value="Left"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
             <Setter Property="Width"
-                    Value="120"/>
+                    Value="140"/>
             <Setter Property="TextWrapping"
                     Value="Wrap"/>
         </Style>
@@ -37,10 +38,10 @@
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <!--Internal, Upper Grid update-->
-        <Grid Grid.Column="0" Margin="139,20,183,19" RenderTransformOrigin="-0.015,0.523">
+        <Grid Grid.Column="0" Margin="230,20,210,19" RenderTransformOrigin="-0.015,0.523">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="55*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -56,8 +57,8 @@
             <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  Grid.Row="2"/>
             <TextBox Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="3"/>
             <ComboBox ItemsSource="{Binding Source={StaticResource CollectionKey}}"
-                      SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                Grid.Column="1" HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="120"/>
+                      SelectedValue="{Binding Level, Mode=TwoWay}"
+                Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="140"/>
             <Label Content="Id"  />
             <Label Content="Name"   Grid.Row="1" />
             <Label Content="Email"  Grid.Row="2" />
@@ -66,19 +67,18 @@
             <Label Content="Current Task"   Grid.Row="5" />
             <Grid Grid.Column="1" Grid.Row="5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*"/>
-                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="80*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                <Label Content="Id" />
-                <Label Content="Alias" Grid.Row="1"/>
-                <ComboBox />
+                <Label Content="Id" FontSize="12"/>
+                <Label Content="Alias" Grid.Row="1" FontSize="12"/>
                 <!--<TextBox Grid.Column="1"  Grid.RowSpan="2"  Margin="10,3,0,0"  VerticalAlignment="Top" IsEnabled="False"
                  Text="{Binding Task.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"/>-->
-                <TextBox Grid.Column="1" Margin="10,3,0,0" Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"
+                <TextBox Grid.Column="1" Margin="0,3,0,0" Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"
                  Text="{Binding Task.Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"/>
             </Grid>
         </Grid>

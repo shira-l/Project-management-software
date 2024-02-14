@@ -13,14 +13,13 @@ internal class TaskImplementation : ITask
     {
         try
         {
-            //מחקתי id
             if (boTask.Alias == "")
             {
-                throw new BO.BlInvalidValueExeption("Incorrect data");
+                throw new BO.BlInvalidValueExeption("Invalid or missing data input");
             }
             if (boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate || boTask.ComplateDate != null)
             {
-                throw new BO.BlIncorrectDateOrderExeption("Incorrect data");
+                throw new BO.BlIncorrectDateOrderExeption("Invalid or missing data input");
             }
             DO.Task doTask = new 
             (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
@@ -111,12 +110,12 @@ internal class TaskImplementation : ITask
             //מחקתי id
             if (boTask.Alias == "")
             {
-                throw new BO.BlInvalidValueExeption("Incorrect data");
+                throw new BO.BlInvalidValueExeption("Invalid or missing data input");
             }
             /// לבדוק תאריכים
             if(boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate)
             {
-                throw new BO.BlIncorrectDateOrderExeption("Incorrect data");
+                throw new BO.BlIncorrectDateOrderExeption("Invalid or missing data input");
             }
             DO.Task doTask = new DO.Task
             (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);

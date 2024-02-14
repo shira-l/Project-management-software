@@ -17,15 +17,7 @@ public enum Status
    InJeopardy,
    OnTrack,
    Scheduled,
-   Unscheduled,
-   None
+   Unscheduled
 }
 
-public enum Level
-{
-    Novice,
-    AdvancedBeginner,
-    Competent,
-    Proficient,
-    Expert
-}
+

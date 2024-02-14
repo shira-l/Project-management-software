@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -15,7 +16,7 @@ namespace PL.Engineer;
 public partial class EngineerWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
-    public BO.Level LevelEngineer { get; set; } = BO.Level.Novice;
+    public BO.EngineerExperience LevelEngineer { get; set; } = BO.EngineerExperience.Novice;
 
     public static bool RegexEmailCheck(string? input)
     {
@@ -38,7 +39,7 @@ public partial class EngineerWindow : Window
                 Level = null
             }
             : s_bl.Engineer.Read(Id)!;
-            
+            TasksId = s_bl.Task.ReadAll().Select(task=>task!.Id);
         }
         catch (BO.BlDoesNotExistException message)
         { MessageBox.Show(message.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
@@ -50,7 +51,15 @@ public partial class EngineerWindow : Window
     }
     public static readonly DependencyProperty CurrentEngineerProperty =
        DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
-
+    
+    public IEnumerable<int> TasksId
+    {
+        get { return (IEnumerable<int>)GetValue(TasksIdProperty); }
+        set { SetValue(TasksIdProperty, value); }
+    }
+    public static readonly DependencyProperty TasksIdProperty =
+       DependencyProperty.Register("TasksId", typeof(IEnumerable<int>), typeof(EngineerWindow), new PropertyMetadata(null));
+   
     private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
     {
         string content = (sender as Button)!.Content.ToString()!;
@@ -58,17 +67,23 @@ public partial class EngineerWindow : Window
         {
             if (CurrentEngineer.Id < 0 || CurrentEngineer.Name == "" || CurrentEngineer.Cost < 0 || !RegexEmailCheck(CurrentEngineer.Email))
             {
-                throw new Exception("Incorrect data");
+                MessageBox.Show("Invalid or missing data input", "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return;
             }
             if (content == "Add")
+            {
                 s_bl.Engineer.Create(CurrentEngineer);
+                MessageBox.Show($"The engineer with a Id={CurrentEngineer.Id} was successfully added");
+            }
             else
+            {
                 s_bl.Engineer.Update(CurrentEngineer);
+                MessageBox.Show($"The engineer with a Id={CurrentEngineer.Id} was successfully updated");
+            }
+                
         }
-        catch (BO.BlAlreadyExistsException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        catch (BO.BlDoesNotExistException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        catch (BO.BlInvalidValueExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        MessageBox.Show("the transaction completed successfully");
+        catch (BO.BlAlreadyExistsException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
+        catch (BO.BlDoesNotExistException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
+        catch (BO.BlInvalidValueExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
         Close();
     }
 

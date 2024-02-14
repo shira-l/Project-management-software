@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Security.Policy;
 
 namespace PL;
 
@@ -22,8 +23,8 @@ internal class TasksCollection : IEnumerable
 
 internal class Collection : IEnumerable
 {
-    static readonly IEnumerable<BO.Level> s_enums =
-    (Enum.GetValues(typeof(BO.Level)) as IEnumerable<BO.Level>)!;
+    static readonly IEnumerable<BO.EngineerExperience> s_enums =
+    (Enum.GetValues(typeof(BO.EngineerExperience)) as IEnumerable<BO.EngineerExperience>)!.Where(Experience=> Experience!= BO.EngineerExperience.None)!;
 
     public IEnumerator GetEnumerator() => s_enums.GetEnumerator();
 }

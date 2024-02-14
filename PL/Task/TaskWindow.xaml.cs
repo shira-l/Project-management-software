@@ -58,17 +58,23 @@ public partial class TaskWindow : Window
         {
             if (CurrentTask.Alias == "")
             {
-                throw new Exception("Incorrect data");
+                MessageBox.Show("Invalid or missing data input", "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return;
             }
             if (content == "Add")
-                s_bl.Task.Create(CurrentTask);
+            {
+               int id= s_bl.Task.Create(CurrentTask);
+                MessageBox.Show($"The task with a Id={id} was successfully added");
+            }
             else
+            {
                 s_bl.Task.Update(CurrentTask);
+                MessageBox.Show($"The task with a Id={CurrentTask.Id} was successfully updated");
+            }
         }
-        catch (BO.BlAlreadyExistsException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        catch (BO.BlDoesNotExistException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        catch (BO.BlInvalidValueExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); Close(); return; }
-        MessageBox.Show("the transaction completed successfully");
+        catch (BO.BlAlreadyExistsException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error);}
+        catch (BO.BlDoesNotExistException ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error);  }
+        catch (BO.BlInvalidValueExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
+        catch (BO.BlIncorrectDateOrderExeption ex) { MessageBox.Show(ex.Message, "error Window", MessageBoxButton.OK, MessageBoxImage.Error); }
         Close();
     }
 
