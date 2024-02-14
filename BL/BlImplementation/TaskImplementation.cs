@@ -22,7 +22,7 @@ internal class TaskImplementation : ITask
                 throw new BO.BlIncorrectDateOrderExeption("Invalid or missing data input");
             }
             DO.Task doTask = new 
-            (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
+            (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.StartDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
             int idTask = _dal.Task.Create(doTask);
             return idTask;
         }
@@ -105,20 +105,28 @@ internal class TaskImplementation : ITask
 
     public void Update(BO.Task boTask)
     {
+        
         try
         {
-            //מחקתי id
+            if (boTask.Engineer!.Id != 0)
+            {
+                DO.Engineer? doEngineer = _dal.Engineer.Read(boTask.Engineer!.Id);
+                if (doEngineer == null)
+                {
+                    throw new BO.BlDoesNotExistException($"Engineer with ID={boTask.Engineer.Id} does not exists");
+                }
+            }
+
             if (boTask.Alias == "")
             {
                 throw new BO.BlInvalidValueExeption("Invalid or missing data input");
             }
-            /// לבדוק תאריכים
-            if(boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate)
+            if (boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate)
             {
                 throw new BO.BlIncorrectDateOrderExeption("Invalid or missing data input");
             }
-            DO.Task doTask = new DO.Task
-            (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.CreateAtDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
+            DO.Task doTask = new
+            (boTask.Id, boTask.Engineer!.Id, boTask.Description, boTask.Alias, boTask.IsActive, boTask.Deliverables, boTask.Remarks, boTask.StartDate, boTask.ScheduleDate, boTask.ForecastDate, boTask.DeadlineDate, boTask.ComplateDate, (DO.EngineerExperience?)boTask.CompmlexityLevel);
             _dal.Task.Update(doTask);
         }
         catch (DO.DalAlreadyExistsException ex)

@@ -18,6 +18,8 @@ public partial class TaskListWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
     public BO.EngineerExperience CompmlexityLevel { get; set; } = BO.EngineerExperience.None;
+
+    //View the list of tasks
     public TaskListWindow()
     {
         InitializeComponent();
@@ -34,6 +36,7 @@ public partial class TaskListWindow : Window
     public static readonly DependencyProperty TaskListProperty =
         DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.TaskInList>), typeof(TaskListWindow), new PropertyMetadata(null));
 
+    //View the list of tasks by level
     private void Task_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
         var temp = CompmlexityLevel == BO.EngineerExperience.None ?
@@ -42,6 +45,7 @@ public partial class TaskListWindow : Window
         TaskList = temp == null ? new() : new(s_bl!.TaskInList.ReadAll(temp!));
     }
 
+    //Adding an task
     private void btnAddTask(object sender, RoutedEventArgs e)
     {
         new TaskWindow().ShowDialog();
@@ -49,6 +53,7 @@ public partial class TaskListWindow : Window
         TaskList = new(s_bl!.TaskInList.ReadAll(tasks));
     }
 
+    //Update the task details
     private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)
     {
         BO.TaskInList? task = (sender as ListView)?.SelectedItem as BO.TaskInList;

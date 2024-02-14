@@ -8,16 +8,14 @@
         Title="TaskWindow" Height="450" Width="800"
         DataContext="{Binding CurrentTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Window.Resources>
-        <Style TargetType="Window">
-            <Setter Property="FontFamily" 
-                    Value="Comic Sans MS"/>
-            <Setter Property="FontSize" Value="14px"/>
-        </Style>
         <Style TargetType="Label">
             <Setter Property="HorizontalAlignment"
                     Value="Left"/>
             <Setter Property="VerticalAlignment"
                     Value="Center"/>
+            <!--<Setter Property="FontFamily" 
+                    Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14px"/>-->
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin"
@@ -136,9 +134,9 @@
                 <Label Content="Id" FontSize="12px"/>
                 <Label Content="name" Grid.Row="1" FontSize="12px"/>
                 <TextBox  Width="100"
-                 Text="{Binding Engineer.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2" />
+                 Text="{Binding Engineer.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2"/>
                 <TextBox  Grid.Row="1" Width="100"
-                 Text="{Binding Engineer.Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2"/>
+                 Text="{Binding Engineer.Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.ColumnSpan="2" IsEnabled="False"/>
             </Grid>
             <Label Content="Description"  Grid.Row="2" />
             <Label Content="Alias"  Grid.Row="3" />

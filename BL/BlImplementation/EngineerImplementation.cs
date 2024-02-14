@@ -94,10 +94,22 @@ internal class EngineerImplementation : IEngineer
     {
         try
         {
+            if (boEngineer.Task != null)
+            {
+                DO.Task? doTask = _dal.Task.Read(boEngineer.Task!.Id);
+                if (doTask == null)
+                {
+                    throw new BO.BlDoesNotExistException($"Task with ID={boEngineer.Task!.Id} does not exists");
+                }
+
+                DO.Task? updateDoTask = doTask with { EngineerId = boEngineer.Id };
+                _dal.Task.Update(updateDoTask);
+            }
             if (boEngineer.Id < 0 || boEngineer.Name == "" || boEngineer.Cost < 0 || !RegexEmailCheck(boEngineer.Email))
             {
                         throw new BO.BlInvalidValueExeption("Invalid or missing data input");
             }
+            
             DO.Engineer doEngineer = new
                 (boEngineer.Id, boEngineer.Cost, boEngineer.Name, boEngineer.Email, (DO.EngineerExperience?)boEngineer.Level);
             _dal.Engineer.Update(doEngineer);
@@ -112,7 +124,7 @@ internal class EngineerImplementation : IEngineer
         Func<DO.Task, bool> filter = (DO.Task task) => id == task.EngineerId;
         DO.Task? currentTask = _dal.Task.ReadAll(filter).LastOrDefault();
         if (currentTask == null)
-            return null;
+            return new();
         TaskInEngineer curTask = new() { Id = currentTask.Id, Alias = currentTask.Alias };
         return curTask;
     }
