@@ -33,6 +33,9 @@
     </Window.Resources>
     <!--Extrnal Grid-->
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource = "../image/image.png"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="20*"/>
@@ -59,7 +62,7 @@
             <ComboBox ItemsSource="{Binding Source={StaticResource CollectionKey}}"
                       SelectedValue="{Binding Level, Mode=TwoWay}"
                 Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="140"/>
-            <Label Content="Id"  />
+            <Label Content="Id"  FontFamily="Ariel"/>
             <Label Content="Name"   Grid.Row="1" />
             <Label Content="Email"  Grid.Row="2" />
             <Label Content="Cost"   Grid.Row="3" />

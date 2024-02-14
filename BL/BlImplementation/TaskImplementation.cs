@@ -116,12 +116,11 @@ internal class TaskImplementation : ITask
                     throw new BO.BlDoesNotExistException($"Engineer with ID={boTask.Engineer.Id} does not exists");
                 }
             }
-
             if (boTask.Alias == "")
             {
                 throw new BO.BlInvalidValueExeption("Invalid or missing data input");
             }
-            if (boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate)
+            if (boTask.CreateAtDate > boTask.StartDate || boTask.ScheduleDate > boTask.ForecastDate || boTask.ForecastDate < boTask.StartDate || boTask.ForecastDate > boTask.DeadlineDate || boTask.ComplateDate < boTask.StartDate)
             {
                 throw new BO.BlIncorrectDateOrderExeption("Invalid or missing data input");
             }

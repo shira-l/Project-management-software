@@ -46,66 +46,6 @@
     <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
   </Task>
   <Task>
-    <Id>1369</Id>
-    <EngineerId>301024011</EngineerId>
-    <Description />
-    <Alias>debaging</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Code listing</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-28T15:22:12.1414533+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2024-06-18T15:22:12.1414533+03:00</ForecastDate>
-    <DeadlineDate>2024-07-12T15:22:12.1414533+03:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Proficient</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1371</Id>
-    <EngineerId>382560199</EngineerId>
-    <Description />
-    <Alias>do Project</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Project plan</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-24T15:22:12.1430759+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2025-02-14T15:22:12.1430759+02:00</ForecastDate>
-    <DeadlineDate>2025-03-06T15:22:12.1430759+02:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Novice</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1372</Id>
-    <EngineerId>262713939</EngineerId>
-    <Description />
-    <Alias>Submit a stage</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>software product</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-21T15:22:12.1439371+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2024-06-11T15:22:12.1439371+03:00</ForecastDate>
-    <DeadlineDate>2024-06-28T15:22:12.1439371+03:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Competent</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1373</Id>
-    <EngineerId>273670464</EngineerId>
-    <Description />
-    <Alias>do Project</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Project plan</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-21T15:22:12.1447682+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2025-03-11T15:22:12.1447682+02:00</ForecastDate>
-    <DeadlineDate>2025-03-28T15:22:12.1447682+03:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Expert</CompmlexityLevel>
-  </Task>
-  <Task>
     <Id>1374</Id>
     <EngineerId>269675057</EngineerId>
     <Description />
@@ -149,36 +89,6 @@
     <DeadlineDate>2024-12-08T15:22:12.147531+02:00</DeadlineDate>
     <ComplateDate xsi:nil="true" />
     <CompmlexityLevel>Novice</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1377</Id>
-    <EngineerId>302999022</EngineerId>
-    <Description />
-    <Alias>run code</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Executable code module</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-19T15:22:12.1486216+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2025-01-09T15:22:12.1486216+02:00</ForecastDate>
-    <DeadlineDate>2025-01-24T15:22:12.1486216+02:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Expert</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1378</Id>
-    <EngineerId>380584088</EngineerId>
-    <Description />
-    <Alias>debaging</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Code listing</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-24T15:22:12.14956+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2024-09-14T15:22:12.14956+03:00</ForecastDate>
-    <DeadlineDate>2024-10-04T15:22:12.14956+03:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>Expert</CompmlexityLevel>
   </Task>
   <Task>
     <Id>1379</Id>
@@ -417,21 +327,6 @@
     <ScheduleDate xsi:nil="true" />
     <ForecastDate>2025-02-16T15:22:12.1688589+02:00</ForecastDate>
     <DeadlineDate>2025-03-10T15:22:12.1688589+02:00</DeadlineDate>
-    <ComplateDate xsi:nil="true" />
-    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
-  </Task>
-  <Task>
-    <Id>1397</Id>
-    <EngineerId>295087107</EngineerId>
-    <Description />
-    <Alias>Designing</Alias>
-    <IsActive>true</IsActive>
-    <Deliverables>Design document</Deliverables>
-    <Remarks />
-    <StartDate>2024-02-21T15:22:12.1729757+02:00</StartDate>
-    <ScheduleDate xsi:nil="true" />
-    <ForecastDate>2024-06-11T15:22:12.1729757+03:00</ForecastDate>
-    <DeadlineDate>2024-06-28T15:22:12.1729757+03:00</DeadlineDate>
     <ComplateDate xsi:nil="true" />
     <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
   </Task>
@@ -824,5 +719,1670 @@
     <DeadlineDate>2024-10-30T15:22:12.1362804+02:00</DeadlineDate>
     <ComplateDate xsi:nil="true" />
     <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1415</Id>
+    <EngineerId>211474152</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T17:11:13.8985719+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-15T17:11:13.8985719+03:00</ForecastDate>
+    <DeadlineDate>2024-08-05T17:11:13.8985719+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1416</Id>
+    <EngineerId>345672916</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:13.9357632+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-14T17:11:13.9357632+03:00</ForecastDate>
+    <DeadlineDate>2024-08-03T17:11:13.9357632+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1417</Id>
+    <EngineerId>307484430</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T17:11:13.9458955+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-12T17:11:13.9458955+02:00</ForecastDate>
+    <DeadlineDate>2024-12-30T17:11:13.9458955+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1418</Id>
+    <EngineerId>319427056</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T17:11:13.9564787+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-10T17:11:13.9564787+02:00</ForecastDate>
+    <DeadlineDate>2025-01-26T17:11:13.9564787+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1419</Id>
+    <EngineerId>243606169</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:13.971529+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-13T17:11:13.971529+02:00</ForecastDate>
+    <DeadlineDate>2025-01-01T17:11:13.971529+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1420</Id>
+    <EngineerId>254982533</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-27T17:11:13.9869006+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-17T17:11:13.9869006+03:00</ForecastDate>
+    <DeadlineDate>2024-10-10T17:11:13.9869006+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1421</Id>
+    <EngineerId>248785504</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.003048+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-02-14T17:11:14.003048+02:00</ForecastDate>
+    <DeadlineDate>2025-03-06T17:11:14.003048+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1422</Id>
+    <EngineerId>380584088</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T17:11:14.0156304+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-18T17:11:14.0156304+03:00</ForecastDate>
+    <DeadlineDate>2024-11-11T17:11:14.0156304+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1423</Id>
+    <EngineerId>383757032</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T17:11:14.0234753+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-12T17:11:14.0234753+03:00</ForecastDate>
+    <DeadlineDate>2024-07-30T17:11:14.0234753+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1424</Id>
+    <EngineerId>209755382</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-27T17:11:14.0316154+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-17T17:11:14.0316154+03:00</ForecastDate>
+    <DeadlineDate>2024-11-09T17:11:14.0316154+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1425</Id>
+    <EngineerId>383757032</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:14.0421261+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-13T17:11:14.0421261+03:00</ForecastDate>
+    <DeadlineDate>2024-07-02T17:11:14.0421261+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1426</Id>
+    <EngineerId>211474152</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T17:11:14.0517006+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-18T17:11:14.0517006+03:00</ForecastDate>
+    <DeadlineDate>2024-09-11T17:11:14.0517006+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1427</Id>
+    <EngineerId>358451479</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.0614924+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-14T17:11:14.0614924+03:00</ForecastDate>
+    <DeadlineDate>2024-07-04T17:11:14.0614924+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1428</Id>
+    <EngineerId>245498640</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T17:11:14.0708548+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-09T17:11:14.0708548+02:00</ForecastDate>
+    <DeadlineDate>2024-11-24T17:11:14.0708548+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1429</Id>
+    <EngineerId>302999022</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T17:11:14.0818802+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-06T17:11:14.0818802+02:00</ForecastDate>
+    <DeadlineDate>2025-01-18T17:11:14.0818802+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1430</Id>
+    <EngineerId>348958585</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T17:11:14.1030763+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-11T17:11:14.1030763+03:00</ForecastDate>
+    <DeadlineDate>2024-06-28T17:11:14.1030763+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1431</Id>
+    <EngineerId>273670464</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:14.116956+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-13T17:11:14.116956+03:00</ForecastDate>
+    <DeadlineDate>2024-08-01T17:11:14.116956+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1432</Id>
+    <EngineerId>245498640</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.1324226+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-14T17:11:14.1324226+03:00</ForecastDate>
+    <DeadlineDate>2024-09-03T17:11:14.1324226+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1433</Id>
+    <EngineerId>302999022</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T17:11:14.1458133+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-15T17:11:14.1458133+02:00</ForecastDate>
+    <DeadlineDate>2025-02-05T17:11:14.1458133+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1434</Id>
+    <EngineerId>311621741</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T17:11:14.157916+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-06T17:11:14.157916+02:00</ForecastDate>
+    <DeadlineDate>2025-01-18T17:11:14.157916+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1435</Id>
+    <EngineerId>209378789</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:14.1744999+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-13T17:11:14.1744999+02:00</ForecastDate>
+    <DeadlineDate>2024-12-02T17:11:14.1744999+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1436</Id>
+    <EngineerId>211474152</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T17:11:14.1863685+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-18T17:11:14.1863685+03:00</ForecastDate>
+    <DeadlineDate>2024-07-12T17:11:14.1863685+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1437</Id>
+    <EngineerId>209755382</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.1990628+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-14T17:11:14.1990628+03:00</ForecastDate>
+    <DeadlineDate>2024-09-03T17:11:14.1990628+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1438</Id>
+    <EngineerId>377927320</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T17:11:14.2132916+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-18T17:11:14.2132916+03:00</ForecastDate>
+    <DeadlineDate>2024-10-12T17:11:14.2132916+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1441</Id>
+    <EngineerId>248700774</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T17:11:14.2515499+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-10T17:11:14.2515499+02:00</ForecastDate>
+    <DeadlineDate>2024-11-26T17:11:14.2515499+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1442</Id>
+    <EngineerId>294540350</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T17:11:14.2612109+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-07T17:11:14.2612109+03:00</ForecastDate>
+    <DeadlineDate>2024-09-20T17:11:14.2612109+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1443</Id>
+    <EngineerId>209755382</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T17:11:14.2765274+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-07T17:11:14.2765274+02:00</ForecastDate>
+    <DeadlineDate>2025-03-20T17:11:14.2765274+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1444</Id>
+    <EngineerId>220811636</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.2926816+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-14T17:11:14.2926816+03:00</ForecastDate>
+    <DeadlineDate>2024-07-04T17:11:14.2926816+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1445</Id>
+    <EngineerId>384466902</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T17:11:14.3131716+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-08T17:11:14.3131716+03:00</ForecastDate>
+    <DeadlineDate>2024-09-22T17:11:14.3131716+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1446</Id>
+    <EngineerId>294540350</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T17:11:14.3331189+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-12T17:11:14.3331189+02:00</ForecastDate>
+    <DeadlineDate>2025-03-30T17:11:14.3331189+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1447</Id>
+    <EngineerId>354412468</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T17:11:14.3459088+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-11T17:11:14.3459088+02:00</ForecastDate>
+    <DeadlineDate>2024-12-28T17:11:14.3459088+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1448</Id>
+    <EngineerId>354412468</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T17:11:14.358196+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-16T17:11:14.358196+02:00</ForecastDate>
+    <DeadlineDate>2024-12-08T17:11:14.358196+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1449</Id>
+    <EngineerId>223312729</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T17:11:14.3760367+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-15T17:11:14.3760367+03:00</ForecastDate>
+    <DeadlineDate>2024-08-05T17:11:14.3760367+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1450</Id>
+    <EngineerId>266320529</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T17:11:14.3932008+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-10T17:11:14.3932008+03:00</ForecastDate>
+    <DeadlineDate>2024-06-26T17:11:14.3932008+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1451</Id>
+    <EngineerId>303313220</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.411087+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-14T17:11:14.411087+02:00</ForecastDate>
+    <DeadlineDate>2025-04-03T17:11:14.411087+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1452</Id>
+    <EngineerId>230833538</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T17:11:14.4290202+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-14T17:11:14.4290202+02:00</ForecastDate>
+    <DeadlineDate>2025-04-03T17:11:14.4290202+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1453</Id>
+    <EngineerId>209755382</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T17:11:14.4407678+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-11T17:11:14.4407678+02:00</ForecastDate>
+    <DeadlineDate>2024-12-28T17:11:14.4407678+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1454</Id>
+    <EngineerId>381701049</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:14.4567461+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-13T17:11:14.4567461+03:00</ForecastDate>
+    <DeadlineDate>2024-10-02T17:11:14.4567461+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1455</Id>
+    <EngineerId>306753964</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-27T17:11:14.471385+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-17T17:11:14.471385+02:00</ForecastDate>
+    <DeadlineDate>2025-04-09T17:11:14.471385+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1456</Id>
+    <EngineerId>240801913</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T17:11:14.4895047+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-16T17:11:14.4895047+03:00</ForecastDate>
+    <DeadlineDate>2024-08-07T17:11:14.4895047+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1457</Id>
+    <EngineerId>343414956</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T17:11:14.5129707+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-15T17:11:14.5129707+03:00</ForecastDate>
+    <DeadlineDate>2024-10-06T17:11:14.5129707+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1458</Id>
+    <EngineerId>236715749</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T17:11:14.5287886+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-09T17:11:14.5287886+03:00</ForecastDate>
+    <DeadlineDate>2024-10-24T17:11:14.5287886+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1459</Id>
+    <EngineerId>297110310</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T17:11:14.5428694+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-16T17:11:14.5428694+02:00</ForecastDate>
+    <DeadlineDate>2024-12-08T17:11:14.5428694+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1461</Id>
+    <EngineerId>223312729</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-27T17:11:14.5686646+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-17T17:11:14.5686646+02:00</ForecastDate>
+    <DeadlineDate>2025-02-09T17:11:14.5686646+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1462</Id>
+    <EngineerId>359873963</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T17:11:14.5831025+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-15T17:11:14.5831025+02:00</ForecastDate>
+    <DeadlineDate>2025-02-05T17:11:14.5831025+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1463</Id>
+    <EngineerId>325562398</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T17:11:14.5967907+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-07T17:11:14.5967907+03:00</ForecastDate>
+    <DeadlineDate>2024-09-20T17:11:14.5967907+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1464</Id>
+    <EngineerId>229627024</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T17:11:14.6141817+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-11T17:11:14.6141817+02:00</ForecastDate>
+    <DeadlineDate>2025-03-28T17:11:14.6141817+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1378</Id>
+    <EngineerId>347597051</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T15:22:12.14956+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-14T15:22:12.14956+03:00</ForecastDate>
+    <DeadlineDate>2024-10-04T15:22:12.14956+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1377</Id>
+    <EngineerId>347597051</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T15:22:12.1486216+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-09T15:22:12.1486216+02:00</ForecastDate>
+    <DeadlineDate>2025-01-24T15:22:12.1486216+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1465</Id>
+    <EngineerId>325462398</EngineerId>
+    <Description />
+    <Alias>a</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>a</Deliverables>
+    <Remarks>a</Remarks>
+    <StartDate>2024-02-15T00:00:00</StartDate>
+    <ScheduleDate>2024-02-16T00:00:00</ScheduleDate>
+    <ForecastDate>2024-02-17T00:00:00</ForecastDate>
+    <DeadlineDate>2024-02-18T00:00:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1466</Id>
+    <EngineerId>0</EngineerId>
+    <Description>a</Description>
+    <Alias>a</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>a</Deliverables>
+    <Remarks>a</Remarks>
+    <StartDate>2024-02-15T00:00:00</StartDate>
+    <ScheduleDate>2024-02-16T00:00:00</ScheduleDate>
+    <ForecastDate>2024-02-17T00:00:00</ForecastDate>
+    <DeadlineDate>2024-02-18T00:00:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1369</Id>
+    <EngineerId>325462398</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T15:22:12.1414533+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-18T15:22:12.1414533+03:00</ForecastDate>
+    <DeadlineDate>2024-07-12T15:22:12.1414533+03:00</DeadlineDate>
+    <ComplateDate>2024-08-29T00:00:00</ComplateDate>
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1467</Id>
+    <EngineerId>209755382</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T18:19:26.9876575+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-18T18:19:26.9876575+02:00</ForecastDate>
+    <DeadlineDate>2025-02-11T18:19:26.9876575+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1468</Id>
+    <EngineerId>354658909</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T18:19:27.0214976+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-15T18:19:27.0214976+03:00</ForecastDate>
+    <DeadlineDate>2024-10-06T18:19:27.0214976+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1469</Id>
+    <EngineerId>229137461</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T18:19:27.0341164+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-13T18:19:27.0341164+03:00</ForecastDate>
+    <DeadlineDate>2024-09-01T18:19:27.0341164+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1470</Id>
+    <EngineerId>12345678</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.0466619+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-16T18:19:27.0466619+02:00</ForecastDate>
+    <DeadlineDate>2024-12-08T18:19:27.0466619+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1471</Id>
+    <EngineerId>236715749</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T18:19:27.0568703+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-07T18:19:27.0568703+03:00</ForecastDate>
+    <DeadlineDate>2024-07-20T18:19:27.0568703+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1472</Id>
+    <EngineerId>266637440</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T18:19:27.0668043+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-15T18:19:27.0668043+03:00</ForecastDate>
+    <DeadlineDate>2024-10-06T18:19:27.0668043+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1473</Id>
+    <EngineerId>299212947</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T18:19:27.0854665+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-09T18:19:27.0854665+02:00</ForecastDate>
+    <DeadlineDate>2024-11-24T18:19:27.0854665+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1474</Id>
+    <EngineerId>347597051</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-27T18:19:27.0980647+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-17T18:19:27.0980647+03:00</ForecastDate>
+    <DeadlineDate>2024-10-10T18:19:27.0980647+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1475</Id>
+    <EngineerId>377927320</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T18:19:27.1109852+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-08T18:19:27.1109852+03:00</ForecastDate>
+    <DeadlineDate>2024-10-22T18:19:27.1109852+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1476</Id>
+    <EngineerId>385265715</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T18:19:27.1267018+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-12T18:19:27.1267018+02:00</ForecastDate>
+    <DeadlineDate>2024-11-30T18:19:27.1267018+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1477</Id>
+    <EngineerId>387618917</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T18:19:27.1395528+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-09T18:19:27.1395528+03:00</ForecastDate>
+    <DeadlineDate>2024-07-24T18:19:27.1395528+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1478</Id>
+    <EngineerId>325462398</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T18:19:27.1520912+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-06T18:19:27.1520912+02:00</ForecastDate>
+    <DeadlineDate>2024-11-18T18:19:27.1520912+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1479</Id>
+    <EngineerId>260986344</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T18:19:27.1654456+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-06T18:19:27.1654456+02:00</ForecastDate>
+    <DeadlineDate>2024-12-18T18:19:27.1654456+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1480</Id>
+    <EngineerId>398162137</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.1781051+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-10T18:19:27.1781051+02:00</ForecastDate>
+    <DeadlineDate>2025-03-26T18:19:27.1781051+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1481</Id>
+    <EngineerId>294320214</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T18:19:27.1896711+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-06T18:19:27.1896711+02:00</ForecastDate>
+    <DeadlineDate>2025-03-18T18:19:27.1896711+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1482</Id>
+    <EngineerId>329701635</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.202261+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-16T18:19:27.202261+02:00</ForecastDate>
+    <DeadlineDate>2025-01-07T18:19:27.202261+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1483</Id>
+    <EngineerId>266637440</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T18:19:27.2137656+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-15T18:19:27.2137656+03:00</ForecastDate>
+    <DeadlineDate>2024-10-06T18:19:27.2137656+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1484</Id>
+    <EngineerId>258908720</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T18:19:27.2242553+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-15T18:19:27.2242553+02:00</ForecastDate>
+    <DeadlineDate>2025-01-05T18:19:27.2242553+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1485</Id>
+    <EngineerId>303313220</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T18:19:27.2336103+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-11T18:19:27.2336103+02:00</ForecastDate>
+    <DeadlineDate>2025-01-28T18:19:27.2336103+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1486</Id>
+    <EngineerId>306753964</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T18:19:27.2450117+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-08T18:19:27.2450117+02:00</ForecastDate>
+    <DeadlineDate>2024-12-22T18:19:27.2450117+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1487</Id>
+    <EngineerId>316723191</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T18:19:27.2540824+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-14T18:19:27.2540824+03:00</ForecastDate>
+    <DeadlineDate>2024-10-04T18:19:27.2540824+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1488</Id>
+    <EngineerId>231153713</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T18:19:27.2755226+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-11T18:19:27.2755226+02:00</ForecastDate>
+    <DeadlineDate>2025-03-28T18:19:27.2755226+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1489</Id>
+    <EngineerId>376383303</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.2896337+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-16T18:19:27.2896337+03:00</ForecastDate>
+    <DeadlineDate>2024-07-08T18:19:27.2896337+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1490</Id>
+    <EngineerId>369981215</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T18:19:27.3119252+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-07T18:19:27.3119252+03:00</ForecastDate>
+    <DeadlineDate>2024-10-20T18:19:27.3119252+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1491</Id>
+    <EngineerId>321132338</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T18:19:27.3232878+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-18T18:19:27.3232878+02:00</ForecastDate>
+    <DeadlineDate>2025-01-11T18:19:27.3232878+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1492</Id>
+    <EngineerId>336665696</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.3384128+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-10T18:19:27.3384128+02:00</ForecastDate>
+    <DeadlineDate>2025-03-26T18:19:27.3384128+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1493</Id>
+    <EngineerId>217400422</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.3510323+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-16T18:19:27.3510323+03:00</ForecastDate>
+    <DeadlineDate>2024-10-08T18:19:27.3510323+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1494</Id>
+    <EngineerId>207614987</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T18:19:27.362375+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-12T18:19:27.362375+03:00</ForecastDate>
+    <DeadlineDate>2024-08-30T18:19:27.362375+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1495</Id>
+    <EngineerId>223153753</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T18:19:27.3758319+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-08T18:19:27.3758319+02:00</ForecastDate>
+    <DeadlineDate>2025-03-22T18:19:27.3758319+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1496</Id>
+    <EngineerId>311621741</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T18:19:27.3885887+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-11-13T18:19:27.3885887+02:00</ForecastDate>
+    <DeadlineDate>2024-12-02T18:19:27.3885887+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1497</Id>
+    <EngineerId>301024011</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.3999515+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-10T18:19:27.3999515+03:00</ForecastDate>
+    <DeadlineDate>2024-10-26T18:19:27.3999515+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1498</Id>
+    <EngineerId>351593400</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-17T18:19:27.4121736+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-07T18:19:27.4121736+03:00</ForecastDate>
+    <DeadlineDate>2024-07-20T18:19:27.4121736+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1499</Id>
+    <EngineerId>243606169</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T18:19:27.4246125+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-12T18:19:27.4246125+02:00</ForecastDate>
+    <DeadlineDate>2024-12-30T18:19:27.4246125+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1500</Id>
+    <EngineerId>358271265</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T18:19:27.4373013+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-18T18:19:27.4373013+03:00</ForecastDate>
+    <DeadlineDate>2024-10-12T18:19:27.4373013+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1501</Id>
+    <EngineerId>321132338</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-22T18:19:27.449902+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-12T18:19:27.449902+03:00</ForecastDate>
+    <DeadlineDate>2024-08-30T18:19:27.449902+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1502</Id>
+    <EngineerId>211474152</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T18:19:27.469809+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-18T18:19:27.469809+03:00</ForecastDate>
+    <DeadlineDate>2024-08-11T18:19:27.469809+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1503</Id>
+    <EngineerId>301024011</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.4827963+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-10T18:19:27.4827963+03:00</ForecastDate>
+    <DeadlineDate>2024-09-26T18:19:27.4827963+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1504</Id>
+    <EngineerId>297110310</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.4986974+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-09-16T18:19:27.4986974+03:00</ForecastDate>
+    <DeadlineDate>2024-10-08T18:19:27.4986974+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1505</Id>
+    <EngineerId>370176019</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.5153091+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-10T18:19:27.5153091+03:00</ForecastDate>
+    <DeadlineDate>2024-07-26T18:19:27.5153091+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1506</Id>
+    <EngineerId>336665696</EngineerId>
+    <Description />
+    <Alias>Complete manual</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>User manual</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T18:19:27.5273028+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-10-14T18:19:27.5273028+03:00</ForecastDate>
+    <DeadlineDate>2024-11-03T18:19:27.5273028+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1507</Id>
+    <EngineerId>372658651</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T18:19:27.5397405+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-14T18:19:27.5397405+02:00</ForecastDate>
+    <DeadlineDate>2025-04-03T18:19:27.5397405+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1508</Id>
+    <EngineerId>399866346</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T18:19:27.5499293+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-06T18:19:27.5499293+02:00</ForecastDate>
+    <DeadlineDate>2024-12-18T18:19:27.5499293+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1509</Id>
+    <EngineerId>319835924</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-26T18:19:27.5626676+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-01-16T18:19:27.5626676+02:00</ForecastDate>
+    <DeadlineDate>2025-02-07T18:19:27.5626676+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1511</Id>
+    <EngineerId>217400422</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-19T18:19:27.5815197+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-02-09T18:19:27.5815197+02:00</ForecastDate>
+    <DeadlineDate>2025-02-24T18:19:27.5815197+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1512</Id>
+    <EngineerId>239362158</EngineerId>
+    <Description />
+    <Alias>debaging</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Code listing</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T18:19:27.6032246+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-08T18:19:27.6032246+03:00</ForecastDate>
+    <DeadlineDate>2024-08-22T18:19:27.6032246+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1513</Id>
+    <EngineerId>391177358</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-18T18:19:27.6128247+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-08T18:19:27.6128247+03:00</ForecastDate>
+    <DeadlineDate>2024-06-22T18:19:27.6128247+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1514</Id>
+    <EngineerId>329701635</EngineerId>
+    <Description />
+    <Alias>run code</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Executable code module</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-16T18:19:27.625678+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-06T18:19:27.625678+02:00</ForecastDate>
+    <DeadlineDate>2025-03-18T18:19:27.625678+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1515</Id>
+    <EngineerId>314406784</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-20T18:19:27.6377304+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-12-10T18:19:27.6377304+02:00</ForecastDate>
+    <DeadlineDate>2024-12-26T18:19:27.6377304+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1516</Id>
+    <EngineerId>357580877</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-25T18:19:27.6477124+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-02-15T18:19:27.6477124+02:00</ForecastDate>
+    <DeadlineDate>2025-03-08T18:19:27.6477124+02:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Proficient</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1460</Id>
+    <EngineerId>223312729</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-23T17:11:14.5542178+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-07-13T17:11:14.5542178+03:00</ForecastDate>
+    <DeadlineDate>2024-08-01T17:11:14.5542178+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1440</Id>
+    <EngineerId>269675057</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-28T17:11:14.2392341+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-18T17:11:14.2392341+02:00</ForecastDate>
+    <DeadlineDate>2025-04-11T17:11:14.2392341+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1439</Id>
+    <EngineerId>316716665</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T17:11:14.2282612+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-11T17:11:14.2282612+03:00</ForecastDate>
+    <DeadlineDate>2024-08-28T17:11:14.2282612+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1373</Id>
+    <EngineerId>325462398</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T15:22:12.1447682+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-03-11T15:22:12.1447682+02:00</ForecastDate>
+    <DeadlineDate>2025-03-28T15:22:12.1447682+03:00</DeadlineDate>
+    <ComplateDate>2024-04-17T00:00:00</ComplateDate>
+    <CompmlexityLevel>Expert</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1518</Id>
+    <EngineerId>0</EngineerId>
+    <Description />
+    <Alias>a</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>a</Deliverables>
+    <Remarks>a</Remarks>
+    <StartDate>2024-02-15T00:00:00</StartDate>
+    <ScheduleDate>2024-02-16T00:00:00</ScheduleDate>
+    <ForecastDate>2024-02-17T00:00:00</ForecastDate>
+    <DeadlineDate>2024-02-18T00:00:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1517</Id>
+    <EngineerId>325462398</EngineerId>
+    <Description>a</Description>
+    <Alias>a</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>a</Deliverables>
+    <Remarks>a</Remarks>
+    <StartDate>2024-02-15T00:00:00</StartDate>
+    <ScheduleDate>2024-02-16T00:00:00</ScheduleDate>
+    <ForecastDate>2024-02-17T00:00:00</ForecastDate>
+    <DeadlineDate>2024-02-18T00:00:00</DeadlineDate>
+    <ComplateDate>2024-01-22T00:00:00</ComplateDate>
+    <CompmlexityLevel>Competent</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1371</Id>
+    <EngineerId>382560199</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-24T15:22:12.1430759+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2025-02-14T15:22:12.1430759+02:00</ForecastDate>
+    <DeadlineDate>2025-03-06T15:22:12.1430759+02:00</DeadlineDate>
+    <ComplateDate>2024-05-03T00:00:00</ComplateDate>
+    <CompmlexityLevel>Novice</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1510</Id>
+    <EngineerId>205030311</EngineerId>
+    <Description />
+    <Alias>do Project</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Project plan</Deliverables>
+    <Remarks>a</Remarks>
+    <StartDate>2024-02-23T18:19:27.5721947+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-08-13T18:19:27.5721947+03:00</ForecastDate>
+    <DeadlineDate>2024-09-01T18:19:27.5721947+03:00</DeadlineDate>
+    <ComplateDate>2024-09-24T00:00:00</ComplateDate>
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1397</Id>
+    <EngineerId>262713939</EngineerId>
+    <Description />
+    <Alias>Designing</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>Design document</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T15:22:12.1729757+02:00</StartDate>
+    <ScheduleDate xsi:nil="true" />
+    <ForecastDate>2024-06-11T15:22:12.1729757+03:00</ForecastDate>
+    <DeadlineDate>2024-06-28T15:22:12.1729757+03:00</DeadlineDate>
+    <ComplateDate xsi:nil="true" />
+    <CompmlexityLevel>AdvancedBeginner</CompmlexityLevel>
+  </Task>
+  <Task>
+    <Id>1372</Id>
+    <EngineerId>262713939</EngineerId>
+    <Description />
+    <Alias>Submit a stage</Alias>
+    <IsActive>true</IsActive>
+    <Deliverables>software product</Deliverables>
+    <Remarks />
+    <StartDate>2024-02-21T15:22:12.1439371+02:00</StartDate>
+    <ScheduleDate>2024-02-22T00:00:00</ScheduleDate>
+    <ForecastDate>2024-06-11T15:22:12.1439371+03:00</ForecastDate>
+    <DeadlineDate>2024-06-28T15:22:12.1439371+03:00</DeadlineDate>
+    <ComplateDate>2024-02-22T00:00:00</ComplateDate>
+    <CompmlexityLevel>Competent</CompmlexityLevel>
   </Task>
 </ArrayOfTask>

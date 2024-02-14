@@ -44,6 +44,9 @@
 
     <!--Extrnal Grid-->
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource = "../image/image.png"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="85*"/>
             <RowDefinition Height="15*"/>

@@ -10,7 +10,6 @@
     
     <!--Extrnal Grid-->
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="500*"/>
@@ -30,13 +29,15 @@
         </Grid>
 
         <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding TaskList}" MouseDoubleClick="ListView_MouseDoubleClick">
+            <ListView.Background>
+                <ImageBrush ImageSource="../image/image.png"/>
+            </ListView.Background>
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="btnAddTask"/>
+        <Button Background="LightPink" Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="btnAddTask"/>
     </Grid>
 </Window>

@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using System.Linq;
 
 namespace PL.Engineer
 {
@@ -36,7 +37,7 @@ namespace PL.Engineer
         private void Engineer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var temp = Engineer == BO.EngineerExperience.None ?
-            s_bl?.Engineer.ReadAll() :
+            s_bl?.Engineer.ReadAll():
             s_bl?.Engineer.ReadAll(item => item.Level == Engineer);
             EngineerList = temp == null ? new() : new(s_bl!.EngineerInList.ReadAll(temp!));
         }

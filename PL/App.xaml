@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:PL"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <local:EngineersCollection x:Key="EngineersCollectionKey" />
+        <local:EngineersCollection x:Key="EngineersCollectionKey"/>
         <local:ConvertIdToContent x:Key="ConvertIdToContentKey"/>
         <local:TasksCollection x:Key="TasksCollectionKey"/>
         <local:ConvertIdtoEnable x:Key="ConvertIdtoEnableKey"/>
