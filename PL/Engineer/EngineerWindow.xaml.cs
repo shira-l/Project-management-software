@@ -59,7 +59,7 @@ public partial class EngineerWindow : Window
     }
     public static readonly DependencyProperty TasksIdProperty =
        DependencyProperty.Register("TasksId", typeof(IEnumerable<int>), typeof(EngineerWindow), new PropertyMetadata(null));
-   
+    //Update button content to add or update as requested
     private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
     {
         string content = (sender as Button)!.Content.ToString()!;

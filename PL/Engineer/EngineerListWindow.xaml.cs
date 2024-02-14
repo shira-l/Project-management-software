@@ -16,6 +16,7 @@ namespace PL.Engineer
     {
         static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         public BO.EngineerExperience Engineer { get; set; } = BO.EngineerExperience.None;
+        //View the list of engineers
         public EngineerListWindow()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace PL.Engineer
 
         public static readonly DependencyProperty EngineerListProperty =
             DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.EngineerInList>), typeof(EngineerListWindow), new PropertyMetadata(null));
-
+        //View the list of engineers by level
         private void Engineer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var temp = Engineer == BO.EngineerExperience.None ?
@@ -39,7 +40,7 @@ namespace PL.Engineer
             s_bl?.Engineer.ReadAll(item => item.Level == Engineer);
             EngineerList = temp == null ? new() : new(s_bl!.EngineerInList.ReadAll(temp!));
         }
-
+        //Adding an engineer
         private void btnAddEngineer(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
@@ -47,7 +48,7 @@ namespace PL.Engineer
             s_bl!.EngineerInList.ReadAll(engineers);
             EngineerList = new(s_bl!.EngineerInList.ReadAll(engineers));
         }
-
+        //Update the engineer details
         private void ListView_MouseDoubleClick(object sender, RoutedEventArgs e)
         {
             BO.EngineerInList ?engineer = (sender as ListView)?.SelectedItem as BO.EngineerInList;
