@@ -17,7 +17,7 @@ public partial class EngineerWindow : Window
 {
     static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
     public BO.EngineerExperience LevelEngineer { get; set; } = BO.EngineerExperience.Novice;
-
+    //Checking the integrity of the email
     public static bool RegexEmailCheck(string? input)
     {
         if (input == null)
